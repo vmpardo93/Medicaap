@@ -1,0 +1,219 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/logica/Usuario.master.cs" Inherits="vista_Usuario" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Ranga" rel="stylesheet"/>
+   
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../bootstrap/css/estilo.css"/>
+    <title>Menu usuario</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!-- estlos viejos del html de la masterpage del usuario<style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            height: 100%;
+        }
+        .auto-style2 {
+            width: 175px;
+            text-align: center;
+            }
+        .auto-style3 {
+            width: 175px;
+            text-align: center;
+            height: 23%;
+        }
+        .auto-style4 {
+            height: 23%;
+            text-align: right;
+        }
+        .auto-style5 {
+            height: 23%;
+            text-align: right;
+            width: 20%;
+        }
+        .auto-style7 {
+            width: 175px;
+            text-align: center;
+            height: 104px;
+        }
+        .auto-style8 {
+            width: 100px;
+        }
+        </style>-->
+</head>
+<body>
+    <form id="form1" runat="server">
+    <header>
+        <div class="container-fluid">
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+          <div class="row">
+          <div class="container">
+            <div class="col-md-11">
+                <div class="navbar-header">
+                    <a href="Perfil.aspx" class="navbar-brand">Medicaap</a>
+                 </div>
+                <div class="collapse navbar-collapse" id="#navegacion-vp">
+                    <ul class="nav navbar-nav">
+
+                        <li class="active"> <a href="Perfil.aspx">Perfil</a></li>
+                        <li class=""> <a href="citas.aspx">Citas Actuales</a></li>
+                        <li class=""> <a href="CancelarCitas.aspx">Cancelar Cita</a></li>
+                        <li class=""> <a href="Nuevacita.aspx">Nueva Cita</a></li>
+                        <li class=""> <a href="Resultados.aspx">Resultados</a></li>
+                        <li class=""> <a href="verdoctores.aspx">Doctores</a></li>
+                
+                    </ul>
+             
+              
+                </div>
+            </div>
+            
+             <div class="col-md-1" >
+                  <asp:Button CssClass="btn btn-primary" ID="B_salir" runat="server" Text="Salir" Width="88px" Height="32px" OnClick="B_salir_Click" />
+              </div>
+          </div>
+        </div>
+        </nav>
+        </div>
+      </header>
+      <div class="separador">
+          
+      </div>
+      <section >
+        <div class="row"></div>
+            <div class="container-fluid bg-info" >
+                <div class="col-md-2">
+                    
+                </div>
+                <div class="col-md-4">
+                    <h3>
+                        <asp:Label ID="L_Nombre" runat="server" Text="Label" ForeColor="Black"></asp:Label>
+                    </h3>
+                    
+                </div>
+                <div class="col-md-4 ">
+                    <asp:Image ID="Im_Perfil" runat="server" Height="150px" Width="98px" />
+                </div>
+                <div class="col-md-2">
+                    
+                </div>
+            </div>
+        
+      </section>
+      <div class="row">
+          <div class="container">
+              <div class="col-lg-3">
+
+              </div>
+              <div class="col-lg-6">
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+              </div>
+              <div class="col-lg-3">
+
+              </div>
+
+          </div>
+      </div>
+    </form>
+    <footer class="container-fluid text-center navbar navbar-inverse">
+        
+            <div class="container-fluid">
+                 <div class="col-md-4">
+                    &copy; 2017 -2020 Medicaap
+                    </div>
+                <div class="col-md-2">
+                    <a href="#">Inicio</a>
+                </div>
+                <div class="col-md-2">
+                     <a href="#">Doctores</a>
+                 </div>
+                 <div class="col-md-2">
+                     <a href="#">Login</a>
+                 </div>
+                 <div class="col-md-2">
+                     <a href="#">Mapa</a>
+                 </div>
+            </div>
+        
+    </footer>
+    <!--<section>
+    <div style = "background-image: url('../../images/fondo-madera-negro.jpg')">
+    
+    
+        
+        
+            <asp:Table ID="Table1" runat="server">
+            </asp:Table>
+            
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style3"></td>
+                    <td class="auto-style5" colspan="2">
+                      
+                    </td>
+                    <td class="auto-style4" colspan="3">
+                        
+                    </td>
+                    <td class="auto-style4" colspan="2">
+                        </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2" rowspan="2">
+                       
+                    </td>
+                    <td class="auto-style8">
+                        
+                    </td>
+                    <td colspan="2">
+                        
+                    </td>
+                    
+                    <td colspan="2">
+                       
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2" colspan="7">
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">
+                       
+                    </td>
+                </tr>
+                </table>
+            
+        
+    
+    
+    </div>
+    </section>
+      <footer>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-6">
+              <p>Medicapp derechos reservados</p>
+            </div>
+            <div class="col-xs-6">
+              <div class="container-fluid">
+                <ul class="list-inline text-right">
+                    <li><a href="#"></a>Perfil</li>
+                    <li><a href="#"></a>Citas</li>
+                    <li><a href="#"></a>Doctores</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>-->
+</body>
+</html>

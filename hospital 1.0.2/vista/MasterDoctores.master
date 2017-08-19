@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/logica/MasterDoctores.master.cs" Inherits="MasterDoctores" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>plataforma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link href="https://fonts.googleapis.com/css?family=Ranga" rel="stylesheet"/>
+    <link rel="stylesheet" href="../App_Themes/Styles/stylemasterpage.css" />
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../bootstrap/css/estilo.css"/>
+    <script src="../App_Themes/JavaScript/jquery.js"></script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+     <form id="form1" runat="server">
+        <div>
+            <header>
+                <div class="contenedor">
+                    <div class="menu">
+                    <nav>
+                        <ul>
+                            <li><a href="verhorariot.aspx">Horario</a></li>
+                            <li><a href="editarhojavida.aspx">Hoja de vida</a></li>
+                            <li><a href="buscacita.aspx">Citas</a></li>
+                            <li><a href="modificadoc.aspx">Datos</a></li>
+                            <li><asp:Image ID="Im_Perfil" runat="server" Height="150px" Width="98px" /></li>
+                            <li> <asp:Button CssClass="btn btn-primary" ID="B_cerrar" runat="server" Text="Cerrar Session" OnClick="B_salir_Click" /></li>
+                        </ul>
+                    </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+    <div class="contenido" >
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

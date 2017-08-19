@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/logica/MasterAdminVic.master.cs" Inherits="vista_MasterAdminVic" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Administrador</title>
+    <link rel="stylesheet" href="../App_Themes/Styles/stylemasterpage.css" />
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../bootstrap/css/estilo.css"/>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            height: 498px;
+        }
+        .auto-style2 {
+            font-size: xx-large;
+            height: 125px;
+            text-align: center;
+            color: #0066FF;
+        }
+        .auto-style4 {
+            width: 25%;
+            text-align: center;
+        }
+        .auto-style5 {
+            text-align: center;
+        }
+        .auto-style7 {
+            height: 99px;
+        }
+        .auto-style8 {
+            width: 27%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body style = "background-image: url('../../images/HospitalB.jpg')">
+    <form id="form1" runat="server">
+    <div>
+        
+        
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style2" colspan="2"><strong>Menu Administrador</strong></td>
+                    <td class="auto-style2" colspan="2">
+                        <asp:Button ID="B_Salir" runat="server" CssClass="btn btn-primary" OnClick="B_Salir_Click" Text="Cerrar sesion" ValidationGroup="50" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style5">
+                        <asp:Button ID="Button1" runat="server"  Text="Ver usuarios" CssClass="btn-primary" OnClick="Button1_Click" ValidationGroup="50" />
+                    </td>
+                    <td class="auto-style8">
+                        <asp:Button ID="Button2" runat="server"  style="text-align: center" Text="Ver doctores" CssClass="btn-primary" OnClick="Button2_Click" ValidationGroup="50" />
+                    </td>
+                    <td class="auto-style4">
+                        <asp:Button ID="Button3" runat="server" Text="registrar doctores" CssClass="btn-primary" OnClick="Button3_Click" ValidationGroup="50" />
+                    </td>
+                    <td class="auto-style4">
+                        <asp:Button ID="Button4" runat="server" Text="Agregar Parametros" CssClass="btn-primary" OnClick="Button4_Click" ValidationGroup="50" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style7" colspan="4">
+                        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style5">&nbsp;</td>
+                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style4">&nbsp;</td>
+                </tr>
+            </table>
+        
+        
+    </div>
+    </form>
+</body>
+</html>

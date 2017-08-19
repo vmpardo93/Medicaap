@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/logica/MasterPage.master.cs" Inherits="MasterPage"  %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>plataforma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link href="https://fonts.googleapis.com/css?family=Ranga" rel="stylesheet"/>
+    <link rel="stylesheet" href="../App_Themes/Styles/stylemasterpage.css" />
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
+    <!--<link rel="stylesheet" href="../bootstrap/css/estilo.css"/>-->
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body >
+   
+        <div >
+            <header>
+                <div class="contenedor">
+                    <div class="menu">
+                    <nav>
+                        <ul>
+                            <li><a href="Inicio.aspx">Inicio</a></li>
+                            <li><a href="mapa.aspx">Mapa</a></li>
+                            <li><a href="doctores.aspx">Doctores</a></li>
+                            <li><a href="Login.aspx">Login</a></li>
+                            <li><a href="Quienesomos.aspx">Quienes somos</a></li>
+                        </ul>
+                    </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+    
+    <section>    
+        <div class="row">
+            <div class="col-md-12">
+                <div class="contenido" >
+                     <form id="form1" runat="server">
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+                    </asp:ContentPlaceHolder>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <!--<div class="row">
+            <div class="container-fluid">
+        
+                <div class="col-md-4">
+                    &copy; 2017 -2020 Medicaap
+                </div>
+                <div class="col-md-2">
+                    <a href="#">Inicio</a>
+                </div>
+                <div class="col-md-2">
+                     <a href="#">Doctores</a>
+                 </div>
+                 <div class="col-md-2">
+                     <a href="#">Login</a>
+                 </div>
+                 <div class="col-md-2">
+                     <a href="#">Mapa</a>
+                 </div>
+             </div>
+           </div>-->
+    </footer>
+    <script src="../bootstrap/js/jquery.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

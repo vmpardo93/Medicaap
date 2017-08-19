@@ -1,0 +1,5 @@
+C:\Users\Acer\Desktop\Copia de seguridad ISII\utilitarios\bin\Debug\utilitarios.dll
+C:\Users\Acer\Desktop\Copia de seguridad ISII\utilitarios\bin\Debug\utilitarios.pdb
+C:\Users\Acer\Desktop\Copia de seguridad ISII\utilitarios\obj\Debug\utilitarios.csprojResolveAssemblyReference.cache
+C:\Users\Acer\Desktop\Copia de seguridad ISII\utilitarios\obj\Debug\utilitarios.dll
+C:\Users\Acer\Desktop\Copia de seguridad ISII\utilitarios\obj\Debug\utilitarios.pdb
