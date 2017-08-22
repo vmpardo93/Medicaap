@@ -12,6 +12,7 @@ namespace utilitarios
     public class IpMac
     {
         public string GetIP()
+            /* toma la dirreccion ip de la persona que accede a la pagina*/
         {
             string IP4Address = String.Empty;
 
@@ -27,6 +28,7 @@ namespace utilitarios
             return IP4Address;
         }
         public string GetMACAddress2()
+            /*toma la mac*/
         {
             NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
             String macAddress = String.Empty;
