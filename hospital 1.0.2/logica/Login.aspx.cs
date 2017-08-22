@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using Logica;
+using utilitarios;
 
 public partial class vista_Login : System.Web.UI.Page
 {
@@ -25,10 +27,17 @@ public partial class vista_Login : System.Web.UI.Page
     protected void B_Entrar_Click(object sender, EventArgs e)
     {
       
-        Usuario user = new Usuario();
-        DataTable data=new DataTable();
-        DAO_doctores usuario=new DAO_doctores();
-        mac mac=new mac();
+        UUsuario user = new UUsuario();
+        LUsuarios log = new LUsuarios();
+        user = log.loggin(TB_username.Text, TB_Clave.Text);
+
+        Session["id_user"] = user.Id_usuario;
+        Session["user"] = user.Username;
+        Session["rol_user"] = (user.Idrol.ToString());
+        ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect","alert('" + user.Mensaje + "'); window.location='" +Request.ApplicationPath + user.Url1 + "';", true);
+
+       
+   /*     mac mac=new mac();
         string ip=mac.IP();
         string umac = mac.Mac();
         data=usuario.buscarUsuarios(TB_username.Text.ToString(),TB_Clave.Text.ToString(),ip,umac);
@@ -79,7 +88,7 @@ public partial class vista_Login : System.Web.UI.Page
                 Response.Redirect("modificadoc.aspx"); // redireccionamos a pagina prinsipal del doc
             }
             
-        }
+        }*/
     }
 
     protected void B_Registro_Click(object sender, EventArgs e)

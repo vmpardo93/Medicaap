@@ -12,18 +12,6 @@ public partial class vista_Usuario : System.Web.UI.MasterPage
     protected void Page_Load(object sender, EventArgs e)
     {
         Response.Cache.SetNoStore();
-        if (Session["id_user"] == null){
-            Response.Redirect("Login.aspx");   //validamos el id del usuario
-        }
-        
-        Usuario user = (Usuario)Session["user"];
-        
-        
-        L_Nombre.Text="Bienvenido   "+(user.Nombre);
-        Im_Perfil.ImageUrl = user.DireccionImagen;
-        if((int.Parse(Session["rol_user"].ToString()))!=2){
-            Response.Redirect("Login.aspx"); // validamos su rol
-        }
         
     }
 

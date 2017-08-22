@@ -74,40 +74,7 @@ public class DAO_doctores
         }
         return archivos;
     }
-    public DataTable buscarUsuarios(string nombreBD, string claveBD,string ip,string mac)
-    {
-
-        DataTable usuarios = new DataTable();
-        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);
-
-        try
-        {
-            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("hospital.buscarusuario", conection);
-            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-            dataAdapter.SelectCommand.Parameters.Add("user_", NpgsqlDbType.Varchar, 50).Value = nombreBD;
-            dataAdapter.SelectCommand.Parameters.Add("clave_", NpgsqlDbType.Varchar, 50).Value = claveBD;
-            dataAdapter.SelectCommand.Parameters.Add("ip_", NpgsqlDbType.Varchar, 50).Value = ip;
-            dataAdapter.SelectCommand.Parameters.Add("mac_", NpgsqlDbType.Varchar, 50).Value = mac;
-            conection.Open();
-            dataAdapter.Fill(usuarios);
-        }
-        catch (Exception Ex)
-        {
-            throw Ex;
-        }
-        finally
-        {
-            if (conection != null)
-            {
-                conection.Close();
-            }
-        }
-        return usuarios;
-
-    }
-
-
-
+ 
     public DataTable buscarUsuariosid(int id_user)
     {
 
