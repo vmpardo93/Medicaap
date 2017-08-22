@@ -455,41 +455,7 @@ public class DAO_doctores
             }
         }
     }
-    public void guardarDoctor(string username, string clave, string edad, string especialidad, string estudios, string nombre, string apellido, string estado, string url)
-    {/*guarda el doctor en la base de datosel doctor solo es registrado por el administrador por lo cual este es un metodo que solo lo usa el admin */
-        DataTable Usuario = new DataTable();
-        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);
-
-        try
-        {
-            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("hospital.f_add_doctor", conection);
-            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-            dataAdapter.SelectCommand.Parameters.Add("username_", NpgsqlDbType.Text).Value = username;
-            dataAdapter.SelectCommand.Parameters.Add("clave_", NpgsqlDbType.Text).Value = clave;
-            dataAdapter.SelectCommand.Parameters.Add("nombre_", NpgsqlDbType.Text).Value = nombre;
-            dataAdapter.SelectCommand.Parameters.Add("apellido_", NpgsqlDbType.Text).Value = apellido;
-            dataAdapter.SelectCommand.Parameters.Add("edad_", NpgsqlDbType.Text).Value = edad;
-            dataAdapter.SelectCommand.Parameters.Add("estudios_", NpgsqlDbType.Text).Value = estudios;
-            dataAdapter.SelectCommand.Parameters.Add("especialidad_", NpgsqlDbType.Text).Value = especialidad;
-            dataAdapter.SelectCommand.Parameters.Add("idrol_", NpgsqlDbType.Integer).Value = 3;
-            dataAdapter.SelectCommand.Parameters.Add("url_", NpgsqlDbType.Text).Value = url;
-            dataAdapter.SelectCommand.Parameters.Add("estado_", NpgsqlDbType.Text).Value = estado;
-
-            conection.Open();
-            dataAdapter.Fill(Usuario);
-        }
-        catch (Exception Ex)
-        {
-            throw Ex;
-        }
-        finally
-        {
-            if (conection != null)
-            {
-                conection.Close();
-            }
-        }
-    }
+ 
     public DataTable vertodosdoctores(){//esto es para ver todos los doctores
         DataTable doctores = new DataTable();
         NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);

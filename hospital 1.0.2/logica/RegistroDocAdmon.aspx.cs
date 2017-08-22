@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using Data;
+using utilitarios;
+using Logica;
 
 public partial class vista_RegistroDocAdmon : System.Web.UI.Page
 {
@@ -14,8 +17,10 @@ public partial class vista_RegistroDocAdmon : System.Web.UI.Page
     }
     protected void B_enviar_Click(object sender, EventArgs e)
     {
-        DAO_paciente paciente = new DAO_paciente();
+        LDoctor logica = new LDoctor();
+        DAOdoctores doc = new DAOdoctores();
         DataTable dataV = new DataTable();
+
         dataV = paciente.verificarusuario(TB_username.Text);
         if (dataV.Rows.Count > 0)
         {
