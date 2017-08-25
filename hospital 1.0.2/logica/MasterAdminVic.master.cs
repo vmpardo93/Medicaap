@@ -4,22 +4,20 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using utilitarios;
+using Logica;
 
 public partial class vista_MasterAdminVic : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         Response.Cache.SetNoStore();
-        if (Session["id_user"] == null)
-        {
-            Response.Redirect("Login.aspx");   //validamos el id del usuario
-        }
-
-        Usuario user = (Usuario)Session["user"];
-        if ((int.Parse(Session["rol_user"].ToString())) != 1)
-        {
-            Response.Redirect("Login.aspx"); // validamos su rol
-        }
+        LUsuarios log = new LUsuarios();
+        UUsuario datos= new UUsuario();
+        String rol = Session["rol_user"] as String;
+        String nombre = Session["user"] as String;
+        Object nomb = Session["objdata"] as Object;
+        datos = log.ValidarSesion(rol,nombre,nomb);
     }
 
     protected void B_Salir_Click(object sender, EventArgs e)

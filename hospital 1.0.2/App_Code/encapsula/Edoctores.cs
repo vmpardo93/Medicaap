@@ -10,9 +10,22 @@ public class Edoctores
 {
 	public Edoctores()
 	{
-		//
-		// TODO: Agregar aquí la lógica del constructor
-		//
+       
 	}
+
+    String nombre;
+
+    public String Nombre
+    {
+        get { return nombre; }
+        set { nombre = value; }
+    }
+    String url;
+
+    public String Url
+    {
+        get { return url; }
+        set { url = value; }
+    }
    
 }

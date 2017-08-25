@@ -1,4 +1,4 @@
-﻿p<%@ Page Language="C#" AutoEventWireup="true" CodeFile="~/logica/Login.aspx.cs" Inherits="vista_Login" ValidateRequest="false" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="~/logica/Login.aspx.cs" Inherits="vista_Login" ValidateRequest="false" %>
 
 <!DOCTYPE html>
 

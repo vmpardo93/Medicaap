@@ -33,23 +33,69 @@ namespace Logica
                 if (int.Parse(datos.Rows[0]["Id_Rol"].ToString()) == 1)
                 {
 
-                    data.Url1 = "vista/VerUsuariosAdmon.aspx";
+                    data.Url1 = "~/vista/VerUsuariosAdmon.aspx";
                 }
                 else if (data.Idrol == 2)
                 {
-                    data.Url1 = "vista/Perfil.aspx";
+                    data.Url1 = "~/vista/vista/Perfil.aspx";
                 }
                 else if (data.Idrol == 3) 
                 {
-                    data.Url1 = "vista/modificadoc.aspx";
+                    data.Url1 = "~/vista/modificadoc.aspx";
                 }
             }
             else
             {
                 data.Mensaje = "Usuario o Contraseña incorrecta";
-                data.Url1 = "Loggin.aspx";
+                data.Url1 = "~/vista/Loggin.aspx";
+            }
+            return data;
+        }
+        public UUsuario ValidarSesion(String rol, String NombreUsuario, object User)
+        {
+            /*valida la session del administrador*/
+            UUsuario data = new UUsuario();
+            if (User != null)
+            {
+                if (int.Parse(rol) != 1)
+                {
+                    data.Url1 = "~/vista/Login.aspx";
+
+                }
+                else
+                {
+                    data.Username = NombreUsuario;
+                }
+            }
+            else
+            {
+                data.Url1 = "~/vista/Login.aspx";
+                data.Username = "";
+            }
+            return data;
+        }
+          public UUsuario ValidarSesiondoc(String rol, String NombreUsuario, object User)
+        {
+            /*valida la session del doctor*/
+            UUsuario data = new UUsuario();
+            if (User != null)
+            {
+                if (int.Parse(rol) != 3)
+                {
+                    data.Url1 = "~/vista/Login.aspx";
+
+                }
+                else
+                {
+                    data.Username = NombreUsuario;
+                }
+            }
+            else
+            {
+                data.Url1 = "~/vista/Login.aspx";
+                data.Username = "";
             }
             return data;
         }
         }
-    }
+        }

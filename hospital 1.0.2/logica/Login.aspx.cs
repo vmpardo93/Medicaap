@@ -34,6 +34,7 @@ public partial class vista_Login : System.Web.UI.Page
         Session["id_user"] = user.Id_usuario;
         Session["user"] = user.Username;
         Session["rol_user"] = (user.Idrol.ToString());
+        Session["objdata"] = user;
         ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect","alert('" + user.Mensaje + "'); window.location='" +Request.ApplicationPath + user.Url1 + "';", true);
 
        

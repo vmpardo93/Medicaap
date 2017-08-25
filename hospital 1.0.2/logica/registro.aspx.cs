@@ -22,10 +22,12 @@ public partial class _Default : System.Web.UI.Page
         UUsuario usuario = new UUsuario();
         string img = cargarimg(FU_foto); 
         usuario = paciente.agregapacientes(TB_username.Text, TB_clave.Text, TB_nombre.Text, TB_apellido.Text, TB_edad.Text, DDL_tipo_sangre.Text, TB_correo.Text, TB_documento.Text, TB_examen.Text, img);
+        
         Session["rol_id"] = usuario.Idrol.ToString();
         Session["nombre"] = TB_nombre.Text.ToString();
         Session["User"] = usuario;
         Session["clave"] = TB_clave.Text.ToString();
+
         ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect","alert('" + usuario.Mensaje + "'); window.location='" +Request.ApplicationPath + usuario.Url1 + "';", true);
         TB_nombre.Text = "";
         TB_correo.Text = "";

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using utilitarios;
+using Logica;
 
 public partial class MasterDoctores : System.Web.UI.MasterPage
 {
@@ -11,16 +13,17 @@ public partial class MasterDoctores : System.Web.UI.MasterPage
     {
         Response.Cache.SetNoStore();
         
-       if (Session["id_user"] == null && (int.Parse(Session["rol_user"].ToString())) != 3)
-        {
-            Response.Redirect("Login.aspx");   //validamos el id del usuario
-        }
-       
-       
+        LUsuarios log = new LUsuarios();
+        UUsuario datos = new UUsuario();
+        
+        String rol = Session["rol_user"] as String;
+        String nombre = Session["user"] as String;
+        Object nomb = Session["objdata"] as Object;
+        datos = log.ValidarSesiondoc(rol, nombre, nomb);     
 
         Usuario user = (Usuario)Session["user"];
 
-        Im_Perfil.ImageUrl = user.DireccionImagen;
+        Im_Perfil.ImageUrl = datos.Imagen;
     }
     protected void B_salir_Click(object sender, EventArgs e)
     {

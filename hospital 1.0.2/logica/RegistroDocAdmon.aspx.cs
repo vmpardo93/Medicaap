@@ -18,67 +18,51 @@ public partial class vista_RegistroDocAdmon : System.Web.UI.Page
     protected void B_enviar_Click(object sender, EventArgs e)
     {
         LDoctor logica = new LDoctor();
-        DAOdoctores doc = new DAOdoctores();
-        DataTable dataV = new DataTable();
-
-        dataV = paciente.verificarusuario(TB_username.Text);
-        if (dataV.Rows.Count > 0)
-        {
-            this.RegisterStartupScript("mensaje", ("<script type='text/javascript'>alert('Ese nombre de usuario ya esta en uso');</script>"));
+        Udoctor datos = new Udoctor();
+        
+        string img = cargarimg(FU_foto); 
+        
+        datos=logica.agregardoctor(TB_username.Text, TB_clave.Text, TB_nombre.Text, TB_apellido.Text, TB_edad.Text, TB_estudios.Text, TB_especialidad.Text, TB_correo.Text, TB_documento.Text,img);
+        
+        //Session["rol_id"] = datos.Idrol.ToString();
+        Session["nombre"] = TB_nombre.Text.ToString();
+        Session["User"] = datos;
+        Session["clave"] = TB_clave.Text.ToString();
+        
+        ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect","alert('" + datos.Mensaje + "'); window.location='" +Request.ApplicationPath + datos.Url + "';", true);
+        
+        TB_nombre.Text = "";
+        TB_correo.Text = "";
+        TB_clave.Text = "";
+        TB_username.Text = "";
+        TB_apellido.Text = "";
+        TB_edad.Text = "";
+        TB_documento.Text = "";
         }
-        else
+        
+    public string cargarimg(FileUpload FU_img) 
+        /*este metodo es para cargar las imagenes contiene toda la logica para crear el nombre de la imagen y guardarla en la carpeta de 
+         imgenes*/
+    {
+        LDoctor core = new LDoctor();
+        
+        string saveLocation = "";
+        string save = "";
+
+        String nombreArchivo = System.IO.Path.GetFileNameWithoutExtension(FU_img.PostedFile.FileName);
+        string extension = System.IO.Path.GetExtension(FU_img.PostedFile.FileName);
+        nombreArchivo = nombreArchivo + DateTime.Now.ToFileTime().ToString() + extension;
+
+        saveLocation = (Server.MapPath("~/images/Perfil") + "/" + nombreArchivo);
+        save = ("~/images/Perfil") + "/" + nombreArchivo;
+        try
         {
-            Edoctores doctores = new Edoctores();
-            DUsuario data = new DUsuario();
-            /*envio todos los datos que estan en lo texbox a la clase que encapsula 
-             y a la clase que usa la funcion de la base de datos para guardar los datos del doctor*/
-            ClientScriptManager cm = this.ClientScript;
-            /*este if lo uso para la confirmacion de la clave si son diferentes*/
-
-
-
-            string saveLocation = "";
-            string save = "";
-
-
-            String nombreArchivo = System.IO.Path.GetFileNameWithoutExtension(FU_foto.PostedFile.FileName);
-            string extension = System.IO.Path.GetExtension(FU_foto.PostedFile.FileName);
-            nombreArchivo = nombreArchivo + DateTime.Now.ToFileTime().ToString() + extension;
-
-            saveLocation = (Server.MapPath("~/images/Perfil") + "/" + nombreArchivo);
-            save = ("~/images/Perfil") + "/" + nombreArchivo;
-
-            try
-            {
-
-
-                doctores.Username = TB_username.Text;
-                doctores.Clave = TB_clave.Text;
-                doctores.Nombre = TB_nombre.Text;
-                doctores.Apellido = TB_apellido.Text;
-                doctores.Edad = TB_edad.Text;
-                doctores.Estudios = TB_estudios.Text;
-                doctores.Especialidad = TB_especialidad.Text;
-                doctores.Estado = "1";
-                doctores.Correo = TB_correo.Text;
-                doctores.Documento = Int64.Parse(TB_documento.Text);
-                doctores.Url = save;
-                data.insertar_doctor(doctores);
-                FU_foto.PostedFile.SaveAs(saveLocation);
-                Response.Write("<script>window.alert('Registro exitoso');</script>");
-                Response.Redirect("RegistroDocAdmon.aspx");
-
-            }
-            catch (FormatException ex)
-            {
-                Response.Write("<script>window.alert('Error el formato digitado en alguno de los campos no es esl solicitado');</script>");
-            }
-            catch (Exception ex)
-            {
-                Response.Write("<script>window.alert('Error registro no exitoso');</script>");
-            }
-
+            FU_img.PostedFile.SaveAs(saveLocation);
         }
+        catch(Exception exc) 
+        {
+        }
+        return save;
+    }
     }
     
-}

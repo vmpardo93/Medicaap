@@ -60,7 +60,7 @@ namespace Data
                 dataAdapter.SelectCommand.Parameters.Add("_estado", NpgsqlDbType.Integer).Value = encapsula.Estado;
                 dataAdapter.SelectCommand.Parameters.Add("_email", NpgsqlDbType.Varchar, 100).Value = encapsula.Correo;
                 dataAdapter.SelectCommand.Parameters.Add("_documento", NpgsqlDbType.Varchar, 20).Value = encapsula.Documento;
-                dataAdapter.SelectCommand.Parameters.Add("_url_perfil", NpgsqlDbType.Varchar, 50).Value = encapsula.Url;
+                dataAdapter.SelectCommand.Parameters.Add("_url_perfil", NpgsqlDbType.Varchar, 50).Value = encapsula.Foto;
                 conection.Open();
                 dataAdapter.Fill(Usuario);
             }
@@ -76,6 +76,32 @@ namespace Data
                 }
             }
         }
+        public DataTable verificarusuario(Udoctor encap)
+        {
+            DataTable usuario = new DataTable();
+            NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);
+
+            try
+            {
+                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("hospital.f_verificarusuario", conection);
+                dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                dataAdapter.SelectCommand.Parameters.Add("user_", NpgsqlDbType.Text).Value =encap.Username;
+                conection.Open();
+                dataAdapter.Fill(usuario);
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+            finally
+            {
+                if (conection != null)
+                {
+                    conection.Close();
+                }
+            }
+            return usuario;
+        }
+    }
 
     }
-}

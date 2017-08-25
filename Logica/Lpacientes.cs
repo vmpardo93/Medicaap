@@ -29,6 +29,7 @@ namespace Logica
             usuario.Documento = documento;
             usuario.Fechaexamen = fechaexamen;
             usuario.Foto = foto;
+
             paciente.guarda_paciente(usuario);
             
             usuario.Mensaje = "Registro exitoso";
