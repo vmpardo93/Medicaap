@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Data;
-using 
 public partial class buscacita : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -97,7 +96,7 @@ public partial class buscacita : System.Web.UI.Page
                 String diagnostico = LB_diagnostico.Text;
                 GridViewRow row = this.GridView1.SelectedRow;
 
-                DAO_doctores doc = new DAO_doctores();
+                DAOcitas doc = new DAOcitas();
                 String idalergia = DDL_alergias.SelectedItem.Value;
                 String idcita = Convert.ToString(GridView1.DataKeys[row.RowIndex].Values[0].ToString());
                 String descripalergia = LB_descripalergia.Text;
