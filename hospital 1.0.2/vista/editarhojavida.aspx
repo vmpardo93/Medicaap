@@ -4,9 +4,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="contenedor-botones">
-        <asp:Button ID="B_registra" runat="server" Text="registra" OnClick="B_registra_Click" />
      </div>
-     <asp:GridView ID="GridView1" runat="server" CellPadding="4" DataKeyNames="id_doctor" DataSourceID="ODS_dochojavida" GridLines="None" AllowPaging="True" AutoGenerateColumns="False" ForeColor="#333333">
+     <asp:GridView ID="GV_hojavida" runat="server" CellPadding="4" DataKeyNames="id_doctor" DataSourceID="ODS_dochojavida" GridLines="None" AllowPaging="True" AutoGenerateColumns="False" ForeColor="#333333">
          <AlternatingRowStyle BackColor="White" />
     <Columns>
         <asp:TemplateField HeaderText="Perfil profesional">
@@ -92,20 +91,10 @@
     <SortedDescendingCellStyle BackColor="#D4DFE1" />
     <SortedDescendingHeaderStyle BackColor="#15524A" />
 </asp:GridView>
-    <asp:ObjectDataSource ID="ODS_dochojavida" runat="server" SelectMethod="buscarhojavida" TypeName="DAO_doctores" UpdateMethod="modificarhojavida">
+    <asp:ObjectDataSource ID="ODS_dochojavida" runat="server" SelectMethod="buscarhojavida" TypeName="Data.DAOhojavida" UpdateMethod="modificarhojavida" DataObjectTypeName="utilitarios.Uhojavida">
         <SelectParameters>
-            <asp:SessionParameter DefaultValue="0" Name="id_doctor" SessionField="id_user" Type="String" />
+            <asp:SessionParameter Name="encap" SessionField="id_user" Type="Object" />
         </SelectParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="perfil_profesional" Type="String" />
-            <asp:Parameter Name="bachiller" Type="String" />
-            <asp:Parameter Name="universidad" Type="String" />
-            <asp:Parameter Name="otros_estudios" Type="String" />
-            <asp:Parameter Name="fellows" Type="String" />
-            <asp:Parameter Name="idiomas" Type="String" />
-            <asp:Parameter Name="experiencia" Type="String" />
-            <asp:Parameter Name="id_doctor" Type="Int32" />
-        </UpdateParameters>
     </asp:ObjectDataSource>
 </asp:Content>
 

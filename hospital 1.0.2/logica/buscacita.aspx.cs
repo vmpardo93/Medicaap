@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using Data;
+using 
 public partial class buscacita : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -12,7 +13,7 @@ public partial class buscacita : System.Web.UI.Page
         if (Session["id_user"] != null && Session["rol_user"].ToString().Equals("3"))
         {
             Edoctores doctores = new Edoctores();
-            DAO_doctores bases = new DAO_doctores();
+            DAOcitas bases = new DAOcitas();
             ClientScriptManager cm = this.ClientScript;
             Lnombre.Visible = false;
             Lapellido.Visible = false;
@@ -95,6 +96,7 @@ public partial class buscacita : System.Web.UI.Page
                 String fecha = TB_fecha_cirugia.Text;
                 String diagnostico = LB_diagnostico.Text;
                 GridViewRow row = this.GridView1.SelectedRow;
+
                 DAO_doctores doc = new DAO_doctores();
                 String idalergia = DDL_alergias.SelectedItem.Value;
                 String idcita = Convert.ToString(GridView1.DataKeys[row.RowIndex].Values[0].ToString());

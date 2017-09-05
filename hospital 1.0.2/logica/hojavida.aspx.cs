@@ -4,29 +4,29 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Logica;
+using utilitarios;
 
 public partial class hojavida : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Response.Cache.SetNoStore();
+        LUsuarios users = new LUsuarios();
+        Object nomb = Session["objdata"] as Object;
+        String rol = Session["rol_user"] as String;
+        String user = Session["user"] as String;
+        users.ValidarSesiondoc(rol, user, nomb);
     }
     protected void BT_enviar_Click(object sender, EventArgs e)
     {
-        if (Session["id_user"] != null && Session["rol_user"].ToString().Equals("3"))
-        {
-            Ehojavida doctores = new Ehojavida();
-            DAO_doctores bases = new DAO_doctores();
-            bases.guardarhojavida(TB_bachiller.Text, TB_estudios.Text, TB_fellows.Text, TB_idiomas.Text, TB_perfil.Text, TB_universidad.Text, TB_experiencia.Text, Session["id_user"].ToString());
-            Response.Redirect("editarhojavida.aspx");
-        }
-        else
-        {
-            Session["rol_user"] = null;
-            Session["id_user"] = null;
-            Response.Redirect("Login.aspx");
+        Lhojavida hojavida = new Lhojavida();
+        Uhojavida datos =new Uhojavida() ;
 
-        }
+        hojavida.agregar_hoja_vida(TB_bachiller.Text, TB_estudios.Text, TB_fellows.Text, TB_idiomas.Text, TB_perfil.Text, TB_universidad.Text, TB_experiencia.Text, Session["id_user"].ToString());
+            
+        ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('" + datos.Mensaje + "'); window.location='" + Request.ApplicationPath + datos.Url + "';", true);
+            
         Response.Cache.SetCacheability(HttpCacheability.ServerAndNoCache);
         Response.Cache.SetAllowResponseInBrowserHistory(false);
         Response.Cache.SetNoStore();

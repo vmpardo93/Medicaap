@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IpMac.cs" />
+    <Compile Include="Ucitas.cs" />
     <Compile Include="Udoctor.cs" />
+    <Compile Include="Uhojavida.cs" />
     <Compile Include="UUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

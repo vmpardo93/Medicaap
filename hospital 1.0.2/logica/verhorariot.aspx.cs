@@ -5,12 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using Data;
 
 public partial class verhorariot : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        DAO_doctores doc = new DAO_doctores();
+        DAOhorario doc = new DAOhorario();
         DataTable com = new DataTable();
         int i;
         GridViewRow row;

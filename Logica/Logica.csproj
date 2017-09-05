@@ -41,7 +41,9 @@
     <Reference Include="UIAutomationClient" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Lcitas.cs" />
     <Compile Include="LDoctor.cs" />
+    <Compile Include="Lhojavida.cs" />
     <Compile Include="Lpacientes.cs" />
     <Compile Include="LUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

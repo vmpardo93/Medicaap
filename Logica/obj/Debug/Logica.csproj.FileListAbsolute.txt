@@ -17,8 +17,6 @@ C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\bin\Debug\uti
 C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\bin\Debug\Npgsql.dll
 C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\bin\Debug\Data.pdb
 C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\bin\Debug\utilitarios.pdb
-C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\bin\Debug\Npgsql.pdb
-C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\bin\Debug\Npgsql.xml
 C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
 C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\obj\Debug\Logica.dll
 C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\obj\Debug\Logica.pdb

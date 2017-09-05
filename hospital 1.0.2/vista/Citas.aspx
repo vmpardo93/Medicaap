@@ -26,9 +26,9 @@
         <SortedDescendingCellStyle BackColor="#FFFDF8" />
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
     </asp:GridView>
-<asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="buscarcitaid" TypeName="DAO_doctores">
+<asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="buscarcitasD" TypeName="Data.DAOcitas">
     <SelectParameters>
-        <asp:SessionParameter DefaultValue="0" Name="id_user" SessionField="id_user" Type="Int32" />
+        <asp:Parameter Name="fecha" Type="DateTime" />
     </SelectParameters>
 </asp:ObjectDataSource>
 </asp:Content>

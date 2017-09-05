@@ -111,17 +111,10 @@
                     <SortedDescendingCellStyle BackColor="#E5E5E5" />
                     <SortedDescendingHeaderStyle BackColor="#275353" />
                 </asp:GridView>
-                <asp:ObjectDataSource ID="ODS_verhorario" runat="server" SelectMethod="mostrarhorario" TypeName="DAO_doctores" UpdateMethod="editarhorario">
+                <asp:ObjectDataSource ID="ODS_verhorario" runat="server" SelectMethod="buscarhojavida" TypeName="Data.DAOhojavida" UpdateMethod="modificarhojavida" DataObjectTypeName="utilitarios.Uhojavida">
                     <SelectParameters>
-                        <asp:SessionParameter DefaultValue="" Name="doctor_id" SessionField="id_user" Type="String" />
+                        <asp:SessionParameter Name="encap" SessionField="id_user" Type="Int32" />
                     </SelectParameters>
-                    <UpdateParameters>
-                        <asp:Parameter Name="doctor_id" Type="String" />
-                        <asp:Parameter Name="hora_inicio" Type="String" />
-                        <asp:Parameter Name="hora_fin" Type="String" />
-                        <asp:Parameter Name="dia" Type="String" />
-                        <asp:Parameter Name="id_usuario" Type="String" />
-                    </UpdateParameters>
                 </asp:ObjectDataSource>
             </td>
             <td>&nbsp;</td>

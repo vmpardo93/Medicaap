@@ -21,8 +21,6 @@ public partial class MasterDoctores : System.Web.UI.MasterPage
         Object nomb = Session["objdata"] as Object;
         datos = log.ValidarSesiondoc(rol, nombre, nomb);     
 
-        Usuario user = (Usuario)Session["user"];
-
         Im_Perfil.ImageUrl = datos.Imagen;
     }
     protected void B_salir_Click(object sender, EventArgs e)

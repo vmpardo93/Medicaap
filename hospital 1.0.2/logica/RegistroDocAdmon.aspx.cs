@@ -13,7 +13,12 @@ public partial class vista_RegistroDocAdmon : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Response.Cache.SetNoStore();
+        LUsuarios users = new LUsuarios();
+        Object nomb = Session["objdata"] as Object;
+        String rol = Session["rol_user"] as String;
+        String user = Session["user"] as String;
+        users.ValidarSesiondoc(rol, user, nomb);
     }
     protected void B_enviar_Click(object sender, EventArgs e)
     {
