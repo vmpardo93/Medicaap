@@ -61,7 +61,7 @@
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
-        <asp:ObjectDataSource ID="Perfil" runat="server" SelectMethod="buscarUsuariosid" TypeName="DAO_doctores" UpdateMethod="modificarUsuariosid">
+        <asp:ObjectDataSource ID="Perfil" runat="server" SelectMethod="obtenerUsuarioId" TypeName="Logica.Lpacientes" UpdateMethod="modificarUsuario">
             <SelectParameters>
                 <asp:SessionParameter DefaultValue="0" Name="id_user" SessionField="id_user" Type="Int32" />
             </SelectParameters>

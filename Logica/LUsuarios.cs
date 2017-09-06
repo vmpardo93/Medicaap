@@ -37,7 +37,7 @@ namespace Logica
                 }
                 else if (data.Idrol == 2)
                 {
-                    data.Url1 = "vista/vista/Perfil.aspx";
+                    data.Url1 = "vista/Perfil.aspx";
                 }
                 else if (data.Idrol == 3) 
                 {

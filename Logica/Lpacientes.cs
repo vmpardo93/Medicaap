@@ -38,5 +38,20 @@ namespace Logica
 
             return usuario;
         }
+        public DataTable obtenerUsuarioId(int id_user)
+        {
+
+            DAOpaciente dao = new DAOpaciente();
+            return dao.buscarUsuariosid(id_user);
+
+        }
+        public DataTable modificarUsuario(int id_user, int id_usuario, string nombre, string apellido, string clave, string edad)
+        {
+
+            DAOpaciente dao = new DAOpaciente();
+            return dao.modificarUsuariosid(id_user,id_usuario,nombre,apellido,clave,edad);
+
+        }
+
         }
 }
