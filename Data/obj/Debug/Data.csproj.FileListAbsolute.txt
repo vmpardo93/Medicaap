@@ -15,3 +15,10 @@ C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Data\bin\Debug\utili
 C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Data\obj\Debug\Data.dll
 C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Data\obj\Debug\Data.pdb
+C:\Users\Darkgrey93\Source\Repos\Medicaap\Data\bin\Debug\Data.dll
+C:\Users\Darkgrey93\Source\Repos\Medicaap\Data\bin\Debug\Data.pdb
+C:\Users\Darkgrey93\Source\Repos\Medicaap\Data\bin\Debug\utilitarios.dll
+C:\Users\Darkgrey93\Source\Repos\Medicaap\Data\bin\Debug\utilitarios.pdb
+C:\Users\Darkgrey93\Source\Repos\Medicaap\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+C:\Users\Darkgrey93\Source\Repos\Medicaap\Data\obj\Debug\Data.dll
+C:\Users\Darkgrey93\Source\Repos\Medicaap\Data\obj\Debug\Data.pdb

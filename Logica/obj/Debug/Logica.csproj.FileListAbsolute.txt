@@ -20,3 +20,13 @@ C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\bin\Debug\uti
 C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
 C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\obj\Debug\Logica.dll
 C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\obj\Debug\Logica.pdb
+C:\Users\Darkgrey93\Source\Repos\Medicaap\Logica\bin\Debug\Logica.dll
+C:\Users\Darkgrey93\Source\Repos\Medicaap\Logica\bin\Debug\Logica.pdb
+C:\Users\Darkgrey93\Source\Repos\Medicaap\Logica\bin\Debug\Data.dll
+C:\Users\Darkgrey93\Source\Repos\Medicaap\Logica\bin\Debug\utilitarios.dll
+C:\Users\Darkgrey93\Source\Repos\Medicaap\Logica\bin\Debug\Npgsql.dll
+C:\Users\Darkgrey93\Source\Repos\Medicaap\Logica\bin\Debug\Data.pdb
+C:\Users\Darkgrey93\Source\Repos\Medicaap\Logica\bin\Debug\utilitarios.pdb
+C:\Users\Darkgrey93\Source\Repos\Medicaap\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+C:\Users\Darkgrey93\Source\Repos\Medicaap\Logica\obj\Debug\Logica.dll
+C:\Users\Darkgrey93\Source\Repos\Medicaap\Logica\obj\Debug\Logica.pdb
