@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Acer\Desktop\Copia de seguridad ISII\utilitarios\bin\Debug\utilitarios.dll
 C:\Users\Acer\Desktop\Copia de seguridad ISII\utilitarios\bin\Debug\utilitarios.pdb
 C:\Users\Acer\Desktop\Copia de seguridad ISII\utilitarios\obj\Debug\utilitarios.csprojResolveAssemblyReference.cache
@@ -13,3 +14,19 @@ C:\Users\angie paez\Desktop\Medicaap\utilitarios\bin\Debug\utilitarios.pdb
 C:\Users\angie paez\Desktop\Medicaap\utilitarios\obj\Debug\utilitarios.csprojResolveAssemblyReference.cache
 C:\Users\angie paez\Desktop\Medicaap\utilitarios\obj\Debug\utilitarios.dll
 C:\Users\angie paez\Desktop\Medicaap\utilitarios\obj\Debug\utilitarios.pdb
+=======
+C:\Users\Acer\Desktop\Copia de seguridad ISII\utilitarios\bin\Debug\utilitarios.dll
+C:\Users\Acer\Desktop\Copia de seguridad ISII\utilitarios\bin\Debug\utilitarios.pdb
+C:\Users\Acer\Desktop\Copia de seguridad ISII\utilitarios\obj\Debug\utilitarios.csprojResolveAssemblyReference.cache
+C:\Users\Acer\Desktop\Copia de seguridad ISII\utilitarios\obj\Debug\utilitarios.dll
+C:\Users\Acer\Desktop\Copia de seguridad ISII\utilitarios\obj\Debug\utilitarios.pdb
+C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\utilitarios\bin\Debug\utilitarios.dll
+C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\utilitarios\bin\Debug\utilitarios.pdb
+C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\utilitarios\obj\Debug\utilitarios.dll
+C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\utilitarios\obj\Debug\utilitarios.pdb
+C:\Users\Darkgrey93\Source\Repos\Medicaap\utilitarios\bin\Debug\utilitarios.dll
+C:\Users\Darkgrey93\Source\Repos\Medicaap\utilitarios\bin\Debug\utilitarios.pdb
+C:\Users\Darkgrey93\Source\Repos\Medicaap\utilitarios\obj\Debug\utilitarios.csprojResolveAssemblyReference.cache
+C:\Users\Darkgrey93\Source\Repos\Medicaap\utilitarios\obj\Debug\utilitarios.dll
+C:\Users\Darkgrey93\Source\Repos\Medicaap\utilitarios\obj\Debug\utilitarios.pdb
+>>>>>>> 77deaa4d396e29996634428ecbe8854477fced92

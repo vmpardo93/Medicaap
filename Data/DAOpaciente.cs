@@ -75,5 +75,73 @@ namespace Data
             }
             return usuario;
         }
+        public DataTable buscarUsuariosid(int id_user)
+        {
+
+            DataTable usuarios = new DataTable();
+            NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);
+
+            try
+            {
+                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("hospital.buscarusuarioid", conection);
+                dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                dataAdapter.SelectCommand.Parameters.Add("id_user", NpgsqlDbType.Integer).Value = id_user;
+
+
+
+
+                conection.Open();
+                dataAdapter.Fill(usuarios);
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+            finally
+            {
+                if (conection != null)
+                {
+                    conection.Close();
+                }
+            }
+            return usuarios;
+
+        }
+        public DataTable modificarUsuariosid(int id_user, int id_usuario, string nombre, string apellido, string clave, string edad)
+        {
+
+            DataTable usuarios = new DataTable();
+            NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);
+
+            try
+            {
+                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("hospital.modificarusuario", conection);
+                dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                dataAdapter.SelectCommand.Parameters.Add("_id_usuario", NpgsqlDbType.Integer).Value = id_usuario;
+                dataAdapter.SelectCommand.Parameters.Add("_nombre", NpgsqlDbType.Varchar).Value = nombre;
+                dataAdapter.SelectCommand.Parameters.Add("_apellido", NpgsqlDbType.Varchar).Value = apellido;
+                dataAdapter.SelectCommand.Parameters.Add("_clave", NpgsqlDbType.Varchar).Value = clave;
+                dataAdapter.SelectCommand.Parameters.Add("_edad", NpgsqlDbType.Varchar).Value = edad;
+
+
+
+
+                conection.Open();
+                dataAdapter.Fill(usuarios);
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+            finally
+            {
+                if (conection != null)
+                {
+                    conection.Close();
+                }
+            }
+            return usuarios;
+
+        }
     }
 }
