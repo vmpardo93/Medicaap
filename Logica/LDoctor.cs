@@ -6,11 +6,23 @@ using System.Threading.Tasks;
 using Data;
 using System.Data;
 using utilitarios;
+using System.Web.UI.WebControls;
 
 namespace Logica
 {
     public class LDoctor
     {
+        public String modificadoc(String save, String location,Boolean hashfile,Label text) 
+        {
+            String archivo = null;
+            if (hashfile == true)
+            {
+                Udoctor datos = new Udoctor();
+                datos.Foto = location;
+                archivo = location;
+            }
+            return archivo;
+        }
         public DataTable obtenerdoctores (){
 
             DAOdoctores dao = new DAOdoctores();

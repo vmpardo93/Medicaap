@@ -15,8 +15,7 @@
         <tr>
             <td class="auto-style2">&nbsp;</td>
             <td>
-                <asp:Button ID="B_registra" runat="server" OnClick="B_registra_Click" Text="Registrar" />
-            </td>
+                &nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
@@ -111,10 +110,17 @@
                     <SortedDescendingCellStyle BackColor="#E5E5E5" />
                     <SortedDescendingHeaderStyle BackColor="#275353" />
                 </asp:GridView>
-                <asp:ObjectDataSource ID="ODS_verhorario" runat="server" SelectMethod="buscarhojavida" TypeName="Data.DAOhojavida" UpdateMethod="modificarhojavida" DataObjectTypeName="utilitarios.Uhojavida">
+                <asp:ObjectDataSource ID="ODS_verhorario" runat="server" SelectMethod="mostrarhorario" TypeName="Data.DAOhorario" UpdateMethod="editarhorario">
                     <SelectParameters>
-                        <asp:SessionParameter Name="encap" SessionField="id_user" Type="Int32" />
+                        <asp:SessionParameter Name="doctor_id" SessionField="id_user" Type="String" />
                     </SelectParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="doctor_id" Type="String" />
+                        <asp:Parameter Name="hora_inicio" Type="String" />
+                        <asp:Parameter Name="hora_fin" Type="String" />
+                        <asp:Parameter Name="dia" Type="String" />
+                        <asp:Parameter Name="id_usuario" Type="String" />
+                    </UpdateParameters>
                 </asp:ObjectDataSource>
             </td>
             <td>&nbsp;</td>

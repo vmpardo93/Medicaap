@@ -366,24 +366,10 @@
             <td class="auto-style125"></td>
             <td class="auto-style126"></td>
             <td class="auto-style127">
-                <asp:ObjectDataSource ID="ODS_buscacita" runat="server" SelectMethod="mostrarcitasdoctor" TypeName="DAO_doctores" UpdateMethod="guardarcitaactual">
+                <asp:ObjectDataSource ID="ODS_buscacita" runat="server" SelectMethod="mostrarcitasdoctor" TypeName="Data.DAOcitas">
                     <SelectParameters>
                         <asp:SessionParameter Name="doctor_id" SessionField="id_user" Type="String" />
                     </SelectParameters>
-                    <UpdateParameters>
-                        <asp:Parameter Name="idcita" Type="String" />
-                        <asp:Parameter Name="doctor_id" Type="String" />
-                        <asp:Parameter Name="diagnostico" Type="String" />
-                        <asp:Parameter Name="alergia" Type="String" />
-                        <asp:Parameter Name="descripalergia" Type="String" />
-                        <asp:Parameter Name="cirugia" Type="String" />
-                        <asp:Parameter Name="descripcirugia" Type="String" />
-                        <asp:Parameter Name="fechacirugia" Type="String" />
-                        <asp:Parameter Name="medicina" Type="String" />
-                        <asp:Parameter Name="dosis" Type="String" />
-                        <asp:Parameter Name="fechainimedicina" Type="String" />
-                        <asp:Parameter Name="fechafinmedicina" Type="String" />
-                    </UpdateParameters>
                 </asp:ObjectDataSource>
             </td>
             <td class="auto-style150"></td>
@@ -396,7 +382,7 @@
             <td class="auto-style10">&nbsp;</td>
             <td class="auto-style3"></td>
             <td class="auto-style4" colspan="3">
-                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="ODS_buscacita" GridLines="Horizontal" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" DataKeyNames="idcita_">
+                <asp:GridView ID="GV_citasdoc" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="ODS_buscacita" GridLines="Horizontal" OnSelectedIndexChanged="GV_citasdocSelectedIndexChanged" DataKeyNames="idcita_">
                     <Columns>
                         <asp:CommandField ShowSelectButton="True" />
                         <asp:BoundField DataField="hora_ini_cita" HeaderText="Hora Inicio" />
@@ -454,7 +440,7 @@
                 <asp:DropDownList ID="DDL_alergias" runat="server" DataSourceID="ODS_alergias" DataValueField="id_alergia" Height="34px" Width="157px" DataTextField="nombre_alergia">
                     <asp:ListItem></asp:ListItem>
                 </asp:DropDownList>
-                <asp:ObjectDataSource ID="ODS_alergias" runat="server" SelectMethod="mostraralergias" TypeName="DAO_doctores"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="ODS_alergias" runat="server" SelectMethod="mostraralergias" TypeName="Data.DAOalergias"></asp:ObjectDataSource>
             </td>
             <td class="auto-style113">
                 &nbsp;</td>
@@ -543,7 +529,7 @@
                 <asp:DropDownList ID="DDL_medicina" runat="server" DataSourceID="ODS_medicinas" DataValueField="id_medicina" Height="34px" Width="157px" DataTextField="nombre_medicina">
                     <asp:ListItem></asp:ListItem>
                 </asp:DropDownList>
-                <asp:ObjectDataSource ID="ODS_medicinas" runat="server" SelectMethod="mostrarmedicinas" TypeName="DAO_doctores"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="ODS_medicinas" runat="server" SelectMethod="mostrarmedicinas" TypeName="Data.DAOmedicinas"></asp:ObjectDataSource>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="DDL_medicina" Display="Dynamic" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
             <td class="auto-style118">

@@ -118,7 +118,7 @@
         <SortedDescendingCellStyle BackColor="#E5E5E5" />
         <SortedDescendingHeaderStyle BackColor="#275353" />
     </asp:GridView>
-    <asp:ObjectDataSource ID="OBS_doctor" runat="server" SelectMethod="obtenerdoc" TypeName="DAO_doctores" UpdateMethod="modificardoctordoc">
+    <asp:ObjectDataSource ID="OBS_doctor" runat="server" SelectMethod="obtenerdoc" TypeName="Data.DAOdoctores" UpdateMethod="modificardoctordoc">
         <SelectParameters>
             <asp:SessionParameter DefaultValue="0" Name="id" SessionField="id_user" Type="String" />
         </SelectParameters>

@@ -47,7 +47,7 @@ namespace Data
                 }
             }
         }
-        public void modificarhojavida(Uhojavida encap)
+       public void modificarhojavida(String perfil_profesional, String bachiller, String universidad, String otros_estudios, String fellows, String idiomas, String experiencia, Int32 id_doctor)
         {/*modifica la hoja de vida del doctor que esta en session el metodo recibe los datos que son enviados al modificar*/
             DataTable Usuario = new DataTable();
             NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);
@@ -55,14 +55,14 @@ namespace Data
             {
                 NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("hospital.f_editar_hojavida", conection);
                 dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                dataAdapter.SelectCommand.Parameters.Add("id_doc", NpgsqlDbType.Integer).Value = int.Parse(encap.Id_doctor);
-                dataAdapter.SelectCommand.Parameters.Add("perfil_", NpgsqlDbType.Text).Value = encap.Perfil;
-                dataAdapter.SelectCommand.Parameters.Add("bachiller_", NpgsqlDbType.Text).Value = encap.Bachiller;
-                dataAdapter.SelectCommand.Parameters.Add("universidad_", NpgsqlDbType.Text).Value = encap.Universidad;
-                dataAdapter.SelectCommand.Parameters.Add("estudios_", NpgsqlDbType.Text).Value = encap.Estudios;
-                dataAdapter.SelectCommand.Parameters.Add("fellows_", NpgsqlDbType.Text).Value = encap.Fellows;
-                dataAdapter.SelectCommand.Parameters.Add("idiomas_", NpgsqlDbType.Text).Value = encap.Idiomas;
-                dataAdapter.SelectCommand.Parameters.Add("experiencia_", NpgsqlDbType.Text).Value = encap.Experiencia;
+                dataAdapter.SelectCommand.Parameters.Add("id_doc", NpgsqlDbType.Integer).Value = id_doctor;
+                dataAdapter.SelectCommand.Parameters.Add("perfil_", NpgsqlDbType.Text).Value = perfil_profesional;
+                dataAdapter.SelectCommand.Parameters.Add("bachiller_", NpgsqlDbType.Text).Value = bachiller;
+                dataAdapter.SelectCommand.Parameters.Add("universidad_", NpgsqlDbType.Text).Value =universidad;
+                dataAdapter.SelectCommand.Parameters.Add("estudios_", NpgsqlDbType.Text).Value = otros_estudios;
+                dataAdapter.SelectCommand.Parameters.Add("fellows_", NpgsqlDbType.Text).Value = fellows;
+                dataAdapter.SelectCommand.Parameters.Add("idiomas_", NpgsqlDbType.Text).Value = idiomas;
+                dataAdapter.SelectCommand.Parameters.Add("experiencia_", NpgsqlDbType.Text).Value = experiencia;
 
 
                 conection.Open();

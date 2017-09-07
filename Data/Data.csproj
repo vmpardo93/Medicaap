@@ -42,10 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAOalergias.cs" />
     <Compile Include="DAOcitas.cs" />
     <Compile Include="DAOdoctores.cs" />
     <Compile Include="DAOhojavida.cs" />
     <Compile Include="DAOhorario.cs" />
+    <Compile Include="DAOmedicinas.cs" />
     <Compile Include="DAOpaciente.cs" />
     <Compile Include="DAOusuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

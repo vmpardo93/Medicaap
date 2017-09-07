@@ -15,7 +15,7 @@ namespace utilitarios
             get { return mensaje; }
             set { mensaje = value; }
         }
-        String foto;
+        private String foto;
 
         public String Foto
         {

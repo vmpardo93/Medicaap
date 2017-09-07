@@ -91,10 +91,20 @@
     <SortedDescendingCellStyle BackColor="#D4DFE1" />
     <SortedDescendingHeaderStyle BackColor="#15524A" />
 </asp:GridView>
-    <asp:ObjectDataSource ID="ODS_dochojavida" runat="server" SelectMethod="buscarhojavida" TypeName="Data.DAOhojavida" UpdateMethod="modificarhojavida" DataObjectTypeName="utilitarios.Uhojavida">
+    <asp:ObjectDataSource ID="ODS_dochojavida" runat="server" SelectMethod="buscarhojavida" TypeName="Data.DAOhojavida" UpdateMethod="modificarhojavida">
         <SelectParameters>
-            <asp:SessionParameter Name="encap" SessionField="id_user" Type="Object" />
+            <asp:SessionParameter Name="encap" SessionField="id_user" Type="Int32" />
         </SelectParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="perfil_profesional" Type="String" />
+            <asp:Parameter Name="bachiller" Type="String" />
+            <asp:Parameter Name="universidad" Type="String" />
+            <asp:Parameter Name="otros_estudios" Type="String" />
+            <asp:Parameter Name="fellows" Type="String" />
+            <asp:Parameter Name="idiomas" Type="String" />
+            <asp:Parameter Name="experiencia" Type="String" />
+            <asp:Parameter Name="id_doctor" Type="Int32" />
+        </UpdateParameters>
     </asp:ObjectDataSource>
 </asp:Content>
 

@@ -12,6 +12,28 @@ namespace Logica
 {
     public class Lhojavida
     {
+        public String validargrid(String var, String rol)
+        {
+            /*este metodo valida el rol y valida el gridview para que direccione automaticamente
+             si el doctor no tiene hoja de vida*/
+            String direccion = null;
+            if (rol != "3")
+            {
+                direccion = "Login.aspx";
+            }
+            else
+            {
+                if (var == "0")
+                {
+                    direccion = "hojavida.aspx";
+                }
+                else
+                {
+                    direccion = "editarhojavida.aspx";
+                }
+            }
+            return direccion;
+        }
         public Uhojavida agregar_hoja_vida(String bachiller, String estudios, String fellows, String idiomas, String perfil, String universidad, String experiencia, String session)
         {
             DAOhojavida datos = new DAOhojavida();
@@ -19,7 +41,7 @@ namespace Logica
             if (bachiller == "" || estudios == "" || universidad == "" || session == "")
             {
                 encap.Mensaje = "debe llenar los campos requeridos";
-                encap.Url = "vista/hojavida.aspx";
+                encap.Url = "hojavida.aspx";
             }
             else
             {
@@ -36,12 +58,12 @@ namespace Logica
                     datos.guardarhojavida(encap);
 
                     encap.Mensaje = "hoja de vida registrada con exito";
-                    encap.Url = "vista/editarhojavida.aspx";
+                    encap.Url = "editarhojavida.aspx";
                 }
                 catch (FormatException ex)
                 {
                     encap.Mensaje = "ha ocurrido un error el formato de las cadenas no es correcto";
-                    encap.Url = "vista/hojavida.aspx";
+                    encap.Url = "hojavida.aspx";
                 }
             }
             return encap;

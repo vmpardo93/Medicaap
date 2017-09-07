@@ -20,3 +20,15 @@ C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\bin\Debug\uti
 C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
 C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\obj\Debug\Logica.dll
 C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\obj\Debug\Logica.pdb
+C:\Users\angie paez\Desktop\Medicaap\Logica\bin\Debug\Logica.dll
+C:\Users\angie paez\Desktop\Medicaap\Logica\bin\Debug\Logica.pdb
+C:\Users\angie paez\Desktop\Medicaap\Logica\bin\Debug\Data.dll
+C:\Users\angie paez\Desktop\Medicaap\Logica\bin\Debug\utilitarios.dll
+C:\Users\angie paez\Desktop\Medicaap\Logica\bin\Debug\Npgsql.dll
+C:\Users\angie paez\Desktop\Medicaap\Logica\bin\Debug\Data.pdb
+C:\Users\angie paez\Desktop\Medicaap\Logica\bin\Debug\utilitarios.pdb
+C:\Users\angie paez\Desktop\Medicaap\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+C:\Users\angie paez\Desktop\Medicaap\Logica\obj\Debug\Logica.dll
+C:\Users\angie paez\Desktop\Medicaap\Logica\obj\Debug\Logica.pdb
+C:\Users\angie paez\Desktop\Medicaap\Logica\bin\Debug\Npgsql.pdb
+C:\Users\angie paez\Desktop\Medicaap\Logica\bin\Debug\Npgsql.xml

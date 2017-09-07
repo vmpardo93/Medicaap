@@ -33,21 +33,21 @@ namespace Logica
                 if (int.Parse(datos.Rows[0]["Id_Rol"].ToString()) == 1)
                 {
 
-                    data.Url1 = "vista/VerUsuariosAdmon.aspx";
+                    data.Url1 = "VerUsuariosAdmon.aspx";
                 }
                 else if (data.Idrol == 2)
                 {
-                    data.Url1 = "vista/vista/Perfil.aspx";
+                    data.Url1 = "Perfil.aspx";
                 }
                 else if (data.Idrol == 3) 
                 {
-                    data.Url1 = "vista/modificadoc.aspx";
+                    data.Url1 = "modificadoc.aspx";
                 }
             }
             else
             {
                 data.Mensaje = "Usuario o Contraseña incorrecta";
-                data.Url1 = "vista/Loggin.aspx";
+                data.Url1 = "Loggin.aspx";
             }
             return data;
         }
@@ -59,7 +59,7 @@ namespace Logica
             {
                 if (int.Parse(rol) != 1)
                 {
-                    data.Url1 = "vista/Login.aspx";
+                    data.Url1 = "Login.aspx";
 
                 }
                 else
@@ -69,7 +69,7 @@ namespace Logica
             }
             else
             {
-                data.Url1 = "vista/Login.aspx";
+                data.Url1 = "Login.aspx";
                 data.Username = "";
             }
             return data;
@@ -82,7 +82,7 @@ namespace Logica
             {
                 if (int.Parse(rol) != 3)
                 {
-                    data.Url1 = "vista/Login.aspx";
+                    data.Url1 = "Login.aspx";
 
                 }
                 else
@@ -92,7 +92,7 @@ namespace Logica
             }
             else
             {
-                data.Url1 = "vista/Login.aspx";
+                data.Url1 = "Login.aspx";
                 data.Username = "";
             }
             return data;

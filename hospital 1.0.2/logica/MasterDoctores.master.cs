@@ -11,24 +11,23 @@ public partial class MasterDoctores : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Response.Cache.SetNoStore();
-        
         LUsuarios log = new LUsuarios();
         UUsuario datos = new UUsuario();
-        
+        /*
         String rol = Session["rol_user"] as String;
         String nombre = Session["user"] as String;
         Object nomb = Session["objdata"] as Object;
-        datos = log.ValidarSesiondoc(rol, nombre, nomb);     
+        datos = log.ValidarSesiondoc(rol, nombre, nomb);     */
 
         Im_Perfil.ImageUrl = datos.Imagen;
+        Response.Cache.SetNoStore();
     }
     protected void B_salir_Click(object sender, EventArgs e)
     {
-        Response.Cache.SetNoStore();
         Session["id_user"] = null;
         Session["user"] = null;
         Session["rol_user"] = null;
-        Response.Redirect("Login.aspx"); 
+        Response.Redirect("Login.aspx");
+        Response.Cache.SetNoStore();
     }
 }

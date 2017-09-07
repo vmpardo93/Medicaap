@@ -8,6 +8,41 @@ namespace utilitarios
 {
     public class Ucitas
     {
+        private String fechainimedicina;
+
+        public String Fechainimedicina
+        {
+            get { return fechainimedicina; }
+            set { fechainimedicina = value; }
+        }
+        private String iddoctor;
+
+        public String Iddoctor
+        {
+            get { return iddoctor; }
+            set { iddoctor = value; }
+        }
+        private String idcita;
+
+        public String Idcita
+        {
+            get { return idcita; }
+            set { idcita = value; }
+        }
+        private String url;
+
+        public String Url
+        {
+            get { return url; }
+            set { url = value; }
+        }
+        private String mensaje;
+
+        public String Mensaje
+        {
+            get { return mensaje; }
+            set { mensaje = value; }
+        }
         private String diagnostico;
 
         public String Diagnostico

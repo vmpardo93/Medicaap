@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using utilitarios;
+using Logica;
 
 public partial class modificadoc : System.Web.UI.Page
 {
@@ -31,10 +33,13 @@ public partial class modificadoc : System.Web.UI.Page
     protected void GridView1_RowUpdating1(object sender, GridViewUpdateEventArgs e)
     {
         int index = e.RowIndex;
+        Udoctor datos = new Udoctor();
         GridViewRow row = (GridViewRow)GridView1.Rows[index];
         FileUpload file = (FileUpload)row.FindControl("Imagen");
         Label imagen = (Label)row.FindControl("Label1");
-
+        modificado(file, imagen);
+        e.NewValues.Add("imagen", datos.Foto);
+  /*
         if (file.HasFile)
         {
             String archivo = System.IO.Path.GetFileName(file.PostedFile.FileName);
@@ -54,6 +59,31 @@ public partial class modificadoc : System.Web.UI.Page
         else
         {
             e.NewValues.Add("imagen", imagen.Text);
+        }*/
+    }
+    public void modificado(FileUpload FU_imge,Label texte) 
+    {
+        Udoctor datos = new Udoctor();
+        LDoctor logica= new LDoctor();
+        string saveLocation = "";
+        string save = "";
+
+        ClientScriptManager cm = this.ClientScript;
+        String nombreArchivo = System.IO.Path.GetFileNameWithoutExtension(FU_imge.PostedFile.FileName);
+        string extension = System.IO.Path.GetExtension(FU_imge.PostedFile.FileName);
+        nombreArchivo = nombreArchivo + DateTime.Now.ToFileTime().ToString() + extension;
+
+        saveLocation = (Server.MapPath("~/Imagenes/Peliculas") + "/" + nombreArchivo);
+        save = ("~/Imagenes/Peliculas") + "/" + nombreArchivo;
+        try
+        {
+
+            string url = logica.modificadoc(save, saveLocation, FU_imge.HasFile,texte);
+            FU_imge.PostedFile.SaveAs(datos.Foto);
+        }
+        catch (Exception exc)
+        {
+
         }
     }
 }

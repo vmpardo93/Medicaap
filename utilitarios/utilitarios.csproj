@@ -44,6 +44,7 @@
     <Compile Include="Ucitas.cs" />
     <Compile Include="Udoctor.cs" />
     <Compile Include="Uhojavida.cs" />
+    <Compile Include="Uhorario.cs" />
     <Compile Include="UUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

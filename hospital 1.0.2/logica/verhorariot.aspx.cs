@@ -5,26 +5,22 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-using Data;
+using utilitarios;
+using Logica;
 
 public partial class verhorariot : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        DAOhorario doc = new DAOhorario();
-        DataTable com = new DataTable();
-        int i;
-        GridViewRow row;
-        for (i = 0; i < GV_horario.Rows.Count; i++) {
-            row = GV_horario.Rows[i];
-            if (row != null)
-            {
-                B_registra.Visible = false;
-            }
-            else {
-                B_registra.Visible = true;
-            }
-        }
+        Uhorario datos = new Uhorario();
+        LUsuarios users = new LUsuarios();
+        Object nomb = Session["objdata"] as Object;
+        String rol = Session["rol_user"] as String;
+        String user = Session["user"] as String;
+        String val = Convert.ToString(GV_horario.Rows.Count);
+        Lhorario logic = new Lhorario();
+        string redi=logic.validar_existe_horario(val,rol);
+        Response.Redirect(redi);
     }
     protected void gv_updating(object sender, GridViewUpdateEventArgs e)
     {
@@ -37,10 +33,5 @@ public partial class verhorariot : System.Web.UI.Page
         e.NewValues.Add("hora_inicio", hora_inicio);
         e.NewValues.Add("hora_fin",hora_fin);
 
-    }
-
-    protected void B_registra_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("Horariodoc.aspx");
     }
 }

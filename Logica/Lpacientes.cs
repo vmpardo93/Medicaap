@@ -34,7 +34,7 @@ namespace Logica
             
             usuario.Mensaje = "Registro exitoso";
 
-            usuario.Url1 = "vista/RegistroDocAdmon.aspx";
+            usuario.Url1 = "RegistroDocAdmon.aspx";
 
             return usuario;
         }

@@ -335,33 +335,7 @@ public class DAO_doctores
     }
     
 
-    public DataTable obtenerdoc(string id)
-    {/*este metodo aplica para el doctor que desea ver sus datos*/
-        DataTable archivos = new DataTable();
-        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);
-
-        try
-        {
-            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("hospital.f_buscadoc", conection);
-            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-            dataAdapter.SelectCommand.Parameters.Add("idusuario_", NpgsqlDbType.Integer).Value = int.Parse(id);
-
-            conection.Open();
-            dataAdapter.Fill(archivos);
-        }
-        catch (Exception Ex)
-        {
-            throw Ex;
-        }
-        finally
-        {
-            if (conection != null)
-            {
-                conection.Close();
-            }
-        }
-        return archivos;
-    }
+  
    
  
     public DataTable vertodosdoctores(){//esto es para ver todos los doctores
@@ -421,35 +395,7 @@ public class DAO_doctores
 
 
 
-    public void guardarhorariodoc(string fechainicio, string fechafin, string horario, string idusuario)
-    {
-        DataTable usuario = new DataTable();
-
-        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);
-        try
-        {
-            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("hospital.f_generar_horario", conection);
-            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-            dataAdapter.SelectCommand.Parameters.Add("_inicio", NpgsqlDbType.Date).Value = Convert.ToDateTime(fechainicio);
-            dataAdapter.SelectCommand.Parameters.Add("_fin", NpgsqlDbType.Date).Value = Convert.ToDateTime(fechafin);
-            dataAdapter.SelectCommand.Parameters.Add("_horario", NpgsqlDbType.Text).Value = horario;
-            dataAdapter.SelectCommand.Parameters.Add("iduser_", NpgsqlDbType.Integer).Value = int.Parse(idusuario);
-            conection.Open();
-            dataAdapter.Fill(usuario);
-        }
-        catch (Exception Ex)
-        {
-            throw Ex;
-        }
-        finally
-        {
-            if (conection != null)
-            {
-                conection.Close();
-            }
-        }
-    }
-
+  
 
     public void guardarDoctor(string username, string clave, string edad, string especialidad, string estudios, string nombre, string apellido, string estado, string url, string correo, string documento)
     {/*guarda el doctor en la base de datosel doctor solo es registrado por el administrador por lo cual este es un metodo que solo lo usa el admin */
@@ -561,41 +507,6 @@ public class DAO_doctores
    
 
 
-    public void modificardoctordoc(string username, string clave, string nombre, string apellido, string edad, string estudios, string especialidad, string imagen, int id_usuario, int id_user, string documento, string correo)
-    {
-        DataTable Usuario = new DataTable();
-        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);
-        try
-        {
-            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("hospital.f_editar_doctor", conection);
-            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-            dataAdapter.SelectCommand.Parameters.Add("id_usuario", NpgsqlDbType.Integer).Value = id_usuario;
-            dataAdapter.SelectCommand.Parameters.Add("username_", NpgsqlDbType.Text).Value = username;
-            dataAdapter.SelectCommand.Parameters.Add("clave_", NpgsqlDbType.Text).Value = clave;
-            dataAdapter.SelectCommand.Parameters.Add("nombre_", NpgsqlDbType.Text).Value = nombre;
-            dataAdapter.SelectCommand.Parameters.Add("apellido_", NpgsqlDbType.Text).Value = apellido;
-            dataAdapter.SelectCommand.Parameters.Add("edad_", NpgsqlDbType.Text).Value = edad;
-            dataAdapter.SelectCommand.Parameters.Add("estudios_", NpgsqlDbType.Text).Value = estudios;
-            dataAdapter.SelectCommand.Parameters.Add("especialidad_", NpgsqlDbType.Text).Value = especialidad;
-            dataAdapter.SelectCommand.Parameters.Add("imagen_", NpgsqlDbType.Text).Value = imagen;
-            dataAdapter.SelectCommand.Parameters.Add("documento_", NpgsqlDbType.Text).Value = documento;
-            dataAdapter.SelectCommand.Parameters.Add("correo_", NpgsqlDbType.Text).Value = correo;
-
-            conection.Open();
-            dataAdapter.Fill(Usuario);
-        }
-        catch (Exception Ex)
-        {
-            throw Ex;
-        }
-        finally
-        {
-            if (conection != null)
-            {
-                conection.Close();
-            }
-        }
-    }
   
     public void sacarCita(int id_cita_,int id_usuario_)
     {
@@ -789,83 +700,11 @@ public class DAO_doctores
         }
         return hv_doc;
     }
-    public DataTable mostraralergias()
-    {
-        DataTable hv_doc = new DataTable();
-        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);
-        try
-        {
-            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("hospital.f_busca_alergias", conection);
-            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-            conection.Open();
-            dataAdapter.Fill(hv_doc);
-        }
-        catch (Exception Ex)
-        {
-            throw Ex;
-        }
-        finally
-        {
-            if (conection != null)
-            {
-                conection.Close();
-            }
-        }
-        return hv_doc;
-    }
-   
-    public DataTable mostrarmedicinas()
-    {
-        DataTable hv_doc = new DataTable();
-        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);
-        try
-        {
-            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("hospital.f_busca_medicinas", conection);
-            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-            conection.Open();
-            dataAdapter.Fill(hv_doc);
-        }
-        catch (Exception Ex)
-        {
-            throw Ex;
-        }
-        finally
-        {
-            if (conection != null)
-            {
-                conection.Close();
-            }
-        }
-        return hv_doc;
-    }
+  
    
     /**************************************novedades angie*******************/
    
-    public DataTable mostrarcitasdoctor(string doctor_id)
-    {
-        DataTable hv_doc = new DataTable();
-        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);
-        try
-        {
-            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("hospital.f_busca_cita", conection);
-            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-            dataAdapter.SelectCommand.Parameters.Add("id_user", NpgsqlDbType.Integer).Value = int.Parse(doctor_id);
-            conection.Open();
-            dataAdapter.Fill(hv_doc);
-        }
-        catch (Exception Ex)
-        {
-            throw Ex;
-        }
-        finally
-        {
-            if (conection != null)
-            {
-                conection.Close();
-            }
-        }
-        return hv_doc;
-    }
+  
     public DataTable obtenercorreo(int id_usuario_)
     {
         DataTable correo = new DataTable();
@@ -1018,107 +857,7 @@ public class DAO_doctores
         }
         return alergias;
     }
-    public void guardacita(string idcita, string doctor_id, string diagnostico, string cirugia, string descripcirugia, string fechacirugia, string medicina, string dosis, string fechainimedicina, string fechafinmedicina)
-    /*guardar cita sin alergias*/
-    {
-        DataTable citas = new DataTable();
-        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);
-        try
-        {
-            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("hospital.f_add_citadoctor3", conection);
-            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-            dataAdapter.SelectCommand.Parameters.Add("diagnostico_", NpgsqlDbType.Text).Value = diagnostico;
-            dataAdapter.SelectCommand.Parameters.Add("doctoid_", NpgsqlDbType.Integer).Value = int.Parse(doctor_id);
-            dataAdapter.SelectCommand.Parameters.Add("idcita_", NpgsqlDbType.Integer).Value = int.Parse(idcita);
-            dataAdapter.SelectCommand.Parameters.Add("cirugia_", NpgsqlDbType.Text).Value = cirugia;
-            dataAdapter.SelectCommand.Parameters.Add("descripcirugia_", NpgsqlDbType.Text).Value = descripcirugia;
-            dataAdapter.SelectCommand.Parameters.Add("fechacirugia_", NpgsqlDbType.Text).Value = fechacirugia;
-            dataAdapter.SelectCommand.Parameters.Add("idmedicina_", NpgsqlDbType.Integer).Value = int.Parse(medicina);
-            dataAdapter.SelectCommand.Parameters.Add("dosis_", NpgsqlDbType.Integer).Value = int.Parse(dosis);
-            dataAdapter.SelectCommand.Parameters.Add("fechafinmedicina_", NpgsqlDbType.Text).Value = fechafinmedicina;
-            conection.Open();
-            dataAdapter.Fill(citas);
-        }
-        catch (Exception Ex)
-        {
-            throw Ex;
-        }
-        finally
-        {
-            if (conection != null)
-            {
-                conection.Close();
-            }
-        }
-
-    }
-    public DataTable guardarcita2(string idcita, string doctor_id, string diagnostico, string alergia, string descripalergia, string medicina, string dosis, string fechainimedicina, string fechafinmedicina)
-    /*guarda la cita mientras el doctor y el paciente estan en ella*/
-    {
-        DataTable hv_doc = new DataTable();
-        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);
-        try
-        {
-            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("hospital.f_add_citadoctor2", conection);
-            dataAdapter.SelectCommand.Parameters.Add("diagnostico_", NpgsqlDbType.Text).Value = diagnostico;
-            dataAdapter.SelectCommand.Parameters.Add("doctoid_", NpgsqlDbType.Integer).Value = int.Parse(doctor_id);
-            dataAdapter.SelectCommand.Parameters.Add("idcita_", NpgsqlDbType.Integer).Value = int.Parse(idcita);
-            dataAdapter.SelectCommand.Parameters.Add("idalergia_", NpgsqlDbType.Integer).Value = int.Parse(alergia);
-            dataAdapter.SelectCommand.Parameters.Add("descripalergia_", NpgsqlDbType.Text).Value = descripalergia;
-            dataAdapter.SelectCommand.Parameters.Add("idmedicina_", NpgsqlDbType.Integer).Value = int.Parse(medicina);
-            dataAdapter.SelectCommand.Parameters.Add("dosis_", NpgsqlDbType.Integer).Value = int.Parse(dosis);
-            dataAdapter.SelectCommand.Parameters.Add("fechafinmedicina_", NpgsqlDbType.Text).Value = fechafinmedicina;
-            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-            conection.Open();
-
-            dataAdapter.Fill(hv_doc);
-        }
-        catch (Exception Ex)
-        {
-
-            throw Ex;
-        }
-        finally
-        {
-            if (conection != null)
-            {
-                conection.Close();
-            }
-        }
-        return hv_doc;
-    }
-    public DataTable guardarcita3(string idcita, string doctor_id, string diagnostico, string medicina, string dosis, string fechainimedicina, string fechafinmedicina)
-    /*guarda la cita mientras el doctor y el paciente estan en ella*/
-    {
-        DataTable hv_doc = new DataTable();
-        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);
-        try
-        {
-            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("hospital.f_add_citadoctor4", conection);
-            dataAdapter.SelectCommand.Parameters.Add("diagnostico_", NpgsqlDbType.Text).Value = diagnostico;
-            dataAdapter.SelectCommand.Parameters.Add("doctoid_", NpgsqlDbType.Integer).Value = int.Parse(doctor_id);
-            dataAdapter.SelectCommand.Parameters.Add("idcita_", NpgsqlDbType.Integer).Value = int.Parse(idcita);
-            dataAdapter.SelectCommand.Parameters.Add("idmedicina_", NpgsqlDbType.Integer).Value = int.Parse(medicina);
-            dataAdapter.SelectCommand.Parameters.Add("dosis_", NpgsqlDbType.Integer).Value = int.Parse(dosis);
-            dataAdapter.SelectCommand.Parameters.Add("fechafinmedicina_", NpgsqlDbType.Text).Value = fechafinmedicina;
-            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-            conection.Open();
-            dataAdapter.Fill(hv_doc);
-        }
-        catch (Exception Ex)
-        {
-
-            throw Ex;
-        }
-        finally
-        {
-            if (conection != null)
-            {
-                conection.Close();
-            }
-        }
-        return hv_doc;
-    }
+   
     public DataTable mostrarparametrizacion()
     {
         DataTable parametri = new DataTable();
