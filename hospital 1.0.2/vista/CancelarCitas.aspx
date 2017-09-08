@@ -44,9 +44,9 @@
                 <SortedDescendingCellStyle BackColor="#FFFDF8" />
                 <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
             </asp:GridView>
-            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="mostrarcitasseparadas" TypeName="DAO_doctores">
+            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="mostrarCitasSeparadas" TypeName="Logica.Lpacientes">
                 <SelectParameters>
-                    <asp:SessionParameter DefaultValue="0" Name="id_usuario_" SessionField="id_user" Type="Int32" />
+                    <asp:SessionParameter DefaultValue="0" Name="id_user" SessionField="id_user" Type="Int32" />
                 </SelectParameters>
             </asp:ObjectDataSource>
         </td>

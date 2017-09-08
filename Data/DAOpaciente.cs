@@ -143,5 +143,55 @@ namespace Data
             return usuarios;
 
         }
+        public DataTable mostrarcitasseparadas(int id_usuario_)
+        {
+            DataTable citas = new DataTable();
+            NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);
+            try
+            {
+                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("hospital.f_buscarcitas_usuarioV", conection);
+                dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                dataAdapter.SelectCommand.Parameters.Add("id_usuario_", NpgsqlDbType.Integer).Value = id_usuario_;
+                conection.Open();
+                dataAdapter.Fill(citas);
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+            finally
+            {
+                if (conection != null)
+                {
+                    conection.Close();
+                }
+            }
+            return citas;
+        }
+        public void cancelarCitaUsuario(int id_cita)
+        {
+            DataTable citas = new DataTable();
+            NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);
+            try
+            {
+                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("hospital.f_cancelar_cita_usuario", conection);
+                dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                dataAdapter.SelectCommand.Parameters.Add("id_cita_", NpgsqlDbType.Integer).Value = id_cita;
+                conection.Open();
+                dataAdapter.Fill(citas);
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+            finally
+            {
+                if (conection != null)
+                {
+                    conection.Close();
+                }
+            }
+
+        }
     }
 }

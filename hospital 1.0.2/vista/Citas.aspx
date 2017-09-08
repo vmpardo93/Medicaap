@@ -1,4 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/vista/Usuario.master" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/vista/Usuario.master" CodeFile="~/logica/Citas.aspx.cs" Inherits="vista_Citas"%>
+
+
+
 
 
 
