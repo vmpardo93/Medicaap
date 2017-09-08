@@ -66,6 +66,13 @@ namespace Logica
             dao.cancelarCitaUsuario(id_user);
 
         }
+        public DataTable mostrarCitasSeparadas(int id_user)
+        {
+
+            DAOpaciente dao = new DAOpaciente();
+            return dao.mostrarcitasseparadas(id_user);
+
+        }
         
         }
 
