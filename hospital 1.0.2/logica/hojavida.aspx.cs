@@ -16,7 +16,7 @@ public partial class hojavida : System.Web.UI.Page
         Object nomb = Session["objdata"] as Object;
         String rol = Session["rol_user"] as String;
         String user = Session["user"] as String;
-        users.ValidarSesiondoc(rol, user, nomb);
+        Response.Redirect(rol);
     }
     protected void BT_enviar_Click(object sender, EventArgs e)
     {
