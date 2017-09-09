@@ -40,8 +40,6 @@ namespace Logica
 
                     data.Url1 = "Perfil.aspx";
 
-                    data.Url1 = "Perfil.aspx";
-
                 }
                 else if (data.Idrol == 3)
                 {

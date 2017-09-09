@@ -7,8 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using utilitarios;
 using Data;
-using System.Web;
-using System.Web.UI.WebControls;
 
 namespace Logica
 {
