@@ -11,7 +11,7 @@ namespace Logica
 {
     public class LUsuarios
     {
-        public UUsuario loggin(String user,String pass) 
+        public UUsuario loggin(String user, String pass)
         {
             DAO_usuarios users = new DAO_usuarios();
             UUsuario data = new UUsuario();
@@ -28,7 +28,7 @@ namespace Logica
 
                 data.Idrol = int.Parse(datos.Rows[0]["Id_Rol"].ToString());
                 data.Id_usuario = int.Parse(datos.Rows[0]["Id_Usuario"].ToString());
-               // data.Username = datos.Rows[0]["user"].ToString();
+                // data.Username = datos.Rows[0]["user"].ToString();
 
                 if (int.Parse(datos.Rows[0]["Id_Rol"].ToString()) == 1)
                 {
@@ -43,7 +43,7 @@ namespace Logica
                     data.Url1 = "Perfil.aspx";
 
                 }
-                else if (data.Idrol == 3) 
+                else if (data.Idrol == 3)
                 {
                     data.Url1 = "modificadoc.aspx";
                 }
@@ -78,28 +78,15 @@ namespace Logica
             }
             return data;
         }
-          public UUsuario ValidarSesiondoc(String rol, String NombreUsuario, object User)
+        public String ValidarSesiondoc(String rol)
         {
             /*valida la session del doctor*/
-            UUsuario data = new UUsuario();
-            if (User != null)
+            String direccion = null;
+            if (int.Parse(rol) != 3)
             {
-                if (int.Parse(rol) != 3)
-                {
-                    data.Url1 = "Login.aspx";
-
-                }
-                else
-                {
-                    data.Username = NombreUsuario;
-                }
+                direccion = "Login.aspx";
             }
-            else
-            {
-                data.Url1 = "Login.aspx";
-                data.Username = "";
-            }
-            return data;
+            return direccion;
         }
-        }
-        }
+    }
+}
