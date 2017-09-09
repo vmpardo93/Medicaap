@@ -12,20 +12,10 @@ public partial class modificadoc : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        DAO_doctores user = new DAO_doctores();
-        if (Session["id_user"] != null && Session["rol_user"].ToString().Equals("3"))
-        {
-            
-            Edoctores doc = new Edoctores();
-            String id = Session["id_user"].ToString();
-        }
-        else
-        {
-            Session["rol_user"] = null;
-            Session["id_user"] = null;
-            Response.Redirect("Login.aspx");
-
-        }
+        LUsuarios logica = new LUsuarios();
+        
+        Response.Redirect(Session["rol_user"].ToString());
+        
         Response.Cache.SetCacheability(HttpCacheability.ServerAndNoCache);
         Response.Cache.SetAllowResponseInBrowserHistory(false);
         Response.Cache.SetNoStore();
