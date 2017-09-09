@@ -40,7 +40,7 @@ namespace Logica
 
                     data.Url1 = "Perfil.aspx";
 
-                    data.Url1 = "vista/Perfil.aspx";
+                    data.Url1 = "Perfil.aspx";
 
                 }
                 else if (data.Idrol == 3)
@@ -55,28 +55,16 @@ namespace Logica
             }
             return data;
         }
-        public UUsuario ValidarSesion(String rol, String NombreUsuario, object User)
+        public String ValidarSesionAdmin(String rol)
         {
             /*valida la session del administrador*/
-            UUsuario data = new UUsuario();
-            if (User != null)
+            String direccion = null;
+            if (int.Parse(rol) != 1)
             {
-                if (int.Parse(rol) != 1)
-                {
-                    data.Url1 = "Login.aspx";
+                direccion = "Login.aspx";
 
-                }
-                else
-                {
-                    data.Username = NombreUsuario;
-                }
             }
-            else
-            {
-                data.Url1 = "Login.aspx";
-                data.Username = "";
-            }
-            return data;
+            return direccion;
         }
         public String ValidarSesiondoc(String rol)
         {

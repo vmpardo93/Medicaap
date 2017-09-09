@@ -17,7 +17,10 @@ public partial class vista_MasterAdminVic : System.Web.UI.MasterPage
         String rol = Session["rol_user"] as String;
         String nombre = Session["user"] as String;
         Object nomb = Session["objdata"] as Object;
-        datos = log.ValidarSesion(rol,nombre,nomb);
+        
+        string direc = log.ValidarSesionAdmin(rol);
+        
+        Response.Redirect(direc);
     }
 
     protected void B_Salir_Click(object sender, EventArgs e)

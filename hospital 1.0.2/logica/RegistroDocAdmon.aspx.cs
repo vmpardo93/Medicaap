@@ -18,7 +18,10 @@ public partial class vista_RegistroDocAdmon : System.Web.UI.Page
         Object nomb = Session["objdata"] as Object;
         String rol = Session["rol_user"] as String;
         String user = Session["user"] as String;
-        users.ValidarSesiondoc(rol, user, nomb);
+        
+        string direc=users.ValidarSesiondoc(rol);
+        
+        Response.Redirect(direc);
     }
     protected void B_enviar_Click(object sender, EventArgs e)
     {

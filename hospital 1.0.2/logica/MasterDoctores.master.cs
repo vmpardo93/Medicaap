@@ -17,7 +17,9 @@ public partial class MasterDoctores : System.Web.UI.MasterPage
         String nombre = Session["user"] as String;
         Object nomb = Session["objdata"] as Object;
 
-        Response.Redirect(log.ValidarSesiondoc(rol));
+        string direc = log.ValidarSesiondoc(rol);
+        
+        Response.Redirect(direc);
 
         Im_Perfil.ImageUrl = datos.Imagen;
         Response.Cache.SetNoStore();

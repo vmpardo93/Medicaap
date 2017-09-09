@@ -4,12 +4,20 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using utilitarios;
+using Logica;
 
 public partial class vista_AgregarAdmon : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Usuario usu = new Usuario();
+        LUsuarios logica = new LUsuarios();
+        string direc=logica.ValidarSesionAdmin(Session["rol_user"].ToString());
+        Response.Redirect(direc);
+        
+        Response.Cache.SetCacheability(HttpCacheability.ServerAndNoCache);
+        Response.Cache.SetAllowResponseInBrowserHistory(false);
+        Response.Cache.SetNoStore();
      }
     protected void B_cargarmedicina_Click(object sender, EventArgs e)
     {
@@ -17,13 +25,17 @@ public partial class vista_AgregarAdmon : System.Web.UI.Page
         try
         {
             DAO_doctores bases = new DAO_doctores();
-            bases.guardarmedicina(TB_medicina.Text);
+          //  bases.guardarmedicina(TB_medicina.Text);
             Response.Redirect("AgregarAdmon.aspx");
         }
         catch (Exception Ex)
         {
             this.RegisterStartupScript("mensaje", ("<script type='text/javascript'>alert('ya existe esta medicina);</script>"));
         }
+        
+        Response.Cache.SetCacheability(HttpCacheability.ServerAndNoCache);
+        Response.Cache.SetAllowResponseInBrowserHistory(false);
+        Response.Cache.SetNoStore();
     }
     protected void B_CargarAlergia_Click(object sender, EventArgs e)
     {
@@ -37,7 +49,10 @@ public partial class vista_AgregarAdmon : System.Web.UI.Page
         {
             this.RegisterStartupScript("mensaje", ("<script type='text/javascript'>alert('ya existe esta alergia);</script>"));
         }
-
+        
+        Response.Cache.SetCacheability(HttpCacheability.ServerAndNoCache);
+        Response.Cache.SetAllowResponseInBrowserHistory(false);
+        Response.Cache.SetNoStore();
     }
 
 

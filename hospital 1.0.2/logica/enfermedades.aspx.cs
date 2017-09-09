@@ -13,6 +13,6 @@ public partial class enfermedades : System.Web.UI.Page
         DAO_doctores bases = new DAO_doctores();
         bases.guardaralergia(TB_alergia.Text);
         bases.guardarcirugias(TB_cirugia.Text);
-        bases.guardarmedicina(TB_medicina.Text);
+//       bases.guardarmedicina(TB_medicina.Text);
     }
 }
