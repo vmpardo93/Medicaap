@@ -40,7 +40,7 @@ namespace Logica
 
                     data.Url1 = "Perfil.aspx";
 
-                    data.Url1 = "vista/Perfil.aspx";
+                    data.Url1 = "Perfil.aspx";
 
                 }
                 else if (data.Idrol == 3) 
@@ -51,7 +51,7 @@ namespace Logica
             else
             {
                 data.Mensaje = "Usuario o Contraseña incorrecta";
-                data.Url1 = "Loggin.aspx";
+                data.Url1 = "Login.aspx";
             }
             return data;
         }
