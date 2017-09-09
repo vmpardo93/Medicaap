@@ -4,24 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logica
+namespace utilitarios
 {
-    public class Umedicinas
+    public class Umedicina
     {
-        private String url;
-
-        public String Url
-        {
-            get { return url; }
-            set { url = value; }
-        }
-        private String mensaje;
-
-        public String Mensaje
-        {
-            get { return mensaje; }
-            set { mensaje = value; }
-        }
         private String idmedicina;
 
         public String Idmedicina

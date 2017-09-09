@@ -37,7 +37,7 @@ namespace Logica
             if (username == " " || clave == " " || nombre == "" || apellido == "" || edad == "" || estudios == "" || especialidad == "" || correo == "" || documento == "" || foto == "")
             {
                 data.Mensaje = "debe llenar todos lo campos";
-                data.Url = "vista/RegistroDocAdmon.aspx";
+                data.Url = "RegistroDocAdmon.aspx";
             }
             else
             {
@@ -49,7 +49,7 @@ namespace Logica
                     if (datos.Rows.Count != 0)
                     {
                         data.Mensaje = "El nombre se usuario esta repetido por favor escribir otro";
-                        data.Url = "vista/RegistroDocAdmon.aspx";
+                        data.Url = "RegistroDocAdmon.aspx";
                     }
                     else
                     {
@@ -68,14 +68,14 @@ namespace Logica
                         bases.insertar_doctor(data);
 
                         data.Mensaje = "registro exitoso";
-                        data.Url = "vista/RegistroDocAdmon.aspx";
+                        data.Url = "RegistroDocAdmon.aspx";
 
                     }
                 }
                 catch (FormatException ex)
                 {
                     data.Mensaje = "ha ocurrido un error el formato de las cadenas no es correcto";
-                    data.Url = "vista/RegistroDocAdmon.aspx";
+                    data.Url = "RegistroDocAdmon.aspx";
                 }
             }
             return data;
