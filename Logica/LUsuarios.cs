@@ -49,7 +49,7 @@ namespace Logica
             else
             {
                 data.Mensaje = "Usuario o Contraseña incorrecta";
-                data.Url1 = "Loggin.aspx";
+                data.Url1 = "Login.aspx";
             }
             return data;
         }
