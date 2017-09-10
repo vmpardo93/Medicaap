@@ -16,7 +16,6 @@ namespace Data
     {
         public DataTable login(UUsuario daoUser)
         {
-
             DataTable usuarios = new DataTable();
             NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);
 
@@ -45,5 +44,6 @@ namespace Data
             return usuarios;
 
         }
+
     }
 }

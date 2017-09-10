@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:GridView ID="GV_usuariosAdmon" runat="server" Width="878px" AutoGenerateColumns="False" DataKeyNames="id_usuario" DataSourceID="ObjectDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None">
+    <asp:GridView ID="GV_usuariosAdmon" runat="server" Width="878px" AutoGenerateColumns="False" DataKeyNames="id_usuario" DataSourceID="ODSpacientesad" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" CellPadding="4" ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="username" HeaderText="Username" />
@@ -27,6 +27,6 @@
         <SortedDescendingCellStyle BackColor="#FFFDF8" />
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
 </asp:GridView>
-    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="allusuarios" TypeName="DAO_doctores"></asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ODSpacientesad" runat="server" SelectMethod="allusuarios" TypeName="Data.DAOpaciente"></asp:ObjectDataSource>
 </asp:Content>
 

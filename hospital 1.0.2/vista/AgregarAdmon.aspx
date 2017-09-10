@@ -78,7 +78,7 @@
             <td class="auto-style23">
                 &nbsp;</td>
             <td class="auto-style24">
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource2" ForeColor="#333333" GridLines="None">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ODSmostrarmedicina" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:BoundField DataField="nombre_medicina" HeaderText="Medicinas" />
@@ -94,10 +94,10 @@
                     <SortedDescendingCellStyle BackColor="#D4DFE1" />
                     <SortedDescendingHeaderStyle BackColor="#15524A" />
                 </asp:GridView>
-                <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="mostrarmedicinasAdmon" TypeName="DAO_doctores"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="ODSmostrarmedicina" runat="server" SelectMethod="mostrarmedicinasAdmon" TypeName="Data.DAOmedicinas"></asp:ObjectDataSource>
             </td>
             <td class="auto-style24">
-                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None">
+                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ODSmostraralergias" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:BoundField DataField="nombre_alergia" HeaderText="Alergias" />
@@ -113,7 +113,7 @@
                     <SortedDescendingCellStyle BackColor="#D4DFE1" />
                     <SortedDescendingHeaderStyle BackColor="#15524A" />
                 </asp:GridView>
-                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="mostraralergias" TypeName="DAO_doctores"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="ODSmostraralergias" runat="server" SelectMethod="mostraralergiasAdmon" TypeName="Data.DAOalergias"></asp:ObjectDataSource>
             </td>
             <td class="auto-style24"></td>
         </tr>
@@ -204,7 +204,7 @@
                     <SortedDescendingCellStyle BackColor="#D4DFE1" />
                     <SortedDescendingHeaderStyle BackColor="#15524A" />
                 </asp:GridView>
-                <asp:ObjectDataSource ID="ODS_parametriza" runat="server" SelectMethod="mostrarparametrizacion" TypeName="DAO_doctores" UpdateMethod="editarparametrizacion">
+                <asp:ObjectDataSource ID="ODS_parametriza" runat="server" SelectMethod="mostrarparametrizacion" TypeName="Data.DAOparametriza" UpdateMethod="editarparametrizacion">
                     <UpdateParameters>
                         <asp:Parameter Name="duracion_citas" Type="String" />
                         <asp:Parameter Name="hora_inicio" Type="String" />

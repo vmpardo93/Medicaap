@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
         <div class="contenedor-botones">
               <a href="registrardoctor.aspx" class="btn btn-primary">Registrar</a>
-              <asp:GridView ID="GV_Doctores" runat="server" AutoGenerateColumns="False" DataKeyNames="id_usuario" DataSourceID="ObjectDataSource1" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" OnRowUpdating="GridView1_RowUpdating1" AllowPaging="True" style="margin-right: 6px; margin-top: 1px">
+              <asp:GridView ID="GV_Doctores" runat="server" AutoGenerateColumns="False" DataKeyNames="id_usuario" DataSourceID="ODSdoctoresadmin" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal" OnRowUpdating="GridView1_RowUpdating1" AllowPaging="True" style="margin-right: 6px; margin-top: 1px">
                   <Columns>
                       <asp:TemplateField HeaderText="Username" SortExpression="username">
                           <EditItemTemplate>
@@ -130,6 +130,22 @@
                   <SortedDescendingCellStyle BackColor="#E5E5E5" />
                   <SortedDescendingHeaderStyle BackColor="#275353" />
               </asp:GridView>
+              <asp:ObjectDataSource ID="ODSdoctoresadmin" runat="server" SelectMethod="obtenerDoctores" TypeName="Data.DAOdoctores" UpdateMethod="modificardoctor">
+                  <UpdateParameters>
+                      <asp:Parameter Name="username" Type="String" />
+                      <asp:Parameter Name="clave" Type="String" />
+                      <asp:Parameter Name="nombre" Type="String" />
+                      <asp:Parameter Name="apellido" Type="String" />
+                      <asp:Parameter Name="edad" Type="String" />
+                      <asp:Parameter Name="estudios" Type="String" />
+                      <asp:Parameter Name="especialidad" Type="String" />
+                      <asp:Parameter Name="imagen" Type="String" />
+                      <asp:Parameter Name="id_usuario" Type="Int32" />
+                      <asp:Parameter Name="estado" Type="String" />
+                      <asp:Parameter Name="documento" Type="String" />
+                      <asp:Parameter Name="correo" Type="String" />
+                  </UpdateParameters>
+              </asp:ObjectDataSource>
               <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="obtenerDoctores" TypeName="DAO_doctores" UpdateMethod="modificardoctor">
                   <UpdateParameters>
                       <asp:Parameter Name="username" Type="String" />

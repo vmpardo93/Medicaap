@@ -53,6 +53,17 @@ namespace Logica
             }
             return data;
         }
+        public String ValidarSesionPaci(String rol)
+        {
+            /*valida la session del administrador*/
+            String direccion = null;
+            if (int.Parse(rol) != 2)
+            {
+                direccion = "Login.aspx";
+
+            }
+            return direccion;
+        }
         public String ValidarSesionAdmin(String rol)
         {
             /*valida la session del administrador*/

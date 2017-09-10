@@ -14,7 +14,7 @@ namespace Data
     public class DAOdoctores
     {
         public DataTable mostrarDoctoresPrincipal()
-            //metodo para mostrar doctores en la pagina principal esto es para el datalist
+        //metodo para mostrar doctores en la pagina principal esto es para el datalist
         {
 
             DataTable doctores = new DataTable();
@@ -85,7 +85,7 @@ namespace Data
             {
                 NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("hospital.f_verificarusuario", conection);
                 dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                dataAdapter.SelectCommand.Parameters.Add("user_", NpgsqlDbType.Text).Value =encap.Username;
+                dataAdapter.SelectCommand.Parameters.Add("user_", NpgsqlDbType.Text).Value = encap.Username;
                 conection.Open();
                 dataAdapter.Fill(usuario);
             }
@@ -164,6 +164,69 @@ namespace Data
             }
             return archivos;
         }
+        public void modificardoctor(string username, string clave, string nombre, string apellido, string edad, string estudios, string especialidad, string imagen, int id_usuario, string estado, string documento, string correo)
+        {/*este metodo aplica para el administrador ya que solo el modifica el estado del doctor*/
+            DataTable Usuario = new DataTable();
+            NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["conexionhospital"].ConnectionString);
+
+            try
+            {
+                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("hospital.f_editar_doctorv", conection);
+                dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                dataAdapter.SelectCommand.Parameters.Add("id_usuario", NpgsqlDbType.Integer).Value = id_usuario;
+                dataAdapter.SelectCommand.Parameters.Add("username_", NpgsqlDbType.Text).Value = username;
+                dataAdapter.SelectCommand.Parameters.Add("clave_", NpgsqlDbType.Text).Value = clave;
+                dataAdapter.SelectCommand.Parameters.Add("nombre_", NpgsqlDbType.Text).Value = nombre;
+                dataAdapter.SelectCommand.Parameters.Add("apellido_", NpgsqlDbType.Text).Value = apellido;
+                dataAdapter.SelectCommand.Parameters.Add("edad_", NpgsqlDbType.Text).Value = edad;
+                dataAdapter.SelectCommand.Parameters.Add("estudios_", NpgsqlDbType.Text).Value = estudios;
+                dataAdapter.SelectCommand.Parameters.Add("especialidad_", NpgsqlDbType.Text).Value = especialidad;
+                dataAdapter.SelectCommand.Parameters.Add("url_", NpgsqlDbType.Text).Value = imagen;
+                dataAdapter.SelectCommand.Parameters.Add("estado_", NpgsqlDbType.Integer).Value = int.Parse(estado);
+                dataAdapter.SelectCommand.Parameters.Add("documento_", NpgsqlDbType.Text).Value = documento;
+                dataAdapter.SelectCommand.Parameters.Add("correo_", NpgsqlDbType.Text).Value = correo;
+                conection.Open();
+                dataAdapter.Fill(Usuario);
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+            finally
+            {
+                if (conection != null)
+                {
+                    conection.Close();
+                }
+            }
+        }
+        public DataTable obtenerDoctores()
+        {/*este metodo aplica para la pagina de ver doctores del administrador*/
+            DataTable archivos = new DataTable();
+            NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);
+
+            try
+            {
+                NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("hospital.f_busca_doctor", conection);
+                dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+
+                conection.Open();
+                dataAdapter.Fill(archivos);
+            }
+            catch (Exception Ex)
+            {
+                throw Ex;
+            }
+            finally
+            {
+                if (conection != null)
+                {
+                    conection.Close();
+                }
+            }
+            return archivos;
+        }
     }
 
-    }
+}

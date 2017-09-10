@@ -30,7 +30,7 @@ public partial class vista_Nuevacita : System.Web.UI.Page
 
         dia = C_Ncita.SelectedDate;
         Lpacientes data = new Lpacientes();
-        GV_CitasDisponibles.DataSource = data.buscarCitaD(dia);
+//       GV_CitasDisponibles.DataSource = data.buscarCitaD(dia);
         GV_CitasDisponibles.DataBind();
 
 
@@ -46,7 +46,7 @@ public partial class vista_Nuevacita : System.Web.UI.Page
         dia = C_Ncita.SelectedDate;
         Lpacientes data = new Lpacientes();
         DataTable datos_llenos = new DataTable();
-        datos_llenos = data.buscarCitaD(dia);
+//       datos_llenos = data.buscarCitaD(dia);
         this.GV_CitasDisponibles.DataSource = datos_llenos;
         this.GV_CitasDisponibles.DataBind();
     }

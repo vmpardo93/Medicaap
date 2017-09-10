@@ -12,11 +12,11 @@ public partial class vista_Login : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Response.Cache.SetNoStore();
         Session["id_user"] = null;
         Session["id_user"] = null;
         Session["user"] = null;
         Session["rol_user"] = null;
+        Response.Cache.SetNoStore();
         
     }
 

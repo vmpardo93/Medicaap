@@ -13,6 +13,7 @@ public partial class vista_AgregarAdmon : System.Web.UI.Page
     {
         LUsuarios logica = new LUsuarios();
         string direc=logica.ValidarSesionAdmin(Session["rol_user"].ToString());
+
         Response.Redirect(direc);
         
         Response.Cache.SetCacheability(HttpCacheability.ServerAndNoCache);
@@ -24,8 +25,8 @@ public partial class vista_AgregarAdmon : System.Web.UI.Page
 
         try
         {
-            DAO_doctores bases = new DAO_doctores();
-          //  bases.guardarmedicina(TB_medicina.Text);
+            Lmedicinas logica = new Lmedicinas();
+            logica.registromedicina(TB_medicina.Text);
             Response.Redirect("AgregarAdmon.aspx");
         }
         catch (Exception Ex)
@@ -41,8 +42,9 @@ public partial class vista_AgregarAdmon : System.Web.UI.Page
     {
         try
         {
-            DAO_doctores bases = new DAO_doctores();
-            bases.guardaralergia(TB_alergia.Text);
+
+            Lalergias logica = new Lalergias();
+            logica.agregaalergia(TB_alergia.Text);
             Response.Redirect("AgregarAdmon.aspx");
         }
         catch (Exception Ex)

@@ -13,6 +13,30 @@ namespace Data
 {
    public class DAOmedicinas
     {
+       public DataTable mostrarmedicinasAdmon()
+       {
+           DataTable medicinas = new DataTable();
+           NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);
+           try
+           {
+               NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("hospital.f_ver_medicinas", conection);
+               dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+               conection.Open();
+               dataAdapter.Fill(medicinas);
+           }
+           catch (Exception Ex)
+           {
+               throw Ex;
+           }
+           finally
+           {
+               if (conection != null)
+               {
+                   conection.Close();
+               }
+           }
+           return medicinas;
+       }
        public DataTable mostrarmedicinas()
        {
            DataTable medicinas = new DataTable();

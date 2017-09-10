@@ -17,7 +17,7 @@ public partial class vista_CancelarCitas : System.Web.UI.Page
         Lpacientes doctores = new Lpacientes();
         GridViewRow row = this.GV_CancelarCita.SelectedRow;
         int id_cita = int.Parse(GV_CancelarCita.DataKeys[row.RowIndex].Values[0].ToString());
-        doctores.CancelarCitasSeparadas(id_cita);
+//       doctores.CancelarCitasSeparadas(id_cita);
         Response.Redirect("CancelarCitas.aspx");
     }
 }
