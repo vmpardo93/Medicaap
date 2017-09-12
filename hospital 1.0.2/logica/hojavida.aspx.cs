@@ -24,8 +24,8 @@ public partial class hojavida : System.Web.UI.Page
         Uhojavida datos =new Uhojavida() ;
 
         hojavida.agregar_hoja_vida(TB_bachiller.Text, TB_estudios.Text, TB_fellows.Text, TB_idiomas.Text, TB_perfil.Text, TB_universidad.Text, TB_experiencia.Text, Session["id_user"].ToString());
-            
-        ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect", "alert('" + datos.Mensaje + "'); window.location='" + Request.ApplicationPath + datos.Url + "';", true);
+
+        this.RegisterStartupScript("mensaje", datos.Mensaje);
             
         Response.Cache.SetCacheability(HttpCacheability.ServerAndNoCache);
         Response.Cache.SetAllowResponseInBrowserHistory(false);

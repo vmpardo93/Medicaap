@@ -28,8 +28,7 @@ public partial class _Default : System.Web.UI.Page
         Session["User"] = usuario;
         Session["clave"] = TB_clave.Text.ToString();
 
-        ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect","alert('" + usuario.Mensaje + "'); window.location='" +Request.ApplicationPath + usuario.Url1 + "';", true);
-        TB_nombre.Text = "";
+        this.RegisterStartupScript("mensaje", usuario.Mensaje); TB_nombre.Text = "";
         TB_correo.Text = "";
         TB_clave.Text = "";
         TB_username.Text = "";

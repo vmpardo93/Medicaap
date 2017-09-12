@@ -36,8 +36,7 @@ namespace Logica
             Udoctor data = new Udoctor();
             if (username == " " || clave == " " || nombre == "" || apellido == "" || edad == "" || estudios == "" || especialidad == "" || correo == "" || documento == "" || foto == "")
             {
-                data.Mensaje = "debe llenar todos lo campos";
-                data.Url = "RegistroDocAdmon.aspx";
+                data.Mensaje = "<script type='text/javascript'>alert('debe llenar los campos requeridos');window.location=\"RegistroDocAdmon.aspx\"</script>";
             }
             else
             {
@@ -48,8 +47,8 @@ namespace Logica
                     datos = bases.verificarusuario(data);
                     if (datos.Rows.Count != 0)
                     {
-                        data.Mensaje = "El nombre se usuario esta repetido por favor escribir otro";
-                        data.Url = "RegistroDocAdmon.aspx";
+                        data.Mensaje = "<script type='text/javascript'>alert('El nombre se usuario esta repetido por favor escribir otro');window.location=\"RegistroDocAdmon.aspx\"</script>";
+
                     }
                     else
                     {
@@ -67,15 +66,14 @@ namespace Logica
                         data.Foto = foto;
                         bases.insertar_doctor(data);
 
-                        data.Mensaje = "registro exitoso";
-                        data.Url = "RegistroDocAdmon.aspx";
+                        data.Mensaje = "<script type='text/javascript'>alert('registro exitoso');window.location=\"RegistroDocAdmon.aspx\"</script>";
 
                     }
                 }
                 catch (FormatException ex)
                 {
-                    data.Mensaje = "ha ocurrido un error el formato de las cadenas no es correcto";
-                    data.Url = "RegistroDocAdmon.aspx";
+                    data.Mensaje = "<script type='text/javascript'>alert('ha ocirrido un error en un formato');window.location=\"RegistroDocAdmon.aspx\"</script>";
+
                 }
             }
             return data;

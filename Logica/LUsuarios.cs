@@ -32,24 +32,23 @@ namespace Logica
 
                 if (int.Parse(datos.Rows[0]["Id_Rol"].ToString()) == 1)
                 {
-
-                    data.Url1 = "VerUsuariosAdmon.aspx";
+                    
+                    data.Mensaje ="<script type='text/javascript'>window.location=\"VerUsuariosAdmon.aspx\"</script>";
                 }
                 else if (data.Idrol == 2)
                 {
 
-                    data.Url1 = "Perfil.aspx";
+                    data.Mensaje ="<script type='text/javascript'>window.location=\"Perfil.aspx\"</script>";
 
                 }
                 else if (data.Idrol == 3)
                 {
-                    data.Url1 = "modificadoc.aspx";
+                    data.Mensaje ="<script type='text/javascript'>window.location=\"modificadoc.aspx\"</script>";
                 }
             }
             else
             {
-                data.Mensaje = "Usuario o Contraseña incorrecta";
-                data.Url1 = "Login.aspx";
+                data.Mensaje = "<script type='text/javascript'>alert('Usuario o Contraseña incorrecta');window.location=\"Login.aspx\"</script>";
             }
             return data;
         }

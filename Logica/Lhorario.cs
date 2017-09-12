@@ -59,7 +59,7 @@ namespace Logica
             object domingo = chequeo["Domingo"];
             try
             {
-                if (Convert.ToDateTime(inicio) < Convert.ToDateTime(fin))
+                if (Convert.ToDateTime(inicio) < Convert.ToDateTime(fin) && Convert.ToDateTime(inicio) > DateTime.Now && Convert.ToDateTime(fin)>DateTime.Now)
                 {
                     if (lunes.Equals(true))
                     {
@@ -72,12 +72,12 @@ namespace Logica
                             }
                             else
                             {
-                                datos.Mensaje = "debe seleccionar un hora de inicio menor a la hora fin";
+                                datos.Mensaje = "<script type='text/javascript'>alert('debe seleccionar un hora de inicio menor a la hora fin')</script>";
                             }
                         }
                         else
                         {
-                            datos.Mensaje = "debe seleccionar una hora de inicio y fin";
+                            datos.Mensaje = "<script type='text/javascript'>alert('debe seleccionar una hora de inicio y fin para el lunes')</script>";
                         }
                     }
                     if (martes.Equals(true))
@@ -91,12 +91,12 @@ namespace Logica
                             }
                             else
                             {
-                                datos.Mensaje = "debe seleccionar un hora de inicio menor a la hora fin";
+                                datos.Mensaje = "<script type='text/javascript'>alert('debe seleccionar un hora de inicio menor a la hora fin')</script>";
                             }
                         }
                         else
                         {
-                            datos.Mensaje = "debe seleccionar una hora de inicio y fin";
+                            datos.Mensaje = "<script type='text/javascript'>alert('debe seleccionar una hora de inicio y fin para el miercoles')</script>";
                         }
                     }
                     if (miercoles.Equals(true))
@@ -110,12 +110,12 @@ namespace Logica
                             }
                             else
                             {
-                                datos.Mensaje = "debe seleccionar un hora de inicio menor a la hora fin";
+                                datos.Mensaje = "<script type='text/javascript'>alert('debe seleccionar un hora de inicio menor a la hora fin')</script>";
                             }
                         }
                         else
                         {
-                            datos.Mensaje = "debe seleccionar una hora de inicio y fin";
+                            datos.Mensaje = "<script type='text/javascript'>alert('debe seleccionar una hora de inicio y fin para el miercoles')</script>";
                         }
                     }
                     if (jueves.Equals(true))
@@ -129,12 +129,12 @@ namespace Logica
                             }
                             else
                             {
-                                datos.Mensaje = "debe seleccionar un hora de inicio menor a la hora fin";
+                                datos.Mensaje = "<script type='text/javascript'>alert('debe seleccionar un hora de inicio menor a la hora fin')</script>";
                             }
                         }
                         else
                         {
-                            datos.Mensaje = "debe seleccionar una hora de inicio y fin";
+                            datos.Mensaje = "<script type='text/javascript'>alert('debe seleccionar una hora de inicio y fin para el jueves')</script>";
                         }
                     }
                     if (viernes.Equals(true))
@@ -148,8 +148,13 @@ namespace Logica
                             }
                             else
                             {
-                                datos.Mensaje = "debe seleccionar un hora de inicio menor a la hora fin";
+                                datos.Mensaje = "<script type='text/javascript'>alert('debe seleccionar un hora de inicio menor a la hora fin')</script>";
                             }
+                        }
+                        else 
+                        {
+                            datos.Mensaje = "<script type='text/javascript'>alert('debe seleccionar una hora de inicio y fin para el viernes')</script>";
+
                         }
                     }
                     if (sabado.Equals(true))
@@ -163,12 +168,12 @@ namespace Logica
                             }
                             else
                             {
-                                datos.Mensaje = "debe seleccionar un hora de inicio menor a la hora fin";
+                                datos.Mensaje = "<script type='text/javascript'>alert('debe seleccionar un hora de inicio menor a la hora fin')</script>";
                             }
                         }
                         else
                         {
-                            datos.Mensaje = "debe seleccionar una hora de inicio y fin";
+                            datos.Mensaje = "<script type='text/javascript'>alert('debe seleccionar una hora de inicio y fin para el sabado')</script>";
                         }
                     }
                     if (domingo.Equals(true))
@@ -182,18 +187,18 @@ namespace Logica
                             }
                             else
                             {
-                                datos.Mensaje = "debe seleccionar un hora de inicio menor a la hora fin";
+                                datos.Mensaje = "<script type='text/javascript'>alert('debe seleccionar un hora de inicio menor a la hora fin')</script>";
                             }
                         }
                         else
                         {
-                            datos.Mensaje = "debe seleccionar una hora de inicio y fin";
+                            datos.Mensaje = "<script type='text/javascript'>alert('debe seleccionar una hora de inicio y fin para el domingo')</script>";
                         }
                     }
                 }
                 else
                 {
-                    datos.Mensaje = "la fecha inicio de be ser menor a la de fin";
+                    datos.Mensaje = "<script type='text/javascript'>alert('la fecha inicio debe ser menor a la de fin')</script>";
                 }
             }
             catch (Exception ex)

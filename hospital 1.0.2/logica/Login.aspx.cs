@@ -34,7 +34,7 @@ public partial class vista_Login : System.Web.UI.Page
         Session["rol_user"] = (user.Idrol.ToString());
         Session["objdata"] = user;
 
-        this.RegisterStartupScript("mensaje", "<script type='text/javascript'>alert('" + user.Mensaje + "');window.location=\"" + user.Url1 + "\"</script>");
+        this.RegisterStartupScript("mensaje",user.Mensaje);
 
     }
 

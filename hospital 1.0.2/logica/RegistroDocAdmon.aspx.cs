@@ -36,8 +36,8 @@ public partial class vista_RegistroDocAdmon : System.Web.UI.Page
         Session["nombre"] = TB_nombre.Text.ToString();
         Session["User"] = datos;
         Session["clave"] = TB_clave.Text.ToString();
-        
-        ScriptManager.RegisterStartupScript(this, this.GetType(), "redirect","alert('" + datos.Mensaje + "'); window.location='" +Request.ApplicationPath + datos.Url + "';", true);
+
+        this.RegisterStartupScript("mensaje", datos.Mensaje);
         
         TB_nombre.Text = "";
         TB_correo.Text = "";

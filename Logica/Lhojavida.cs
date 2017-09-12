@@ -38,8 +38,8 @@ namespace Logica
             Uhojavida encap = new Uhojavida();
             if (bachiller == "" || estudios == "" || universidad == "" || session == "")
             {
-                encap.Mensaje = "debe llenar los campos requeridos";
-                encap.Url = "hojavida.aspx";
+                encap.Mensaje = "<script type='text/javascript'>alert('debe llenar los campos requeridos');window.location=\"hojavida.aspx\"</script>";
+                
             }
             else
             {
@@ -55,13 +55,11 @@ namespace Logica
                     encap.Session = session;
                     datos.guardarhojavida(encap);
 
-                    encap.Mensaje = "hoja de vida registrada con exito";
-                    encap.Url = "editarhojavida.aspx";
+                    encap.Mensaje = "<script type='text/javascript'>alert('hoja de vida registrada con exito');window.location=\"editarhojavida.aspx\"</script>";
                 }
                 catch (FormatException ex)
                 {
-                    encap.Mensaje = "ha ocurrido un error el formato de las cadenas no es correcto";
-                    encap.Url = "hojavida.aspx";
+                    encap.Mensaje = "<script type='text/javascript'>alert('ha ocirrido un error en un formato');window.location=\"hojavida.aspx\"</script>";
                 }
             }
             return encap;

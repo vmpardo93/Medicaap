@@ -27,7 +27,7 @@ public partial class Horariodoc : System.Web.UI.Page
         Uhorario datos = new Uhorario();
         String inicio = C_inicio.SelectedDate.ToShortDateString();
         String fin = C_fin.SelectedDate.ToShortDateString();
-            
+ 
         Hashtable hash= new Hashtable();
         hash.Add(CB_lunes.Text,CB_lunes.Checked);
         hash.Add(CB_martes.Text,CB_martes.Checked);
@@ -57,7 +57,7 @@ public partial class Horariodoc : System.Web.UI.Page
 
         logic.guardarhorario(inicio,fin,hash,Session["id_user"].ToString(),lista_horasini,lista_horafin);
 
-        this.RegisterStartupScript("mensaje", "<script type='text/javascript'>alert('" + datos.Mensaje + "');window.location=\"" + datos.Url + "\"</script>");
+        this.RegisterStartupScript("mensaje", datos.Mensaje);
 
 
         Response.Cache.SetCacheability(HttpCacheability.ServerAndNoCache);
@@ -72,7 +72,5 @@ public partial class Horariodoc : System.Web.UI.Page
         DateTime ant = e.Day.Date;
         Lhorario logica = new Lhorario();
         Uhorario datos =new Uhorario();
-        logica.valida(fecha, ant);
-        e.Day.IsSelectable = datos.Ver;
     }
 }

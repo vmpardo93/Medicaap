@@ -16,24 +16,30 @@ namespace Logica
             DAOpaciente paciente = new DAOpaciente();
             DataTable datos = new DataTable();
             UUsuario usuario = new UUsuario();
+            try
+            {
+                
 
-            usuario.Username = username;
-            usuario.Clave = clave;
-            usuario.Nombre = nombre;
-            usuario.Apellido = apellido;
-            usuario.Edad = edad;
-            usuario.Tiposangre = tiposangre;
-            usuario.Correo = correo;
-            usuario.Documento = documento;
-            usuario.Fechaexamen = fechaexamen;
-            usuario.Foto = foto;
+                usuario.Username = username;
+                usuario.Clave = clave;
+                usuario.Nombre = nombre;
+                usuario.Apellido = apellido;
+                usuario.Edad = edad;
+                usuario.Tiposangre = tiposangre;
+                usuario.Correo = correo;
+                usuario.Documento = documento;
+                usuario.Fechaexamen = fechaexamen;
+                usuario.Foto = foto;
 
-            paciente.guarda_paciente(usuario);
-            
-            usuario.Mensaje = "Registro exitoso";
+                paciente.guarda_paciente(usuario);
 
-            usuario.Url1 = "vista/RegistroDocAdmon.aspx";
+                usuario.Mensaje = "<script type='text/javascript'>alert('registro exitoso');window.location=\"Login.aspx\"</script>";
+            }
+            catch (FormatException ex) 
+            {
+                usuario.Mensaje = "<script type='text/javascript'>alert('ha ocirrido un error en un formato');window.location=\"registro.aspx\"</script>";
 
+            }
             return usuario;
         }
         public DataTable obtenerUsuarioId(int id_user)

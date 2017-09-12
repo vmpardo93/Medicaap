@@ -8,6 +8,20 @@ namespace utilitarios
 {
     public class Ucitas
     {
+        private bool ver;
+
+        public bool Ver
+        {
+            get { return ver; }
+            set { ver = value; }
+        }
+        private object color;
+
+        public object Color
+        {
+            get { return color; }
+            set { color = value; }
+        }
         private String fechainimedicina;
 
         public String Fechainimedicina

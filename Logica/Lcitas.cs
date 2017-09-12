@@ -10,6 +10,16 @@ namespace Logica
 {
    public  class Lcitas
     {
+       public Ucitas validar(DateTime fecha, DateTime anterior, object col) 
+       {
+           Ucitas datos = new Ucitas();
+           if (fecha < anterior) 
+           {
+              datos.Ver= false;
+              datos.Color = col;    
+           }
+           return datos;
+       }
         public Ucitas guardarcitasdoc(String idcita,String doctorid, String diagnostico, String alergia, String descripalergia, String cirugia, String descripcirugia,String fechacirusinh, String horaciru,String fechacirugia, String medicina, String dosis, String fechainimedicina,String fechafinmedicina) 
         {
             Ucitas datos = new Ucitas();
