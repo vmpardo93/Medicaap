@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,10 +16,6 @@ public partial class vista_MasterAdminVic : System.Web.UI.MasterPage
         String rol = Session["rol_user"] as String;
         String nombre = Session["user"] as String;
         Object nomb = Session["objdata"] as Object;
-        LUsuarios log = new LUsuarios();
-        UUsuario datos = log.ValidarSesionAdmin(Session["rol_user"].ToString(), Session["user"].ToString());
-//        this.RegisterStartupScript("mensaje", datos.Mensaje);
-
     }
 
     protected void B_Salir_Click(object sender, EventArgs e)
