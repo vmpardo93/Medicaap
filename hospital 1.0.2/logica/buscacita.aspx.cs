@@ -13,6 +13,7 @@ public partial class buscacita : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         LUsuarios logica = new LUsuarios();
+        Udoctor datos=logica.ValidarSesiondoc(Session["id_user"].ToString(), Session["user"].ToString());
         ClientScriptManager cm = this.ClientScript;
         Lnombre.Visible = false;
         Lapellido.Visible = false;
@@ -40,9 +41,7 @@ public partial class buscacita : System.Web.UI.Page
         TB_dosis.Visible = false;
         TB_fechafin.Visible = false;
         B_cargar.Visible = false;
-
-        Response.Redirect(logica.ValidarSesiondoc(Session["rol_user"].ToString()));
-        
+        this.RegisterStartupScript("mensaje", datos.Mensaje);
         Response.Cache.SetCacheability(HttpCacheability.ServerAndNoCache);
         Response.Cache.SetAllowResponseInBrowserHistory(false);
         Response.Cache.SetNoStore();

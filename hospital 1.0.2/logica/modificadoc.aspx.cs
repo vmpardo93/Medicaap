@@ -13,9 +13,9 @@ public partial class modificadoc : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         LUsuarios logica = new LUsuarios();
-        
-        Response.Redirect(Session["rol_user"].ToString());
-        
+        Udoctor datos= logica.ValidarSesiondoc(Session["rol_user"].ToString(),Session["user"].ToString());
+        this.RegisterStartupScript("mensaje", datos.Mensaje);
+
         Response.Cache.SetCacheability(HttpCacheability.ServerAndNoCache);
         Response.Cache.SetAllowResponseInBrowserHistory(false);
         Response.Cache.SetNoStore();

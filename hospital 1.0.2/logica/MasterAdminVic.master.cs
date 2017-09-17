@@ -12,15 +12,14 @@ public partial class vista_MasterAdminVic : System.Web.UI.MasterPage
     protected void Page_Load(object sender, EventArgs e)
     {
         Response.Cache.SetNoStore();
-        LUsuarios log = new LUsuarios();
-        UUsuario datos= new UUsuario();
+        
         String rol = Session["rol_user"] as String;
         String nombre = Session["user"] as String;
         Object nomb = Session["objdata"] as Object;
-        
-        string direc = log.ValidarSesionAdmin(rol);
-        
-        Response.Redirect(direc);
+        LUsuarios log = new LUsuarios();
+        UUsuario datos = log.ValidarSesionAdmin(Session["rol_user"].ToString(), Session["user"].ToString());
+//        this.RegisterStartupScript("mensaje", datos.Mensaje);
+
     }
 
     protected void B_Salir_Click(object sender, EventArgs e)

@@ -12,9 +12,9 @@ public partial class vista_AgregarAdmon : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         LUsuarios logica = new LUsuarios();
-        string direc=logica.ValidarSesionAdmin(Session["rol_user"].ToString());
+        UUsuario datos = logica.ValidarSesionAdmin(Session["rol_user"].ToString(), Session["user"].ToString());
 
-        Response.Redirect(direc);
+        this.RegisterStartupScript("mensaje", datos.Mensaje);
         
         Response.Cache.SetCacheability(HttpCacheability.ServerAndNoCache);
         Response.Cache.SetAllowResponseInBrowserHistory(false);

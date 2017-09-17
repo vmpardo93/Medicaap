@@ -14,14 +14,14 @@ public partial class vista_RegistroDocAdmon : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         Response.Cache.SetNoStore();
-        LUsuarios users = new LUsuarios();
         Object nomb = Session["objdata"] as Object;
         String rol = Session["rol_user"] as String;
         String user = Session["user"] as String;
-        
-        string direc=users.ValidarSesiondoc(rol);
-        
-        Response.Redirect(direc);
+        LUsuarios logica = new LUsuarios();
+        UUsuario datos = logica.ValidarSesionAdmin(Session["rol_user"].ToString(), Session["user"].ToString());
+
+        this.RegisterStartupScript("mensaje", datos.Mensaje);
+ 
     }
     protected void B_enviar_Click(object sender, EventArgs e)
     {

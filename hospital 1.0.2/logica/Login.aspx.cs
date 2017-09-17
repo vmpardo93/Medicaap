@@ -16,6 +16,7 @@ public partial class vista_Login : System.Web.UI.Page
         Session["id_user"] = null;
         Session["user"] = null;
         Session["rol_user"] = null;
+
         Response.Cache.SetNoStore();
         
     }
