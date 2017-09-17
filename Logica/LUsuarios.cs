@@ -52,37 +52,48 @@ namespace Logica
             }
             return data;
         }
-        public String ValidarSesionPaci(String rol)
+        public UUsuario ValidarSesionPaci(String rol, String user)
         {
-            /*valida la session del administrador*/
-            String direccion = null;
-            if (int.Parse(rol) != 2)
-            {
-                direccion = "Login.aspx";
-
-            }
-            return direccion;
-        }
-        public String ValidarSesionAdmin(String rol)
-        {
-            /*valida la session del administrador*/
-            String direccion = null;
+            /*valida la session del paciente*/
+            UUsuario datos = new UUsuario();
             if (int.Parse(rol) != 1)
             {
-                direccion = "Login.aspx";
-
+                datos.Mensaje = "<script type='text/javascript'>window.location=\"Login.aspx\"</script>";
             }
-            return direccion;
+            else
+            {
+                datos.Mensaje = user;
+            }
+            return datos;
         }
-        public String ValidarSesiondoc(String rol)
+        public UUsuario ValidarSesionAdmin(String rol,String user)
+        {
+            /*valida la session del administrador*/
+            UUsuario datos = new UUsuario();
+            if (int.Parse(rol) != 1)
+            {
+                datos.Mensaje = "<script type='text/javascript'>window.location=\"Login.aspx\"</script>";
+            }
+            else 
+            {
+                datos.Mensaje = user;
+            }
+            return datos;
+        }
+        public Udoctor ValidarSesiondoc(String rol,String user)
         {
             /*valida la session del doctor*/
-            String direccion = null;
+            Udoctor datos = new Udoctor();
             if (int.Parse(rol) != 3)
             {
-                direccion = "Login.aspx";
+                datos.Mensaje = "<script type='text/javascript'>window.location=\"Login.aspx\"</script>";
+
             }
-            return direccion;
+            else
+            {
+                datos.Mensaje = user;
+            }
+            return datos;
         }
     }
 }
