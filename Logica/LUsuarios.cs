@@ -72,7 +72,7 @@ namespace Logica
             }
             else
             {
-                datos.Mensaje = user;
+                datos.Mensaje =null;
             }
             return datos;
         }
@@ -86,7 +86,7 @@ namespace Logica
             }
             else 
             {
-                datos.Mensaje = user;
+                datos.Mensaje = null;
 
             }
             return datos;
@@ -103,7 +103,7 @@ namespace Logica
             }
             else
             {
-                datos.Mensaje = user;
+                datos.Mensaje = null;
             }
             return datos;
         }
