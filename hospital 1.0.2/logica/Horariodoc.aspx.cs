@@ -16,7 +16,7 @@ public partial class Horariodoc : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         LUsuarios logica=new LUsuarios();
-        Udoctor datos = logica.ValidarSesiondoc(Session["id_user"].ToString(), Session["user"].ToString());
+        Udoctor datos = logica.ValidarSesiondoc(Session["rol_user"].ToString(), Session["user"].ToString());
         this.RegisterStartupScript("mensaje", datos.Mensaje);
     }
 

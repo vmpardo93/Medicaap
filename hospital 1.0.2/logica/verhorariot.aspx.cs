@@ -12,15 +12,22 @@ public partial class verhorariot : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Uhorario datos = new Uhorario();
-        LUsuarios users = new LUsuarios();
-        Object nomb = Session["objdata"] as Object;
-        String rol = Session["rol_user"] as String;
-        String user = Session["user"] as String;
-        String val = Convert.ToString(GV_horario.Rows.Count);
-        Lhorario logic = new Lhorario();
-        string redi=logic.validar_existe_horario(val,rol);
-        Response.Redirect(redi);
+        try
+        {
+            Uhorario datos = new Uhorario();
+            LUsuarios users = new LUsuarios();
+            Object nomb = Session["objdata"] as Object;
+            String rol = Session["rol_user"] as String;
+            String user = Session["user"] as String;
+            String val = Convert.ToString(GV_horario.Rows.Count);
+            Lhorario logic = new Lhorario();
+            datos=logic.validar_existe_horario(val,Session["id_user"].ToString());
+            this.RegisterStartupScript("mensaje", datos.Mensaje);
+        }
+        catch (Exception ex)
+        {
+
+        }
     }
     protected void gv_updating(object sender, GridViewUpdateEventArgs e)
     {

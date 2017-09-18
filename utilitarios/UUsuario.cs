@@ -135,5 +135,34 @@ namespace utilitarios
             get { return correo; }
             set { correo = value; }
         }
+        private string tipo_de_sangre;
+
+        public string Tipo_de_sangre
+        {
+            get { return tipo_de_sangre; }
+            set { tipo_de_sangre = value; }
+        }
+        private string especialidad;
+
+        public string Especialidad
+        {
+            get { return especialidad; }
+            set { especialidad = value; }
+        }
+        private string fecha_ultimo_examen;
+
+        public string Fecha_ultimo_examen
+        {
+            get { return fecha_ultimo_examen; }
+            set { fecha_ultimo_examen = value; }
+        }
+        private string direccionImagen;
+
+        public string DireccionImagen
+        {
+            get { return direccionImagen; }
+            set { direccionImagen = value; }
+        }
+         
     }
 }

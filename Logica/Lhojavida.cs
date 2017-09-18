@@ -25,10 +25,6 @@ namespace Logica
                 {
                     direccion = "hojavida.aspx";
                 }
-                else
-                {
-                    direccion = "editarhojavida.aspx";
-                }
             }
             return direccion;
         }

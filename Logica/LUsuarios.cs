@@ -13,7 +13,7 @@ namespace Logica
     {
         public UUsuario loggin(String user, String pass)
         {
-            DAO_usuarios users = new DAO_usuarios();
+            DAOusuarios users = new DAOusuarios();
             UUsuario data = new UUsuario();
             IpMac dirrec = new IpMac();
 
@@ -28,7 +28,16 @@ namespace Logica
 
                 data.Idrol = int.Parse(datos.Rows[0]["Id_Rol"].ToString());
                 data.Id_usuario = int.Parse(datos.Rows[0]["Id_Usuario"].ToString());
-                // data.Username = datos.Rows[0]["user"].ToString();
+                data.Nombre = (datos.Rows[0]["nombre"].ToString());
+                data.Apellido = (datos.Rows[0]["apellido"].ToString());
+                data.Username = (datos.Rows[0]["username"].ToString());
+                data.Idrol = int.Parse(datos.Rows[0]["id_rol"].ToString());
+                data.Tipo_de_sangre = (datos.Rows[0]["tipo_de_sangre"].ToString());
+                data.Edad = (datos.Rows[0]["edad"].ToString());
+                //data.Especialidad = (datos.Rows[0]["especialidad"].ToString());
+                //data.Fecha_ultimo_examen = (datos.Rows[0]["fecha_de_ultimo_examen"].ToString());
+                data.DireccionImagen = (datos.Rows[0]["imagen"].ToString());
+                
 
                 if (int.Parse(datos.Rows[0]["Id_Rol"].ToString()) == 1)
                 {
@@ -39,6 +48,7 @@ namespace Logica
                 {
 
                     data.Mensaje ="<script type='text/javascript'>window.location=\"Perfil.aspx\"</script>";
+
 
                 }
                 else if (data.Idrol == 3)
@@ -77,9 +87,11 @@ namespace Logica
             else 
             {
                 datos.Mensaje = user;
+
             }
             return datos;
         }
+
         public Udoctor ValidarSesiondoc(String rol,String user)
         {
             /*valida la session del doctor*/
@@ -95,5 +107,6 @@ namespace Logica
             }
             return datos;
         }
+        
     }
 }
