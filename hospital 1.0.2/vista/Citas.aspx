@@ -1,10 +1,4 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/vista/Usuario.master" CodeFile="~/logica/Citas.aspx.cs" Inherits="vista_Citas"%>
-
-
-
-
-
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -29,9 +23,9 @@
         <SortedDescendingCellStyle BackColor="#FFFDF8" />
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
     </asp:GridView>
-<asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="buscarcitasD" TypeName="Data.DAOcitas">
+<asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="buscarcitaid" TypeName="Logica.Lpacientes">
     <SelectParameters>
-        <asp:Parameter Name="fecha" Type="DateTime" />
+        <asp:SessionParameter DefaultValue="0" Name="id_user" SessionField="id_user" Type="Int32" />
     </SelectParameters>
 </asp:ObjectDataSource>
 </asp:Content>

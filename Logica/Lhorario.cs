@@ -12,25 +12,18 @@ namespace Logica
 {
     public class Lhorario
     {
-        public String validar_existe_horario(String vali,String rol)
+        public Uhorario validar_existe_horario(String vali, String iddoc)
         {
-            String direccion=null;
-            if (rol != "3")
+            Uhorario datos = new Uhorario();
+            if (vali == "0")
             {
-                direccion = "Login.aspx";
+                datos.Mensaje ="<script type='text/javascript'>window.location=\"Horariodoc.aspx\"</script>";
             }
             else
             {
-                if (vali == "0")
-                {
-                    direccion = "Horariodoc.aspx";
-                }
-                else 
-                {
-                    direccion = "verhorario.aspx";
-                }
+                datos.Mensaje =null;
             }
-            return direccion;
+            return datos;
 
         }
         public Uhorario valida(DateTime fecha, DateTime anterires)
@@ -67,7 +60,7 @@ namespace Logica
                         {
                             if (DateTime.Parse(horasini["1"]) < DateTime.Parse(horafin["1"]))
                             {
-                                datos.Horario = "dia:1-hi:" + horafin["1"] + "-hf:" + horafin["1"];
+                                datos.Horario = "dia:1-hi:" + horasini["1"] + "-hf:" + horafin["1"];
                                 bases.guardarhorariodoc(datos);
                             }
                             else
@@ -86,7 +79,7 @@ namespace Logica
                         {
                             if (DateTime.Parse(horasini["2"]) < DateTime.Parse(horafin["2"]))
                             {
-                                datos.Horario = "dia:2-hi:" + horafin["2"] + "-hf:" + horafin["2"];
+                                datos.Horario = "dia:2-hi:" + horasini["2"] + "-hf:" + horafin["2"];
                                 bases.guardarhorariodoc(datos);
                             }
                             else
@@ -105,7 +98,7 @@ namespace Logica
                         {
                             if (DateTime.Parse(horasini["3"]) < DateTime.Parse(horafin["3"]))
                             {
-                                datos.Horario = "dia:3-hi:" + horafin["3"] + "-hf:" + horafin["3"];
+                                datos.Horario = "dia:3-hi:" + horasini["3"] + "-hf:" + horafin["3"];
                                 bases.guardarhorariodoc(datos);
                             }
                             else
@@ -124,7 +117,7 @@ namespace Logica
                         {
                             if (DateTime.Parse(horasini["4"]) < DateTime.Parse(horafin["4"]))
                             {
-                                datos.Horario = "dia:4-hi:" + horafin["4"] + "-hf:" + horafin["4"];
+                                datos.Horario = "dia:4-hi:" + horasini["4"] + "-hf:" + horafin["4"];
                                 bases.guardarhorariodoc(datos);
                             }
                             else
@@ -143,7 +136,7 @@ namespace Logica
                         {
                             if (DateTime.Parse(horasini["5"]) < DateTime.Parse(horafin["5"]))
                             {
-                                datos.Horario = "dia:5-hi:" + horafin["5"] + "-hf:" + horafin["5"];
+                                datos.Horario = "dia:5-hi:" + horasini["5"] + "-hf:" + horafin["5"];
                                 bases.guardarhorariodoc(datos);
                             }
                             else
@@ -163,7 +156,7 @@ namespace Logica
                         {
                             if (DateTime.Parse(horasini["6"]) < DateTime.Parse(horafin["6"]))
                             {
-                                datos.Horario = "dia:6-hi:" + horafin["6"] + "-hf:" + horafin["6"];
+                                datos.Horario = "dia:6-hi:" + horasini["6"] + "-hf:" + horafin["6"];
                                 bases.guardarhorariodoc(datos);
                             }
                             else
@@ -182,7 +175,7 @@ namespace Logica
                         {
                             if (DateTime.Parse(horasini["7"]) < DateTime.Parse(horafin["7"]))
                             {
-                                datos.Horario = "dia:7-hi:" + horafin["7"] + "-hf:" + horafin["7"];
+                                datos.Horario = "dia:7-hi:" + horasini["7"] + "-hf:" + horafin["7"];
                                 bases.guardarhorariodoc(datos);
                             }
                             else

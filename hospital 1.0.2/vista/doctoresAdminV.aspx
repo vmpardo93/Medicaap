@@ -155,7 +155,7 @@
                       <td>&nbsp;</td>
                       <td class="auto-style10">&nbsp;</td>
                       <td>
-              <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="obtenerDoctores" TypeName="DAO_doctores" UpdateMethod="modificardoctor">
+              <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="obtenerDoctores" TypeName="Data.DAOdoctores" UpdateMethod="modificardoctor">
                   <UpdateParameters>
                       <asp:Parameter Name="username" Type="String" />
                       <asp:Parameter Name="clave" Type="String" />
