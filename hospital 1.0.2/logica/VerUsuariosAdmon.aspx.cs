@@ -18,8 +18,6 @@ public partial class vista_VerUsuariosAdmon : System.Web.UI.Page
     }
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
     {
-
-        DAO_doctores doctores = new DAO_doctores();
         GridViewRow row = this.GV_usuariosAdmon.SelectedRow;
         int id_usuario = int.Parse(GV_usuariosAdmon.DataKeys[row.RowIndex].Values[0].ToString());
         Session["usuarioSeleccionado"] = id_usuario;

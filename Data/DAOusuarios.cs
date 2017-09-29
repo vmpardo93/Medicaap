@@ -12,7 +12,7 @@ using System.Configuration;
 
 namespace Data
 {
-   public class DAO_usuarios
+   public class DAOusuarios
     {
         public DataTable login(UUsuario daoUser)
         {

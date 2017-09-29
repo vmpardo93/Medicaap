@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using Logica;
+using utilitarios;
 
 public partial class vista_ReporteHv : System.Web.UI.Page
 {
@@ -15,38 +17,26 @@ public partial class vista_ReporteHv : System.Web.UI.Page
     }
     protected DataSet obtenerDatos()
     {
-        Reportes datos = new Reportes();
-        DAO_doctores baseD = new DAO_doctores();
-        DataTable resultado = baseD.mostrarHV(int.Parse((Session["hvdoc"].ToString())));
-        if (resultado.Rows.Count == 0)
+        DataSet datos = new DataSet();
+
+        Lpacientes logica = new Lpacientes();
+        DataTable resultado = logica.mostrarhv((int.Parse(Session["id_user"].ToString())));
+        try
         {
-            Response.Redirect("Nohay.aspx");
+            int filas = resultado.Rows.Count;
+            string redirec;
+            redirec = logica.verificarReportes(filas);
+            Response.Redirect(redirec);
         }
-        DataTable data = new DataTable(); //dt
-        data = datos.doctor;
-        DataRow fila;
-        for (int i = 0; i < resultado.Rows.Count; i++)
+
+        catch (Exception ex)
         {
-            fila = data.NewRow();
 
-            fila["nombre"] = resultado.Rows[i]["nombre"].ToString();
-            fila["apellido"] = resultado.Rows[i]["apellido"].ToString();
-            fila["edad"] = resultado.Rows[i]["edad"].ToString();
-            fila["estudios"] = resultado.Rows[i]["estudios"].ToString();
-            fila["especialidad"] = resultado.Rows[i]["especialidad"].ToString();
-            fila["imagen"] = resultado.Rows[i]["imagen"].ToString();
-            fila["experiencia"] = resultado.Rows[i]["experiencia"].ToString();
-            fila["fellows"] = resultado.Rows[i]["fellows"].ToString();
-            fila["idiomas"] = resultado.Rows[i]["idiomas"].ToString();
-            fila["otros_estudios"] = resultado.Rows[i]["otros_estudios"].ToString();
-            fila["perfil_profesional"] = resultado.Rows[i]["perfil_profesional"].ToString();
-            fila["universidad"] = resultado.Rows[i]["universidad"].ToString();
-
-            data.Rows.Add(fila);
         }
 
 
+        datos = logica.enviarHv(resultado);
         return datos;
     }
-    
+
 }

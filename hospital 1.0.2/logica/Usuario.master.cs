@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Logica;
+using utilitarios;
 
 
 public partial class vista_Usuario : System.Web.UI.MasterPage
@@ -12,7 +14,11 @@ public partial class vista_Usuario : System.Web.UI.MasterPage
     protected void Page_Load(object sender, EventArgs e)
     {
         Response.Cache.SetNoStore();
-        
+
+        UUsuario user = (UUsuario)Session["objdata"];
+        L_Nombre.Text = "Bienvenido   " + user.Nombre;
+        Im_Perfil.ImageUrl = user.DireccionImagen;
+
     }
 
     /*protected void B_cita_Click(object sender, EventArgs e)
@@ -29,7 +35,7 @@ public partial class vista_Usuario : System.Web.UI.MasterPage
         Session["id_user"] = null;
         Session["user"] = null;
         Session["rol_user"] = null;
-        Response.Redirect("Login.aspx"); 
+        Response.Redirect("Login.aspx");
     }
     /* protected void B_Citas_Click(object sender, EventArgs e)
      {
@@ -49,3 +55,4 @@ public partial class vista_Usuario : System.Web.UI.MasterPage
 
      }*/
 }
+

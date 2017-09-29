@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using Logica;
+using utilitarios;
 
 public partial class vista_ReporteMedicamentos : System.Web.UI.Page
 {
@@ -16,35 +18,25 @@ public partial class vista_ReporteMedicamentos : System.Web.UI.Page
     }
     protected DataSet obtenerDatos()
     {
-        Reportes datos = new Reportes();
-        DAO_doctores baseD = new DAO_doctores();
-        DataTable resultado = baseD.ReporteMedicina(int.Parse(Session["id_user"].ToString()));
-        if(resultado.Rows.Count==0){
-            Response.Redirect("Nohay.aspx");
-        }
-        DataTable data = new DataTable(); //dt
-        data = datos.medicina;
-        DataRow fila;
-        for (int i = 0; i < resultado.Rows.Count; i++)
+        DataSet datos = new DataSet();
+
+        Lpacientes logica = new Lpacientes();
+        DataTable resultado = logica.buscarmedicinareporte((int.Parse(Session["id_user"].ToString())));
+        try
         {
-            fila = data.NewRow();
+            int filas = resultado.Rows.Count;
+            string redirec;
+            redirec = logica.verificarReportes(filas);
+            Response.Redirect(redirec);
+        }
 
-            fila["nombre"] = resultado.Rows[i]["nombre"].ToString();
-            fila["apellido"] = resultado.Rows[i]["apellido"].ToString();
-            fila["documento"] = resultado.Rows[i]["documento"].ToString();
-            fila["edad"] = resultado.Rows[i]["edad"].ToString();
-            fila["tipo_sangre"] = resultado.Rows[i]["tipo_de_sangre"].ToString();
-            fila["fecha_ult_examen"] = resultado.Rows[i]["fecha_de_ultimo_examen"].ToString();
-            fila["dosis"] = resultado.Rows[i]["dosis"].ToString();
-            fila["fecha_inicio"] = resultado.Rows[i]["fecha_ini"].ToString();
-            fila["fecha_fin"] = resultado.Rows[i]["fecha_fin"].ToString();
-            fila["nombre_medicina"] = resultado.Rows[i]["nombre_medicamento"].ToString();
+        catch (Exception ex)
+        {
 
-
-            data.Rows.Add(fila);
         }
 
 
+        datos = logica.enviarMedicinasR(resultado);
         return datos;
     }
 }

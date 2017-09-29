@@ -13,7 +13,7 @@ public partial class modificadoc : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         LUsuarios logica = new LUsuarios();
-        Udoctor datos= logica.ValidarSesiondoc(Session["rol_user"].ToString(),Session["user"].ToString());
+        Udoctor datos = logica.ValidarSesiondoc(Session["rol_user"].ToString(), Session["user"].ToString());
         this.RegisterStartupScript("mensaje", datos.Mensaje);
 
         Response.Cache.SetCacheability(HttpCacheability.ServerAndNoCache);
@@ -27,9 +27,11 @@ public partial class modificadoc : System.Web.UI.Page
         GridViewRow row = (GridViewRow)GridView1.Rows[index];
         FileUpload file = (FileUpload)row.FindControl("Imagen");
         Label imagen = (Label)row.FindControl("Label1");
-        modificado(file, imagen);
-        e.NewValues.Add("imagen", datos.Foto);
-  /*
+        LDoctor doc = new LDoctor();
+        /* modificado(file, imagen);
+         e.NewValues.Add("imagen", datos.Foto);*/
+        string aux;
+
         if (file.HasFile)
         {
             String archivo = System.IO.Path.GetFileName(file.PostedFile.FileName);
@@ -49,31 +51,6 @@ public partial class modificadoc : System.Web.UI.Page
         else
         {
             e.NewValues.Add("imagen", imagen.Text);
-        }*/
-    }
-    public void modificado(FileUpload FU_imge,Label texte) 
-    {
-        Udoctor datos = new Udoctor();
-        LDoctor logica= new LDoctor();
-        string saveLocation = "";
-        string save = "";
-
-        ClientScriptManager cm = this.ClientScript;
-        String nombreArchivo = System.IO.Path.GetFileNameWithoutExtension(FU_imge.PostedFile.FileName);
-        string extension = System.IO.Path.GetExtension(FU_imge.PostedFile.FileName);
-        nombreArchivo = nombreArchivo + DateTime.Now.ToFileTime().ToString() + extension;
-
-        saveLocation = (Server.MapPath("~/Imagenes/Peliculas") + "/" + nombreArchivo);
-        save = ("~/Imagenes/Peliculas") + "/" + nombreArchivo;
-        try
-        {
-
-            string url = logica.modificadoc(save, saveLocation, FU_imge.HasFile,texte);
-            FU_imge.PostedFile.SaveAs(datos.Foto);
-        }
-        catch (Exception exc)
-        {
-
         }
     }
 }

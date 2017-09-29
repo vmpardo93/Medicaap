@@ -41,12 +41,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IpMac.cs" />
+    <Compile Include="Reportes\Reportes.Designer.cs">
+      <DependentUpon>Reportes.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Ualergia.cs" />
     <Compile Include="Ucitas.cs" />
     <Compile Include="Udoctor.cs" />
     <Compile Include="Uhojavida.cs" />
     <Compile Include="Uhorario.cs" />
+    <Compile Include="Umedicina.cs" />
+    <Compile Include="Uparametrizacion.cs" />
     <Compile Include="UUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Reportes\Reportes.xsc">
+      <DependentUpon>Reportes.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Reportes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Reportes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reportes\Reportes.xss">
+      <DependentUpon>Reportes.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

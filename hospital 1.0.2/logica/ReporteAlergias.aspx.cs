@@ -5,6 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using Logica;
+using Data;
+using System.Collections;
+using utilitarios;
 
 public partial class vista_ReporteAlergias : System.Web.UI.Page
 {
@@ -15,32 +19,25 @@ public partial class vista_ReporteAlergias : System.Web.UI.Page
     }
     protected DataSet obtenerDatos()
     {
-        Reportes datos = new Reportes();
-        DAO_doctores baseD = new DAO_doctores();
-        DataTable resultado = baseD.alegiareporte(int.Parse(Session["id_user"].ToString()));
-        if (resultado.Rows.Count == 0)
-        {
-            Response.Redirect("Nohay.aspx");
-        }
-        DataTable data = new DataTable(); //dt
-        data = datos.alergia;
-        DataRow fila;
-        for (int i = 0; i < resultado.Rows.Count; i++)
-        {
-            fila = data.NewRow();
+        DataSet datos = new DataSet();
 
-            fila["nombre"] = resultado.Rows[i]["nombre"].ToString();
-            fila["apellido"] = resultado.Rows[i]["apellido"].ToString();
-            fila["documento"] = resultado.Rows[i]["documento"].ToString();
-            fila["edad"] = resultado.Rows[i]["edad"].ToString();
-            fila["tipo_sangre"] = resultado.Rows[i]["tipo_de_sangre"].ToString();
-            fila["fecha_ult_examen"] = resultado.Rows[i]["fecha_de_ultimo_examen"].ToString();
-            fila["descripcion_alergia"] = resultado.Rows[i]["descripcion"].ToString();
-            fila["nombre_alergia"] = resultado.Rows[i]["nombre_alergia"].ToString();
-            data.Rows.Add(fila);
+        Lpacientes logica = new Lpacientes();
+        DataTable resultado = logica.buscaralergiareporte((int.Parse(Session["id_user"].ToString())));
+        try
+        {
+            int filas = resultado.Rows.Count;
+            string redirec;
+            redirec = logica.verificarReportes(filas);
+            Response.Redirect(redirec);
+        }
+
+        catch (Exception ex)
+        {
+
         }
 
 
+        datos = logica.enviarAlergiasR(resultado);
         return datos;
     }
 }

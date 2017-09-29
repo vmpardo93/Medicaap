@@ -60,23 +60,23 @@ public partial class vista_AgregarAdmon : System.Web.UI.Page
 
     protected void updating(object sender, GridViewUpdateEventArgs e)
     {
-   
-            int index = e.RowIndex;
-            GridViewRow row = (GridViewRow)GV_parametriza.Rows[index];
-            DropDownList duracion = (DropDownList)row.FindControl("DDL_duracion");
-            DropDownList hora_inicio1 = (DropDownList)row.FindControl("DDL_horainicio");
-            DropDownList hora_fin1 = (DropDownList)row.FindControl("DDL_horafin");
-            String hora_inicio = hora_inicio1.SelectedValue;
-            String hora_fin = hora_fin1.SelectedValue;
-            String duraci = duracion.SelectedValue;
-        /*    if (DateTime.Parse(hora_inicio) > DateTime.Parse(hora_fin)) {
-                throw new System.Exception("la hora de inicio no puede ser menor a la final");
-                Response.Redirect("AgregarAdmon.aspx");
-            }//creo que esto de abajo no va esta doblando las variables
-        */
-            e.NewValues.Add("duracion_citas", duraci);
-            e.NewValues.Add("hora_inicio", hora_inicio);
-            e.NewValues.Add("hora_fin", hora_fin);
-        
+
+
+        int index = e.RowIndex;
+        GridViewRow row = (GridViewRow)GV_parametriza.Rows[index];
+        DropDownList duracion = (DropDownList)row.FindControl("DDL_duracion");
+        DropDownList hora_inicio1 = (DropDownList)row.FindControl("DDL_horainicio");
+        DropDownList hora_fin1 = (DropDownList)row.FindControl("DDL_horafin");
+        String hora_inicio = hora_inicio1.SelectedValue;
+        String hora_fin = hora_fin1.SelectedValue;
+        String duraci = duracion.SelectedValue;
+
+        Lparametriza logica = new Lparametriza();
+        logica.parametrizacitas(duraci, hora_inicio, hora_fin); 
+
+        e.NewValues.Add("duracion_citas", duraci);
+        e.NewValues.Add("hora_inicio", hora_inicio);
+        e.NewValues.Add("hora_fin", hora_fin);
+
     }
 }

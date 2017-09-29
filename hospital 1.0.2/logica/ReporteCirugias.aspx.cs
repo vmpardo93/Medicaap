@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using Logica;
+using utilitarios;
 
 public partial class vista_ReporteCirugias : System.Web.UI.Page
 {
@@ -15,35 +17,25 @@ public partial class vista_ReporteCirugias : System.Web.UI.Page
     }
     protected DataSet obtenerDatos()
     {
-        Reportes datos = new Reportes();
-        DAO_doctores baseD = new DAO_doctores();
-        DataTable resultado = baseD.cirugiasreporte(int.Parse(Session["id_user"].ToString()));
-        if (resultado.Rows.Count == 0)
+        DataSet datos = new DataSet();
+
+        Lpacientes logica = new Lpacientes();
+        DataTable resultado = logica.buscarcirugiareporte((int.Parse(Session["id_user"].ToString())));
+        try
         {
-            Response.Redirect("Nohay.aspx");
+            int filas = resultado.Rows.Count;
+            string redirec;
+            redirec = logica.verificarReportes(filas);
+            Response.Redirect(redirec);
         }
-        DataTable data = new DataTable(); //dt
-        data = datos.cirugias;
-        DataRow fila;
-        for (int i = 0; i < resultado.Rows.Count; i++)
+
+        catch (Exception ex)
         {
-            fila = data.NewRow();
 
-            fila["nombre"] = resultado.Rows[i]["nombre"].ToString();
-            fila["apellido"] = resultado.Rows[i]["apellido"].ToString();
-            fila["documento"] = resultado.Rows[i]["documento"].ToString();
-            fila["edad"] = resultado.Rows[i]["edad"].ToString();
-            fila["tipo_sangre"] = resultado.Rows[i]["tipo_de_sangre"].ToString();
-            fila["fecha_ult_examen"] = resultado.Rows[i]["fecha_de_ultimo_examen"].ToString();
-            fila["nombre_cirugia"] = resultado.Rows[i]["nombre_cirugia"].ToString();
-            fila["descripcion"] = resultado.Rows[i]["descripcion"].ToString();
-            fila["fecha_cirugia"] = resultado.Rows[i]["fecha_cirugia"].ToString();
-            
-
-            data.Rows.Add(fila);
         }
 
 
+        datos = logica.enviarCirugiasR(resultado);
         return datos;
     }
 }

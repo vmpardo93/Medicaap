@@ -98,5 +98,22 @@ namespace Logica
             }
             return datos;
         }
+        public Ucitas validar(DateTime fecha,DateTime anteriores)
+        {
+            Ucitas datos = new Ucitas();
+            if (anteriores < fecha) 
+            {
+                
+                datos.Ver = false;
+            }
+            return datos;
+        }
+        public void cancelarCitasUsuario(int id_usuario)
+        {
+            DAOcitas citas = new DAOcitas();
+            citas.cancelarCitaUsuario(id_usuario);
+
+
+        }
     }
 }

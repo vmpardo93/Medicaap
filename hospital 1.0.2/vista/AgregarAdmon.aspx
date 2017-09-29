@@ -204,13 +204,7 @@
                     <SortedDescendingCellStyle BackColor="#D4DFE1" />
                     <SortedDescendingHeaderStyle BackColor="#15524A" />
                 </asp:GridView>
-                <asp:ObjectDataSource ID="ODS_parametriza" runat="server" SelectMethod="mostrarparametrizacion" TypeName="Data.DAOparametriza" UpdateMethod="editarparametrizacion">
-                    <UpdateParameters>
-                        <asp:Parameter Name="duracion_citas" Type="String" />
-                        <asp:Parameter Name="hora_inicio" Type="String" />
-                        <asp:Parameter Name="hora_fin" Type="String" />
-                        <asp:Parameter Name="id_paremetrizacion" Type="Int32" />
-                    </UpdateParameters>
+                <asp:ObjectDataSource ID="ODS_parametriza" runat="server" SelectMethod="mostrarparametrizacion" TypeName="Data.DAOparametriza">
                 </asp:ObjectDataSource>
             </td>
             <td colspan="2" class="auto-style29">&nbsp;</td>

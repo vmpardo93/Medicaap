@@ -17,8 +17,9 @@ public partial class MasterDoctores : System.Web.UI.MasterPage
         String nombre = Session["user"] as String;
         Object nomb = Session["objdata"] as Object;
 
+        UUsuario user = (UUsuario)Session["objdata"];
 
-        Im_Perfil.ImageUrl = datos.Imagen;
+        Im_Perfil.ImageUrl = user.DireccionImagen;
         Response.Cache.SetNoStore();
     }
     protected void B_salir_Click(object sender, EventArgs e)

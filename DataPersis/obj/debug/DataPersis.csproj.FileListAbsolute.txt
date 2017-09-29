@@ -1,0 +1,6 @@
+C:\Users\angie paez\Dropbox\Clinica\Medicaap_def\Medicaap_\DataPersis\bin\Debug\DataPersis.dll.config
+C:\Users\angie paez\Dropbox\Clinica\Medicaap_def\Medicaap_\DataPersis\bin\Debug\DataPersis.dll
+C:\Users\angie paez\Dropbox\Clinica\Medicaap_def\Medicaap_\DataPersis\bin\Debug\DataPersis.pdb
+C:\Users\angie paez\Dropbox\Clinica\Medicaap_def\Medicaap_\DataPersis\obj\Debug\DataPersis.csprojResolveAssemblyReference.cache
+C:\Users\angie paez\Dropbox\Clinica\Medicaap_def\Medicaap_\DataPersis\obj\Debug\DataPersis.dll
+C:\Users\angie paez\Dropbox\Clinica\Medicaap_def\Medicaap_\DataPersis\obj\Debug\DataPersis.pdb

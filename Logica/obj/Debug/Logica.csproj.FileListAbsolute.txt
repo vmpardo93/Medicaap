@@ -1,69 +1,22 @@
-<<<<<<< HEAD
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\bin\Debug\Logica.dll
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\bin\Debug\Logica.pdb
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\obj\Debug\Logica.dll
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\obj\Debug\Logica.pdb
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\bin\Debug\Data.dll
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\bin\Debug\utilitarios.dll
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\bin\Debug\Npgsql.dll
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\bin\Debug\Data.pdb
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\bin\Debug\utilitarios.pdb
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\bin\Debug\Npgsql.pdb
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\bin\Debug\Npgsql.xml
-C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\bin\Debug\Logica.dll
-C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\bin\Debug\Logica.pdb
-C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\bin\Debug\Data.dll
-C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\bin\Debug\utilitarios.dll
-C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\bin\Debug\Npgsql.dll
-C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\bin\Debug\Data.pdb
-C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\bin\Debug\utilitarios.pdb
-C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
-C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\obj\Debug\Logica.dll
-C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\obj\Debug\Logica.pdb
-C:\Users\angie paez\Desktop\Medicaap\Logica\bin\Debug\Logica.dll
-C:\Users\angie paez\Desktop\Medicaap\Logica\bin\Debug\Logica.pdb
-C:\Users\angie paez\Desktop\Medicaap\Logica\bin\Debug\Data.dll
-C:\Users\angie paez\Desktop\Medicaap\Logica\bin\Debug\utilitarios.dll
-C:\Users\angie paez\Desktop\Medicaap\Logica\bin\Debug\Npgsql.dll
-C:\Users\angie paez\Desktop\Medicaap\Logica\bin\Debug\Data.pdb
-C:\Users\angie paez\Desktop\Medicaap\Logica\bin\Debug\utilitarios.pdb
-C:\Users\angie paez\Desktop\Medicaap\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
-C:\Users\angie paez\Desktop\Medicaap\Logica\obj\Debug\Logica.dll
-C:\Users\angie paez\Desktop\Medicaap\Logica\obj\Debug\Logica.pdb
-C:\Users\angie paez\Desktop\Medicaap\Logica\bin\Debug\Npgsql.pdb
-C:\Users\angie paez\Desktop\Medicaap\Logica\bin\Debug\Npgsql.xml
-=======
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\bin\Debug\Logica.dll
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\bin\Debug\Logica.pdb
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\obj\Debug\Logica.dll
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\obj\Debug\Logica.pdb
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\bin\Debug\Data.dll
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\bin\Debug\utilitarios.dll
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\bin\Debug\Npgsql.dll
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\bin\Debug\Data.pdb
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\bin\Debug\utilitarios.pdb
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\bin\Debug\Npgsql.pdb
-C:\Users\Acer\Desktop\Copia de seguridad ISII\Logica\bin\Debug\Npgsql.xml
-C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\bin\Debug\Logica.dll
-C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\bin\Debug\Logica.pdb
-C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\bin\Debug\Data.dll
-C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\bin\Debug\utilitarios.dll
-C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\bin\Debug\Npgsql.dll
-C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\bin\Debug\Data.pdb
-C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\bin\Debug\utilitarios.pdb
-C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
-C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\obj\Debug\Logica.dll
-C:\Users\angie paez\Dropbox\Clinica\hospital 1.0.2\Medicaap\Logica\obj\Debug\Logica.pdb
-C:\Users\Darkgrey93\Source\Repos\Medicaap\Logica\bin\Debug\Logica.dll
-C:\Users\Darkgrey93\Source\Repos\Medicaap\Logica\bin\Debug\Logica.pdb
-C:\Users\Darkgrey93\Source\Repos\Medicaap\Logica\bin\Debug\Data.dll
-C:\Users\Darkgrey93\Source\Repos\Medicaap\Logica\bin\Debug\utilitarios.dll
-C:\Users\Darkgrey93\Source\Repos\Medicaap\Logica\bin\Debug\Npgsql.dll
-C:\Users\Darkgrey93\Source\Repos\Medicaap\Logica\bin\Debug\Data.pdb
-C:\Users\Darkgrey93\Source\Repos\Medicaap\Logica\bin\Debug\utilitarios.pdb
-C:\Users\Darkgrey93\Source\Repos\Medicaap\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
-C:\Users\Darkgrey93\Source\Repos\Medicaap\Logica\obj\Debug\Logica.dll
-C:\Users\Darkgrey93\Source\Repos\Medicaap\Logica\obj\Debug\Logica.pdb
->>>>>>> 77deaa4d396e29996634428ecbe8854477fced92
+C:\Users\Darkgrey93\Desktop\Medicaap\Logica\bin\Debug\Logica.dll
+C:\Users\Darkgrey93\Desktop\Medicaap\Logica\bin\Debug\Logica.pdb
+C:\Users\Darkgrey93\Desktop\Medicaap\Logica\bin\Debug\Data.dll
+C:\Users\Darkgrey93\Desktop\Medicaap\Logica\bin\Debug\utilitarios.dll
+C:\Users\Darkgrey93\Desktop\Medicaap\Logica\bin\Debug\Npgsql.dll
+C:\Users\Darkgrey93\Desktop\Medicaap\Logica\bin\Debug\Data.pdb
+C:\Users\Darkgrey93\Desktop\Medicaap\Logica\bin\Debug\utilitarios.pdb
+C:\Users\Darkgrey93\Desktop\Medicaap\Logica\bin\Debug\Npgsql.pdb
+C:\Users\Darkgrey93\Desktop\Medicaap\Logica\bin\Debug\Npgsql.xml
+C:\Users\Darkgrey93\Desktop\Medicaap\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+C:\Users\Darkgrey93\Desktop\Medicaap\Logica\obj\Debug\Logica.dll
+C:\Users\Darkgrey93\Desktop\Medicaap\Logica\obj\Debug\Logica.pdb
+C:\Users\angie paez\Dropbox\Clinica\Medicaap_def\Medicaap_\Logica\bin\Debug\Logica.dll
+C:\Users\angie paez\Dropbox\Clinica\Medicaap_def\Medicaap_\Logica\bin\Debug\Logica.pdb
+C:\Users\angie paez\Dropbox\Clinica\Medicaap_def\Medicaap_\Logica\bin\Debug\Data.dll
+C:\Users\angie paez\Dropbox\Clinica\Medicaap_def\Medicaap_\Logica\bin\Debug\utilitarios.dll
+C:\Users\angie paez\Dropbox\Clinica\Medicaap_def\Medicaap_\Logica\bin\Debug\Npgsql.dll
+C:\Users\angie paez\Dropbox\Clinica\Medicaap_def\Medicaap_\Logica\bin\Debug\Data.pdb
+C:\Users\angie paez\Dropbox\Clinica\Medicaap_def\Medicaap_\Logica\bin\Debug\utilitarios.pdb
+C:\Users\angie paez\Dropbox\Clinica\Medicaap_def\Medicaap_\Logica\obj\Debug\Logica.csprojResolveAssemblyReference.cache
+C:\Users\angie paez\Dropbox\Clinica\Medicaap_def\Medicaap_\Logica\obj\Debug\Logica.dll
+C:\Users\angie paez\Dropbox\Clinica\Medicaap_def\Medicaap_\Logica\obj\Debug\Logica.pdb

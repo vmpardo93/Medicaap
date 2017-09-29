@@ -66,7 +66,7 @@ namespace Logica
         {
             /*valida la session del paciente*/
             UUsuario datos = new UUsuario();
-            if (int.Parse(rol) != 1)
+            if (int.Parse(rol) != 2)
             {
                 datos.Mensaje = "<script type='text/javascript'>window.location=\"Login.aspx\"</script>";
             }

@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using utilitarios;
 
 namespace Data
 {
@@ -36,7 +37,7 @@ namespace Data
             }
             return parametri;
         }
-        public DataTable editarparametrizacion(String duracion_citas, String hora_inicio, String hora_fin, int id_paremetrizacion)
+        public DataTable editarparametrizacion(Uparametrizacion datos)
         {
             DataTable parametri = new DataTable();
             NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);
@@ -44,10 +45,9 @@ namespace Data
             {
                 NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter(" hospital.f_edita_tiempo", conection);
                 dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                dataAdapter.SelectCommand.Parameters.Add("_id_horario", NpgsqlDbType.Integer).Value = id_paremetrizacion;
-                dataAdapter.SelectCommand.Parameters.Add("_duracion_citas", NpgsqlDbType.Text).Value = duracion_citas;
-                dataAdapter.SelectCommand.Parameters.Add("_hora_inicio", NpgsqlDbType.Text).Value = hora_inicio;
-                dataAdapter.SelectCommand.Parameters.Add("_hora_fin", NpgsqlDbType.Text).Value = hora_fin;
+                dataAdapter.SelectCommand.Parameters.Add("_duracion_citas", NpgsqlDbType.Text).Value =datos.Duracion;
+                dataAdapter.SelectCommand.Parameters.Add("_hora_inicio", NpgsqlDbType.Text).Value =datos.Inicio;
+                dataAdapter.SelectCommand.Parameters.Add("_hora_fin", NpgsqlDbType.Text).Value = datos.Fin;
                 conection.Open();
                 dataAdapter.Fill(parametri);
             }

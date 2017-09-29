@@ -49,6 +49,7 @@
     <Compile Include="DAOhorario.cs" />
     <Compile Include="DAOmedicinas.cs" />
     <Compile Include="DAOpaciente.cs" />
+    <Compile Include="DAOparametriza.cs" />
     <Compile Include="DAOusuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

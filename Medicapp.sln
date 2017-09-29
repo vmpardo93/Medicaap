@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "hospital 1.0.2", "http://localhost:8605", "{724EBF62-9C6F-4EFD-A841-3FE773CEF4AE}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
@@ -31,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logica", "Logica\Logica.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "utilitarios", "utilitarios\utilitarios.csproj", "{6DD05DBE-4798-4542-AEE5-EAB5DBE4E41F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataPersis", "DataPersis\DataPersis.csproj", "{C2763F8D-89D5-475E-828D-1B2AFF033002}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +53,10 @@ Global
 		{6DD05DBE-4798-4542-AEE5-EAB5DBE4E41F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DD05DBE-4798-4542-AEE5-EAB5DBE4E41F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DD05DBE-4798-4542-AEE5-EAB5DBE4E41F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2763F8D-89D5-475E-828D-1B2AFF033002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2763F8D-89D5-475E-828D-1B2AFF033002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2763F8D-89D5-475E-828D-1B2AFF033002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2763F8D-89D5-475E-828D-1B2AFF033002}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

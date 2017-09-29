@@ -30,6 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Devart.Data.Linq, Version=4.7.1317.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="Devart.Data.SqlServer.Linq, Version=4.7.1317.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -41,12 +43,14 @@
     <Reference Include="UIAutomationClient" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Lalergias.cs" />
     <Compile Include="Lcitas.cs" />
     <Compile Include="LDoctor.cs" />
     <Compile Include="Lhojavida.cs" />
     <Compile Include="Lhorario.cs" />
     <Compile Include="Lmedicinas.cs" />
     <Compile Include="Lpacientes.cs" />
+    <Compile Include="Lparametriza.cs" />
     <Compile Include="LUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

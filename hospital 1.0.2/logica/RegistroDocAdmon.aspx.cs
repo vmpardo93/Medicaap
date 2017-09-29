@@ -22,6 +22,8 @@ public partial class vista_RegistroDocAdmon : System.Web.UI.Page
 
         this.RegisterStartupScript("mensaje", datos.Mensaje);
  
+        
+
     }
     protected void B_enviar_Click(object sender, EventArgs e)
     {

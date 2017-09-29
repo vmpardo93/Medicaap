@@ -102,7 +102,7 @@ namespace Data
             }
             return usuario;
         }
-        public void modificardoctordoc(string username, string clave, string nombre, string apellido, string edad, string estudios, string especialidad, string imagen, int id_usuario, int id_user, string documento, string correo)
+        public void modificardoctordoc(string username, string clave, string nombre, string apellido, string edad, string estudios, string especialidad, string foto, int id_usuario, int id_user, string documento, string correo)
         {
             DataTable Usuario = new DataTable();
             NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["ConexionHospital"].ConnectionString);
@@ -118,7 +118,7 @@ namespace Data
                 dataAdapter.SelectCommand.Parameters.Add("edad_", NpgsqlDbType.Text).Value = edad;
                 dataAdapter.SelectCommand.Parameters.Add("estudios_", NpgsqlDbType.Text).Value = estudios;
                 dataAdapter.SelectCommand.Parameters.Add("especialidad_", NpgsqlDbType.Text).Value = especialidad;
-                dataAdapter.SelectCommand.Parameters.Add("imagen_", NpgsqlDbType.Text).Value = imagen;
+                dataAdapter.SelectCommand.Parameters.Add("imagen_", NpgsqlDbType.Text).Value = foto;
                 dataAdapter.SelectCommand.Parameters.Add("documento_", NpgsqlDbType.Text).Value = documento;
                 dataAdapter.SelectCommand.Parameters.Add("correo_", NpgsqlDbType.Text).Value = correo;
 

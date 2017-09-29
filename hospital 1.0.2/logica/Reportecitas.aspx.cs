@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using Logica;
+using utilitarios;
 
 public partial class vista_Reportecitas : System.Web.UI.Page
 {
@@ -17,45 +19,26 @@ public partial class vista_Reportecitas : System.Web.UI.Page
 
     protected DataSet obtenerDatos()
     {
-        Reportes datos = new Reportes();
-        DAO_doctores baseD = new DAO_doctores();
-        DataTable resultado;
-        if (Session["usuarioSeleccionado"] != null)
+        DataSet datos = new DataSet();
+
+        Lpacientes logica = new Lpacientes();
+        DataTable resultado = logica.buscarcitareporte((int.Parse(Session["id_user"].ToString())));
+        try
         {
-            resultado = baseD.buscarcitareporte(int.Parse(Session["usuarioSeleccionado"].ToString()));
+            int filas = resultado.Rows.Count;
+            string redirec;
+            redirec = logica.verificarReportes(filas);
+            Response.Redirect(redirec);
         }
-        else { 
-            resultado = baseD.buscarcitareporte(int.Parse(Session["id_user"].ToString()));
-        }
-        if (resultado.Rows.Count == 0)
+
+        catch (Exception ex)
         {
-            Response.Redirect("Nohay.aspx");
-        }
-        DataTable data = new DataTable(); //dt
-        data = datos.citas;
-        DataRow fila;
-        for (int i = 0; i < resultado.Rows.Count; i++)
-        {
-            fila = data.NewRow();
 
-            fila["nombre"] = resultado.Rows[i]["nombre"].ToString();
-            fila["apellido"] = resultado.Rows[i]["apellido"].ToString();
-            fila["documento"] = resultado.Rows[i]["documento"].ToString();
-            fila["edad"] = resultado.Rows[i]["edad"].ToString();
-            fila["tipo_sangre"] = resultado.Rows[i]["tipo_de_sangre"].ToString();
-            fila["fecha_ult_examen"] = resultado.Rows[i]["fecha_de_ultimo_examen"].ToString();
-            fila["hora_ini_cita"] = resultado.Rows[i]["hora_inicio"].ToString();
-            fila["hora_fin_cita"] = resultado.Rows[i]["hora_fin"].ToString();
-            fila["tipo"] = resultado.Rows[i]["tipo"].ToString();
-            fila["diagnostico"] = resultado.Rows[i]["diagnostico"].ToString();
-            fila["nombredoc"] = resultado.Rows[i]["nombredoc"].ToString();
-            fila["apellidodoc"] = resultado.Rows[i]["apellidodoc"].ToString();
-
-            data.Rows.Add(fila);
         }
 
 
+        datos = logica.enviarCitasR(resultado);
         return datos;
     }
-
 }
+
