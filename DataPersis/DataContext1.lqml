@@ -2,37 +2,29 @@
 <Database Name="medicapp1.3" EntityNamespace="Medicapp13Context" ContextNamespace="Medicapp13Context" Class="Medicapp13DataContext" xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" ed:Guid="44da901f-bc19-4879-b7c7-fee150f0056d" Provider="Devart.Data.PostgreSql.Linq.Provider.PgSqlDataProvider, Devart.Data.PostgreSql.Linq" Extended="true" xmlns="http://schemas.devart.com/linqconnect/mapping">
   <Connection Mode="ConnectionString" ConnectionString="User Id=postgres;Password=1234;Host=localhost;Database=medicapp1.3;Persist Security Info=True" Provider="Devart.Data.PostgreSql" />
   <Table Name="hospital.medicinas" Member="Medicinas">
-    <Type Name="Medicina" ed:Guid="a3f2ca1a-acdf-48f9-a45d-3817d0432b35">
-      <Column Name="id_medicina" Member="IdMedicina" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="19bef742-b977-4fdd-9fbc-de440f485de7" />
-      <Column Name="nombre_medicina" Member="NombreMedicina" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="true" ed:Guid="69206ed0-ba3e-45c6-8596-32bf1466fec6" />
+    <Type Name="Medicina" Id="ID1" ed:Guid="30e9b387-8c93-467b-a627-3c52e36dd783">
+      <Column Name="id_medicina" Member="IdMedicina" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="549fb9ec-022a-41b2-9ea4-1e1c09291e97" />
+      <Column Name="nombre_medicina" Member="NombreMedicina" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="true" ed:Guid="d4da3581-ff87-45eb-b963-25fcc94021da" />
     </Type>
   </Table>
   <Table Name="hospital.tipo" Member="Tipos">
-    <Type Name="Tipo" ed:Guid="99766ec6-78ca-40ee-97ee-06443972c121">
-      <Column Name="id_tipo" Member="IdTipo" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="34cc380f-c1f5-4d58-8d80-77a852193c35" />
-      <Column Name="tipo" Member="Tipo1" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="true" ed:Guid="bbc57df0-b6a0-436a-a5d8-af80900a857f" />
-    </Type>
-  </Table>
-  <Table Name="hospital.alergicita" Member="Alergicitas">
-    <Type Name="Alergicita" ed:Guid="075c6f7d-6a84-40f2-b2ae-9eda5e97ba59">
-      <Column Name="id_alergias" Member="IdAlergias" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="01e4c686-a690-4ea1-961b-d0762cac9bdf" />
-      <Column Name="descripcion_alergia" Member="DescripcionAlergia" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="true" ed:Guid="8b42939a-90c7-4489-bfec-c83a08ea91ca" />
-      <Column Name="id_user" Member="IdUser" Type="System.Int32" DbType="INT4 NOT NULL" CanBeNull="false" UpdateCheck="Never" ed:ValidateRequired="true" ed:Guid="cbd5261d-0bc3-42ec-802b-bc7b1b78edb1" />
-      <Column Name="id_cita" Member="IdCita" Type="System.Int32" DbType="INT4 NOT NULL" CanBeNull="false" UpdateCheck="Never" ed:ValidateRequired="true" ed:Guid="baa928dc-013e-422e-83f5-fe9a9496a210" />
+    <Type Name="Tipo" Id="ID2" ed:Guid="ca320e98-f180-4593-8af5-c2c891872f12">
+      <Column Name="id_tipo" Member="IdTipo" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="e737572e-a35b-4600-a15b-9dacdc735fc7" />
+      <Column Name="tipo" Member="Tipo1" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="true" ed:Guid="5f5381c3-af32-4b1a-a2ad-a10000f763d1" />
     </Type>
   </Table>
   <Table Name="hospital.alergia" Member="Alergias">
-    <Type Name="Alergia" ed:Guid="3824a927-dbf0-46c6-b092-84cfbdd983d9">
-      <Column Name="id_alergia" Member="IdAlergia" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="4d7ea933-4a7a-47d3-98c5-34185f7f386e" />
-      <Column Name="nombre_alergia" Member="NombreAlergia" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="true" ed:Guid="c1f292f4-1fe8-4e60-aa0e-d19e1f8ae5ac" />
+    <Type Name="Alergia" Id="ID3" ed:Guid="ac9346fb-b825-4f62-ae56-8eae4cae2f09">
+      <Column Name="id_alergia" Member="IdAlergia" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="c00abd2f-22f2-4193-a302-457a1206ba13" />
+      <Column Name="nombre_alergia" Member="NombreAlergia" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="true" ed:Guid="93336d2a-da28-4b3c-956f-85ecc70600c9" />
     </Type>
   </Table>
   <Table Name="hospital.parametrizacion" Member="Parametrizacions">
-    <Type Name="Parametrizacion" ed:Guid="56ad2032-3fac-439c-8e09-f2306fa86c69">
-      <Column Name="id_paremetrizacion" Member="IdParemetrizacion" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="6d1b5873-fb94-4cfe-863f-43dda95ffdc7" />
-      <Column Name="duracion_citas" Member="DuracionCitas" Type="System.TimeSpan" DbType="TIME" CanBeNull="true" UpdateCheck="Never" Precision="6" ed:ValidateRequired="false" ed:Guid="901e7e90-2bc1-49c7-9c50-e5488cd4512a" />
-      <Column Name="hora_inicio" Member="HoraInicio" Type="System.TimeSpan" DbType="TIME" CanBeNull="true" UpdateCheck="Never" Precision="6" ed:ValidateRequired="false" ed:Guid="0ada8971-0a07-44d3-9685-e5762a3ad52c" />
-      <Column Name="hora_fin" Member="HoraFin" Type="System.TimeSpan" DbType="TIME" CanBeNull="true" UpdateCheck="Never" Precision="6" ed:ValidateRequired="false" ed:Guid="d709b5bf-9cb5-4196-9509-29246fa2ad84">
+    <Type Name="Parametrizacion" Id="ID4" ed:Guid="ed62d70e-9d65-40da-9f10-6e72d0259009">
+      <Column Name="id_paremetrizacion" Member="IdParemetrizacion" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="a86ead80-29e8-4df8-b31f-b6ebda227442" />
+      <Column Name="duracion_citas" Member="DuracionCitas" Type="System.TimeSpan" DbType="TIME" CanBeNull="true" UpdateCheck="Never" Precision="6" ed:ValidateRequired="false" ed:Guid="58d844b1-1d5e-4495-a9a0-00004c1a3c2b" />
+      <Column Name="hora_inicio" Member="HoraInicio" Type="System.TimeSpan" DbType="TIME" CanBeNull="true" UpdateCheck="Never" Precision="6" ed:ValidateRequired="false" ed:Guid="d14edf6e-80ac-46b5-9c0c-bc626af0c4d4" />
+      <Column Name="hora_fin" Member="HoraFin" Type="System.TimeSpan" DbType="TIME" CanBeNull="true" UpdateCheck="Never" Precision="6" ed:ValidateRequired="false" ed:Guid="3244f495-092b-49e3-8a9e-52129e752fea">
         <Documentation>
           <Summary>hora para iniciar a hacer citas
 
@@ -42,60 +34,779 @@
     </Type>
   </Table>
   <Table Name="hospital.hoja_de_vida" Member="HojaDeVidas">
-    <Type Name="HojaDeVida" ed:Guid="0a2b46bf-c335-4748-ab0d-9a2cbf7d6abf">
-      <Column Name="id_hv" Member="IdHv" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="48c2f87f-8b43-4198-a735-23a202bb62c0" />
-      <Column Name="perfil_profesional" Member="PerfilProfesional" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="true" ed:Guid="571d4f8a-57e8-4c3c-a7b3-c36e668e95e0" />
-      <Column Name="bachiller" Member="Bachiller" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="true" ed:Guid="71054252-14e7-40fb-8256-c20700af3eb1" />
-      <Column Name="universidad" Member="Universidad" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="true" ed:Guid="8cec6898-cdc5-4daf-aac0-70d325870783" />
-      <Column Name="otros_estudios" Member="OtrosEstudios" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="707124ff-14a7-485c-8df7-75b54e776654" />
-      <Column Name="fellows" Member="Fellows" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="56c5547b-9ae5-4148-b594-454e9d4ad084" />
-      <Column Name="idiomas" Member="Idiomas" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="886fa254-968c-4a6f-bd4c-69659bc1f437" />
-      <Column Name="experiencia" Member="Experiencia" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="226e8938-84de-44be-88d2-839618708d18" />
-      <Column Name="id_doctor" Member="IdDoctor" Type="System.Int32" DbType="INT4 NOT NULL" CanBeNull="false" UpdateCheck="Never" ed:ValidateRequired="true" ed:Guid="f10e5524-8628-4070-aa34-301d133355ac" />
+    <Type Name="HojaDeVida" Id="ID5" ed:Guid="d52487a9-ed2b-4aef-9c2a-5e45ed368be4">
+      <Column Name="id_hv" Member="IdHv" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="1a13c4d2-7108-41d9-b0fa-7f17524a432a" />
+      <Column Name="perfil_profesional" Member="PerfilProfesional" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="true" ed:Guid="fa2bf84a-081c-41cd-a54b-0fca8092efb5" />
+      <Column Name="bachiller" Member="Bachiller" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="true" ed:Guid="ae39a652-ff1d-44bb-832c-d62b745df73f" />
+      <Column Name="universidad" Member="Universidad" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="true" ed:Guid="9bac217d-8d74-4db7-b215-b5c2e8d32ef9" />
+      <Column Name="otros_estudios" Member="OtrosEstudios" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="e9a79f21-1813-4c4c-a08a-f027043f6326" />
+      <Column Name="fellows" Member="Fellows" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="3bc2e8ce-ddf4-4e08-9037-cf0ecac67506" />
+      <Column Name="idiomas" Member="Idiomas" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="9d994431-4868-4157-ac85-6207e31a3a84" />
+      <Column Name="experiencia" Member="Experiencia" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="4bf02cb7-254b-4c69-8fe5-460973627498" />
+      <Column Name="id_doctor" Member="IdDoctor" Type="System.Int32" DbType="INT4 NOT NULL" CanBeNull="false" UpdateCheck="Never" ed:ValidateRequired="true" ed:Guid="ec4998bf-f368-4ef9-983d-62875ea6585b" />
+      <Association Name="Usuario_HojaDeVida" ed:AssociationGuid="5f54e942-0f6c-43ba-97de-4e1eae59f380" Member="Usuario" ed:Guid="75d54900-23ec-4a4a-916c-c5de851a22b1" ThisKey="IdDoctor" OtherKey="IdUsuario" Type="Usuario" DeleteRule="NO ACTION" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="hospital.alergicita" Member="Alergicitas">
+    <Type Name="Alergicita" ed:Guid="23dea937-a6a8-48df-adfd-ed21e4275afd">
+      <Column Name="id_alergias" Member="IdAlergias" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="a7274556-c1b7-4e99-992b-d8a704dd8b3c" />
+      <Column Name="descripcion_alergia" Member="DescripcionAlergia" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="true" ed:Guid="92594087-bca5-4258-9a3e-6798e7d63f07" />
+      <Column Name="id_user" Member="IdUser" Type="System.Int32" DbType="INT4 NOT NULL" CanBeNull="false" UpdateCheck="Never" ed:ValidateRequired="true" ed:Guid="3ead227f-410b-4a74-bc7c-2a7f7c6215f8" />
+      <Column Name="id_cita" Member="IdCita" Type="System.Int32" DbType="INT4 NOT NULL" CanBeNull="false" UpdateCheck="Never" ed:ValidateRequired="true" ed:Guid="f13c66e6-b0dc-4ce8-ac05-bf322b9dc2d1" />
     </Type>
   </Table>
   <Table Name="hospital.cirucitas" Member="Cirucitas">
-    <Type Name="Cirucita" ed:Guid="159f36af-3d0e-4f70-9b9a-5114dd9ac874">
-      <Column Name="id_cirucitas" Member="IdCirucitas" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="eea473ae-2d1d-458d-94f4-0fc15f9ba9da" />
-      <Column Name="fecha" Member="Fecha" Type="System.DateTime" DbType="DATE" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="0cda4a80-4f38-45d6-ba96-c2a12a03cc03" />
-      <Column Name="descripcion" Member="Descripcion" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="41821c9c-e205-4e98-8de2-cdfe1d9ad336" />
-      <Column Name="id_usuario" Member="IdUsuario" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="a70911a1-a36d-4e57-8497-fd30ac44391a" />
-      <Column Name="id_cita" Member="IdCita" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="d2f5ee5e-1ae1-4b8f-bd51-468c63644674" />
-      <Column Name="id_cirugia" Member="IdCirugia" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="d627371b-7b73-4a9e-b3ac-f40865443887" />
+    <Type Name="Cirucita" ed:Guid="e5d57913-97d1-4115-847d-ae62b23616dc">
+      <Column Name="id_cirucitas" Member="IdCirucitas" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="f714a568-373e-4fa6-9793-7278ef438dae" />
+      <Column Name="fecha" Member="Fecha" Type="System.DateTime" DbType="DATE" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="2a5bed9d-7a03-4c07-b709-f15add800e45" />
+      <Column Name="descripcion" Member="Descripcion" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="e30ab97f-fb8c-4d61-a3ca-94ac6062ff0d" />
+      <Column Name="id_usuario" Member="IdUsuario" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="b6e8be82-2955-4576-8d1f-e849cc77f173" />
+      <Column Name="id_cita" Member="IdCita" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="20552116-beca-4478-a53e-1b7565b38a8c" />
+      <Column Name="id_cirugia" Member="IdCirugia" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="4e3ae548-6402-4a84-94ee-2a487dae00a9" />
     </Type>
   </Table>
   <Table Name="hospital.medicita" Member="Medicitas">
-    <Type Name="Medicita" ed:Guid="ae7bbe83-84af-415e-b53e-a64ae2c210d4">
+    <Type Name="Medicita" ed:Guid="c48a8b4e-38d0-496d-9c03-6fdae9a0bc8e">
       <Documentation>
         <Summary>tabla intermedia entre cita y medicinas</Summary>
       </Documentation>
-      <Column Name="id_medicita" Member="IdMedicita" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="3e383fce-c99d-4477-96bc-3b114c205f67" />
-      <Column Name="id_medicina" Member="IdMedicina" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="16a1bcaf-49f5-4d9c-9e07-ab840014bfd3" />
-      <Column Name="id_usuario" Member="IdUsuario" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="d3139b1a-b902-4d37-b217-6454b1fcb9cc" />
-      <Column Name="dosis" Member="Dosis" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="acf4c4b6-ccd7-4549-8699-6d89226cfb87" />
-      <Column Name="fecha_inicio" Member="FechaInicio" Type="System.DateTime" DbType="TIMESTAMP" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="06f2a399-ccd2-4a87-a604-e36fa3c24fd6" />
-      <Column Name="id_cita" Member="IdCita" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="9a1f7c02-0691-4716-8825-b988c56c86f4" />
-      <Column Name="fecha_fin" Member="FechaFin" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="2c0ad5cf-42cf-4fde-bb6b-fbc91c127b4a" />
+      <Column Name="id_medicita" Member="IdMedicita" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="cebb74a7-c19b-4dfb-9171-976b8260816a" />
+      <Column Name="id_medicina" Member="IdMedicina" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="07a94c41-67b5-4229-8bdd-7c7a3cd8ece7" />
+      <Column Name="id_usuario" Member="IdUsuario" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="c7b831f7-aa01-4079-960c-bb67eacaf519" />
+      <Column Name="dosis" Member="Dosis" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="e67f2cb6-2419-4694-a1d7-174e33a9d264" />
+      <Column Name="fecha_inicio" Member="FechaInicio" Type="System.DateTime" DbType="TIMESTAMP" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="cdad7589-6328-4662-87fc-34b97bfa7d1d" />
+      <Column Name="id_cita" Member="IdCita" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="853fd623-e7b0-40e9-9da5-9ab28c5711b3" />
+      <Column Name="fecha_fin" Member="FechaFin" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="194be89c-45d4-4f57-9433-47c45f83290e" />
     </Type>
   </Table>
   <Table Name="hospital.horario" Member="Horarios">
-    <Type Name="Horario" ed:Guid="275bf492-dfa0-4207-bc3e-f181d08a447f">
-      <Column Name="id_horario" Member="IdHorario" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="d7ecb80f-4177-4096-bd30-ce627bef8de0" />
-      <Column Name="fecha_inicio" Member="FechaInicio" Type="System.DateTime" DbType="TIMESTAMP NOT NULL" CanBeNull="false" UpdateCheck="Never" ed:ValidateRequired="true" ed:Guid="98883bfa-9f4b-4280-bffb-4f69519afa8c" />
-      <Column Name="fecha_fin" Member="FechaFin" Type="System.DateTime" DbType="TIMESTAMP NOT NULL" CanBeNull="false" UpdateCheck="Never" ed:ValidateRequired="true" ed:Guid="c674f021-1b4b-4b7a-bd68-aa2dc33d73b2" />
-      <Column Name="id_usuario" Member="IdUsuario" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="b4fbf5ad-90f4-47b1-8bfd-d769df157173" />
+    <Type Name="Horario" ed:Guid="29b904f0-4875-42ca-b113-f2c22faf591e">
+      <Column Name="id_horario" Member="IdHorario" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="d31e44c0-fe14-4b1d-aeef-181ea976a728" />
+      <Column Name="fecha_inicio" Member="FechaInicio" Type="System.DateTime" DbType="TIMESTAMP NOT NULL" CanBeNull="false" UpdateCheck="Never" ed:ValidateRequired="true" ed:Guid="01e10fcf-400a-486d-8765-454c63b98019" />
+      <Column Name="fecha_fin" Member="FechaFin" Type="System.DateTime" DbType="TIMESTAMP NOT NULL" CanBeNull="false" UpdateCheck="Never" ed:ValidateRequired="true" ed:Guid="f83ccc52-fe66-449b-8ae4-07cec98cb355" />
+      <Column Name="id_usuario" Member="IdUsuario" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="5063089b-0f71-464e-9af7-4618f863ccee" />
     </Type>
   </Table>
   <Table Name="hospital.cita" Member="Citas">
-    <Type Name="Cita" ed:Guid="80ac3ecb-8b6a-401c-80cd-72341034e097">
-      <Column Name="id_cita" Member="IdCita" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="cb924b2c-1e10-4d7e-b6c2-c8400223ef5d" />
-      <Column Name="doctor_id" Member="DoctorId" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="c85f2afa-3961-4fde-9d10-54bce606009f" />
-      <Column Name="diagnostico" Member="Diagnostico" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="a2af40a4-64a6-4119-aa54-2993dd3255fa" />
-      <Column Name="paciente_id" Member="PacienteId" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="a9eb75c3-fea6-459d-8e07-4ba8421dfbee" />
-      <Column Name="hora_inicio" Member="HoraInicio" Type="System.DateTime" DbType="TIMESTAMP" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="5b5c81ca-d1f2-475e-a896-c28b21e55d0e" />
-      <Column Name="hora_fin" Member="HoraFin" Type="System.DateTime" DbType="TIMESTAMP" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="f9a07f19-c34b-4722-8896-6da74c93d87c" />
-      <Column Name="estado" Member="Estado" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" DefaultValue="0" ed:ValidateRequired="false" ed:Guid="5c8eb27e-2385-458d-ad38-0dcf55ae0862" />
-      <Column Name="tipo" Member="Tipo" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="0a6eead0-300d-477d-8e38-0e579cf91a9f" />
+    <Type Name="Cita" ed:Guid="d2093186-fd75-4ede-a7c5-3c3570b7f585">
+      <Column Name="id_cita" Member="IdCita" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="7424b484-714f-4b07-94a2-6484fae1fb87" />
+      <Column Name="doctor_id" Member="DoctorId" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="19cea37a-e63d-462c-8b22-fb0466db7a51" />
+      <Column Name="diagnostico" Member="Diagnostico" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="61b8e142-8a96-4788-9f7f-e9ce5ec38910" />
+      <Column Name="paciente_id" Member="PacienteId" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="2653e245-1b14-4ad1-9bc7-a928ba0b6f2b" />
+      <Column Name="hora_inicio" Member="HoraInicio" Type="System.DateTime" DbType="TIMESTAMP" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="ab0fde5a-364b-40cb-9b2c-97716ecceb71" />
+      <Column Name="hora_fin" Member="HoraFin" Type="System.DateTime" DbType="TIMESTAMP" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="e68015d8-de57-4b83-bfb5-2d6a2c39047a" />
+      <Column Name="estado" Member="Estado" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" DefaultValue="0" ed:ValidateRequired="false" ed:Guid="0aa8850a-bd8d-41f7-af27-7b7b4cb78b37" />
+      <Column Name="tipo" Member="Tipo" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="1d707a73-8185-4336-9201-fb947f329c51" />
     </Type>
   </Table>
+  <Table Name="hospital.cirugias" Member="Cirugias">
+    <Type Name="Cirugia" ed:Guid="055f18a8-61f4-4d1d-9da0-a48899619efa">
+      <Column Name="id_cirugia" Member="IdCirugia" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="fdfe930d-c077-4781-aa4e-29c67d94cd99" />
+      <Column Name="nombre_cirugia" Member="NombreCirugia" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="true" ed:Guid="b6c7e35d-2af9-4164-b030-abddda573403" />
+      <Column Name="descripcion" Member="Descripcion" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="3a855154-a6ab-47ec-8a7b-f4013ba0c7de" />
+      <Column Name="id_user" Member="IdUser" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="5de932ec-c52b-427f-acd6-7a0feef8b8dc" />
+      <Column Name="fecha_cirugia" Member="FechaCirugia" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="c76d5385-d5b8-4952-bfc8-2aeb4177f84f" />
+      <Association Name="Usuario_Cirugia" ed:AssociationGuid="480cd2eb-677a-47a3-8678-8a583f449617" Member="Usuario" ed:Guid="697e4821-2b41-463b-acba-096d0ac750d5" ThisKey="IdUser" OtherKey="IdUsuario" Type="Usuario" DeleteRule="NO ACTION" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="hospital.rol" Member="Rols">
+    <Type Name="Rol" ed:Guid="097184e2-8f5d-4109-a2e4-ffacc1395215">
+      <Column Name="id_rol" Member="IdRol" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="76acdf5f-8dcc-4d9e-8df6-e8254c9090f7" />
+      <Column Name="nombre_rol" Member="NombreRol" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="true" ed:Guid="3ffceb87-6ac7-4c17-8e34-416554923548" />
+      <Association Name="Rol_Usuario" ed:AssociationGuid="2fbb9d46-fd31-4149-9987-5a50683138cf" Member="Usuarios" ed:Guid="810075c6-7f4c-4c1f-bf66-638270a30e26" ThisKey="IdRol" OtherKey="IdRol" Type="Usuario" />
+    </Type>
+  </Table>
+  <Table Name="hospital.usuario" Member="Usuarios">
+    <Type Name="Usuario" Id="ID6" ed:Guid="8e3f4faa-360c-42bb-859f-3faf3f82e29d">
+      <Column Name="id_usuario" Member="IdUsuario" Type="System.Int32" AutoSync="OnInsert" DbType="SERIAL NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" ed:ValidateRequired="true" ed:Guid="3615d500-82b5-469d-b269-6e4b04c88cc2" />
+      <Column Name="username" Member="Username" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="true" ed:Guid="e9b8187d-eca5-4519-aff5-4384b0520ef0" />
+      <Column Name="clave" Member="Clave" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="true" ed:Guid="d874283c-043f-47bc-beeb-4c3b48448c63" />
+      <Column Name="nombre" Member="Nombre" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="true" ed:Guid="f31b21a0-e65d-4cd1-ab78-f50104521cf6" />
+      <Column Name="apellido" Member="Apellido" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="true" ed:Guid="996013c0-fc62-4d45-a5b3-a0507e471a46" />
+      <Column Name="edad" Member="Edad" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="8ed527db-1a29-4859-bb6b-1743ca3749fd" />
+      <Column Name="tipo_de_sangre" Member="TipoDeSangre" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="49349712-7dcb-43a7-b8a9-7b621bfeeae1" />
+      <Column Name="estudios" Member="Estudios" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="1200ec69-9818-485e-864d-1bb93eb288a1" />
+      <Column Name="especialidad" Member="Especialidad" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="94541030-3b51-401b-ba3d-ffbf60892e85" />
+      <Column Name="id_rol" Member="IdRol" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="f3c421da-30aa-485a-995b-616dcb3eae78" />
+      <Column Name="ip" Member="Ip" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="727fb084-44c4-45ae-9bb2-340914fd056e" />
+      <Column Name="mac" Member="Mac" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="bcb26012-57c4-4eb6-826e-bd4b6dd29ebc" />
+      <Column Name="imagen" Member="Imagen" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="a427aaab-fb07-4511-9cba-f706712b8afe" />
+      <Column Name="fecha_de_ultimo_examen" Member="FechaDeUltimoExamen" Type="System.DateTime" DbType="DATE" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="e1623b82-ea9b-43f8-bf5f-f2546f596683" />
+      <Column Name="correo" Member="Correo" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="07680f6a-9628-4490-b2b0-e0ab93185ebe" />
+      <Column Name="documento" Member="Documento" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="2eaa041b-d24b-473a-8060-ad159719c2ca" />
+      <Column Name="estado" Member="Estado" Type="System.Int32" DbType="INT4" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="b953a89e-f6af-4baf-ba76-c9bf72c1adc5" />
+      <Association Name="Usuario_HojaDeVida" ed:AssociationGuid="5f54e942-0f6c-43ba-97de-4e1eae59f380" Member="HojaDeVidas" ed:Guid="e0179a5d-c32a-4a3f-bf5a-1d60a5ef1bee" ThisKey="IdUsuario" OtherKey="IdDoctor" Type="HojaDeVida" />
+      <Association Name="Usuario_Cirugia" ed:AssociationGuid="480cd2eb-677a-47a3-8678-8a583f449617" Member="Cirugias" ed:Guid="6125cb6c-e21e-4061-976a-11fa8c9dd541" ThisKey="IdUsuario" OtherKey="IdUser" Type="Cirugia" />
+      <Association Name="Rol_Usuario" ed:AssociationGuid="2fbb9d46-fd31-4149-9987-5a50683138cf" Member="Rol" ed:Guid="18d5fc88-22b0-466e-9a8f-ae7e33c12cc9" ThisKey="IdRol" OtherKey="IdRol" Type="Rol" DeleteRule="NO ACTION" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="hospital.mostrarcitasvistaid" Member="Mostrarcitasvistaids">
+    <Type Name="Mostrarcitasvistaid" Id="ID7" ed:Guid="bfe08e74-1b12-4344-a821-607b0e53e13a">
+      <Column Name="tipo" Member="Tipo" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="10f1ed97-3ea4-4786-89fe-4ad957cc6f97" />
+      <Column Name="hora_ini_cita" Member="HoraIniCita" Type="System.DateTime" DbType="TIMESTAMP" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="30916a1d-5e0f-4bb2-bb64-f511ca8999e0" />
+      <Column Name="hora_fin_cita" Member="HoraFinCita" Type="System.DateTime" DbType="TIMESTAMP" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="0cd9ce94-f39f-4c50-8d96-718b695e898e" />
+      <Column Name="diagnostico" Member="Diagnostico" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="bd3257ac-c141-4870-b1ef-2522402a2038" />
+      <Column Name="nombre" Member="Nombre" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="267819c4-bbe2-4687-8619-c1f2a4ba0919" />
+      <Column Name="apellido" Member="Apellido" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="685009ac-5409-4161-a367-d02b951944a3" />
+    </Type>
+  </Table>
+  <Table Name="hospital.mostrarcitasdoc" Member="Mostrarcitasdocs">
+    <Type Name="Mostrarcitasdoc" ed:Guid="e359766c-e9b7-4e80-81fd-49f108a8cd47">
+      <Column Name="nombre" Member="Nombre" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="c4230d78-d496-4a0c-9f37-4795244aac9d" />
+      <Column Name="apellido" Member="Apellido" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="e054b622-92a4-40cd-87fd-f64a631ff08c" />
+      <Column Name="hora_ini_cita" Member="HoraIniCita" Type="System.TimeSpan" DbType="TIME" CanBeNull="true" UpdateCheck="Never" Precision="6" ed:ValidateRequired="false" ed:Guid="d22e8f85-8838-473d-89e2-c49a91d476b3" />
+      <Column Name="hora_fin_cita" Member="HoraFinCita" Type="System.TimeSpan" DbType="TIME" CanBeNull="true" UpdateCheck="Never" Precision="6" ed:ValidateRequired="false" ed:Guid="e3501256-ac73-4172-ae76-caff034f0b74" />
+    </Type>
+  </Table>
+  <Table Name="hospital.mostrarcitasvista" Member="Mostrarcitasvistas">
+    <Type Name="Mostrarcitasvista" ed:Guid="4c9db721-6f15-480c-b80b-3aa94cf18380">
+      <Column Name="especildad_cita" Member="EspecildadCita" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="d0c8b364-0044-4f12-bf30-bd5a9d6c0fad" />
+      <Column Name="hora_ini_cita" Member="HoraIniCita" Type="System.TimeSpan" DbType="TIME" CanBeNull="true" UpdateCheck="Never" Precision="6" ed:ValidateRequired="false" ed:Guid="0d8f0a5c-cf40-4052-8d9b-48e95e227070" />
+      <Column Name="hora_fin_cita" Member="HoraFinCita" Type="System.TimeSpan" DbType="TIME" CanBeNull="true" UpdateCheck="Never" Precision="6" ed:ValidateRequired="false" ed:Guid="a4f7cf75-2b59-47a5-bcbe-41e26a387dac" />
+      <Column Name="diagnostico" Member="Diagnostico" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="5e5cb093-7ff5-4d6c-b8ec-fc30d29939da" />
+      <Column Name="nombre" Member="Nombre" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="abd05844-d368-4d94-b59b-f4d27ff45d48" />
+      <Column Name="apellido" Member="Apellido" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" Unicode="true" ed:ValidateRequired="false" ed:Guid="21c64e74-80cc-46ad-823a-4311e0f817b1" />
+    </Type>
+  </Table>
+  <Type Name="FVerificarCitaResult" ed:Guid="c1b26eaa-b164-41c6-871f-bbfbd88b0e6e">
+    <Column Name="hora_inicio" Member="HoraInicio" Type="System.DateTime" DbType="TIMESTAMP" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="7dd8a570-47f7-4188-aa3f-3fca1db8bd4f" />
+  </Type>
+  <Type Name="Buscarusuario2Result" ed:Guid="9344aa79-1943-464d-a1e0-592a21c7a82f">
+    <Column Name="id_usuario" Member="IdUsuario" Type="System.Int32" DbType="INT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="26bdc1dc-0773-4fa9-bd3e-0af93f7d1c37" />
+    <Column Name="username" Member="Username" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="54f3f635-5e75-4fb3-b62d-f0222d4ba6a2" />
+    <Column Name="nombre" Member="Nombre" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="42a9484f-fad6-45d3-b3ea-cd50a7f8f80a" />
+    <Column Name="apellido" Member="Apellido" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="c92fb941-c48f-4fc1-9776-13f706a6b9e9" />
+    <Column Name="edad" Member="Edad" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="8b20ff91-3954-4202-aa75-ed97bfefd1af" />
+    <Column Name="tipo_de_sangre" Member="TipoDeSangre" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="aeb52d82-9be9-47f5-881f-2a4aaea2739a" />
+    <Column Name="id_rol" Member="IdRol" Type="System.Int32" DbType="INT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="555d6f82-67e7-425a-b6e9-f4024c1999f4" />
+    <Column Name="ip" Member="Ip" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="7d8da506-a4f9-4a79-a0e8-443acaa5b891" />
+    <Column Name="mac" Member="Mac" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="b2862c00-3105-4525-b498-94598e0ffb6a" />
+    <Column Name="imagen" Member="Imagen" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="09606e1f-b1cf-45d7-bbff-e79deeb9adb8" />
+    <Column Name="correo" Member="Correo" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="203b936b-2c78-47c4-9f80-ce3496a602f0" />
+    <Column Name="documento" Member="Documento" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="c0e9edfb-d52e-499c-b9f7-bbd7a6ef53f1" />
+  </Type>
+  <Type Name="BuscarcitareporteResult" ed:Guid="bce8bd39-0ce4-4a8e-b99d-e952498ef58c">
+    <Column Name="nombre" Member="Nombre" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="29d0a55e-dbff-4d72-b0fb-0c401eec8750" />
+    <Column Name="apellido" Member="Apellido" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="8519717d-ebff-4cc0-bf8f-56b8279476bd" />
+    <Column Name="documento" Member="Documento" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="f7af6994-0346-460b-9423-e29faea6c282" />
+    <Column Name="edad" Member="Edad" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="a0afffc5-2f80-4a20-8d42-066240809a63" />
+    <Column Name="tipo_de_sangre" Member="TipoDeSangre" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="0a1456d4-fd06-49a4-8c63-e13c637b84d2" />
+    <Column Name="fecha_de_ultimo_examen" Member="FechaDeUltimoExamen" Type="System.DateTime" DbType="DATE" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="ce8b8cfd-e325-447d-af69-e9f8ec5f434d" />
+    <Column Name="hora_inicio" Member="HoraInicio" Type="System.DateTime" DbType="TIMESTAMP" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="70dd57f0-a053-4c80-803a-d81293967283" />
+    <Column Name="hora_fin" Member="HoraFin" Type="System.DateTime" DbType="TIMESTAMP" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="8a372381-39f8-4012-ada6-d5cb61ea8e21" />
+    <Column Name="tipo" Member="Tipo" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="053c7adb-b39f-4f07-8a9c-246cae98fa28" />
+    <Column Name="diagnostico" Member="Diagnostico" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="751ee00a-7d83-42d7-aa2b-3c5d1b4265da" />
+    <Column Name="nombredoc" Member="Nombredoc" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="9e7950d9-16fa-4e92-bcc1-c3d837b96692" />
+    <Column Name="apellidodoc" Member="Apellidodoc" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="2fd84b6d-bfa3-4663-9098-e6c65149215f" />
+  </Type>
+  <Type Name="FBuscarDoctoreResult" ed:Guid="dc552b1a-766e-48a5-a3f0-2d3a297bebc9">
+    <Column Name="id_usuario" Member="IdUsuario" Type="System.Int32" DbType="INT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="1a0eda5a-e517-485b-aff6-d392e546f6f5" />
+    <Column Name="imagen" Member="Imagen" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="9f11a82a-6839-4369-a8a3-90cfad7cbfc9" />
+    <Column Name="nombre" Member="Nombre" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="44f78fb9-8e54-4867-9458-fd4c566e29be" />
+    <Column Name="apellido" Member="Apellido" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="cad21f84-84d6-4549-a43f-745217ddd331" />
+    <Column Name="especialidad" Member="Especialidad" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="d2aaa0a5-0dea-4d45-959f-8cf963b4800e" />
+  </Type>
+  <Type Name="FCancelarCitasHoraDoctorResult" ed:Guid="3abe3421-a71f-47fd-b60c-479e226c4a83">
+    <Column Name="return_value" Member="ReturnValue" Type="System.Boolean" DbType="BOOLEAN" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="16b89797-809b-4bfc-83b7-f99945deaf48" />
+  </Type>
+  <Type Name="MostrardoctoresrolResult" ed:Guid="d5e802ee-1e55-4a9e-88e1-79c95a3e2487">
+    <Column Name="nombre" Member="Nombre" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="25314561-7ae8-412d-a7de-0a9870a2db62" />
+    <Column Name="apellido" Member="Apellido" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="9eef7994-305e-4ebc-b162-1458b18cb940" />
+    <Column Name="edad" Member="Edad" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="2f7c0fd4-c281-454d-9908-c9ff517dc4a3" />
+    <Column Name="especialidad" Member="Especialidad" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="d212438f-3b7b-4054-8b97-0acfd58ffe7e" />
+    <Column Name="imagen" Member="Imagen" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="f24c5a6b-9cf9-46d1-b311-953e950e9654" />
+  </Type>
+  <Type Name="FBuscaTodosPacienteResult" ed:Guid="e6535bfc-ec97-4cac-9dab-119a46a92d16">
+    <Column Name="id_usuario" Member="IdUsuario" Type="System.Int32" DbType="INT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="df5db27c-635e-41bd-ab3e-07cf4e1e764b" />
+    <Column Name="username" Member="Username" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="e704bb06-c817-405a-aa7d-90936459f15a" />
+    <Column Name="clave" Member="Clave" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="e79a7370-08b6-437e-855b-5e5547096ff5" />
+    <Column Name="nombre" Member="Nombre" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="e02d5375-4e98-4af7-bfa1-412863d640f2" />
+    <Column Name="apellido" Member="Apellido" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="a869b1d9-a84c-4d4b-ac6c-7a4cee289b02" />
+    <Column Name="edad" Member="Edad" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="a00ea3b6-348d-4cfa-840e-ead32decf6dd" />
+    <Column Name="tipo_de_sangre" Member="TipoDeSangre" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="a8036879-f932-4154-b6e3-1fac8606ed6a" />
+    <Column Name="correo" Member="Correo" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="467dce1a-4a4b-433e-a59e-fb627706df10" />
+    <Column Name="documento" Member="Documento" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="21661c51-574f-4c75-911a-eb8abc15fbbd" />
+  </Type>
+  <Type Name="AlergiasreporteResult" ed:Guid="cbfe8fba-08ec-43d6-a6bb-737c7ab09038">
+    <Column Name="nombre" Member="Nombre" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="3f7c0879-87a4-4158-9ad8-e91b8928b2c0" />
+    <Column Name="apellido" Member="Apellido" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="86499585-e10a-4955-99be-d8cce628381a" />
+    <Column Name="documento" Member="Documento" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="bf41073a-b5e2-434d-bcbb-a3d4bfbeb842" />
+    <Column Name="edad" Member="Edad" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="8a76c4a7-549f-4702-b946-9c459aa24eff" />
+    <Column Name="tipo_de_sangre" Member="TipoDeSangre" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="9ee16fb2-83fc-463b-9342-b734e6e5add1" />
+    <Column Name="fecha_de_ultimo_examen" Member="FechaDeUltimoExamen" Type="System.DateTime" DbType="DATE" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="399eaa7d-b555-437d-9520-eb1a8179fdfb" />
+    <Column Name="descripcion" Member="Descripcion" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="f4fdcb4c-9d98-4ef0-8d5d-c31ef2035b5b" />
+    <Column Name="nombre_alergia" Member="NombreAlergia" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="7c8ba9b9-f78f-4354-a9eb-2c45bd5e8474" />
+  </Type>
+  <Type Name="CirugiasreporteResult" ed:Guid="1de0df00-e3a6-44cf-8296-b8c394dc5b2b">
+    <Column Name="nombre" Member="Nombre" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="13f4a8d1-d3d8-4fe2-acd9-65635b85237e" />
+    <Column Name="apellido" Member="Apellido" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="9eb65477-01a0-451d-80de-a7a256a3f42f" />
+    <Column Name="documento" Member="Documento" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="49cf4fca-ab6b-4675-83ad-afe5e4583197" />
+    <Column Name="edad" Member="Edad" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="dd439f8e-f55b-45cf-bf43-4d8b7bed0e3e" />
+    <Column Name="tipo_de_sangre" Member="TipoDeSangre" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="d936628e-b058-44aa-8a8a-7c7fa00623a9" />
+    <Column Name="fecha_de_ultimo_examen" Member="FechaDeUltimoExamen" Type="System.DateTime" DbType="DATE" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="0e9c5710-a614-46a8-b202-f70dfdbaca4b" />
+    <Column Name="nombre_cirugia" Member="NombreCirugia" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="a965b24c-f087-428e-bce1-3932a6358ae9" />
+    <Column Name="descripcion" Member="Descripcion" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="82812eef-5fd9-48be-8309-9fc59c293829" />
+    <Column Name="fecha_cirugia" Member="FechaCirugia" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="b520f62f-dbf9-4c1e-8590-b2464e281ccb" />
+  </Type>
+  <Type Name="FHvDoctorResult" ed:Guid="77f565a4-4f85-43e7-8b3f-844c01ced6b0">
+    <Column Name="nombre" Member="Nombre" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="fb51979b-b742-4347-8c20-d456f5e21636" />
+    <Column Name="apellido" Member="Apellido" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="f02d46f3-0071-4ffc-8422-7e7ff3cab04e" />
+    <Column Name="edad" Member="Edad" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="41347890-49df-4b0f-b2a9-bfea2389a3b5" />
+    <Column Name="estudios" Member="Estudios" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="f7c1e770-0839-4d65-94ae-3d2165e76b5e" />
+    <Column Name="especialidad" Member="Especialidad" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="55a926d9-7f6f-42a2-9d48-39e6b34791e6" />
+    <Column Name="imagen" Member="Imagen" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="613007eb-f532-48db-b106-594c57925def" />
+    <Column Name="experiencia" Member="Experiencia" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="b2e4a375-b966-4b65-81f8-6c6cf8f99fff" />
+    <Column Name="fellows" Member="Fellows" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="4a1f518e-f30a-4d48-bcbc-6996b3069a9d" />
+    <Column Name="idiomas" Member="Idiomas" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="4922086d-801a-4f18-8a94-c1639ed9ccb3" />
+    <Column Name="otros_estudios" Member="OtrosEstudios" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="21abc8fb-604d-4f73-9665-8dba6b4e86fd" />
+    <Column Name="perfil_profesional" Member="PerfilProfesional" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="9e7b9f66-e7de-41b7-9e9f-b61fe7e3b0bb" />
+    <Column Name="universidad" Member="Universidad" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="385d8b14-ffdc-4536-884d-82c62178fc3d" />
+  </Type>
+  <Type Name="FBuscaCitaResult" ed:Guid="250b25bd-0e20-4a96-b31d-b9505a32f275">
+    <Column Name="hora_ini_cita" Member="HoraIniCita" Type="System.TimeSpan" DbType="TIME" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="a66b45fe-0657-4f0a-aead-3f2586f68114" />
+    <Column Name="hora_fin_cita" Member="HoraFinCita" Type="System.TimeSpan" DbType="TIME" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="f00b0e8b-9a23-4ad9-8282-fa9a773912a7" />
+    <Column Name="nombre" Member="Nombre" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="f02b9bb5-f6fa-45af-851b-c5cd558739ec" />
+    <Column Name="apellido" Member="Apellido" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="eae3413f-0a23-4213-95bc-d773902d7f65" />
+    <Column Name="doctor_id" Member="DoctorId" Type="System.Int32" DbType="INT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="6bc96d0e-ae04-4811-b32c-272793bd1712" />
+    <Column Name="idcita_" Member="Idcita" Type="System.Int32" DbType="INT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="04c896da-ab4a-4dfc-a191-498d9d86e2d2" />
+  </Type>
+  <Type Name="FBuscarcitasUsuariovResult" ed:Guid="eb1506c3-aeda-425d-b457-685946b950d1">
+    <Column Name="id_cita" Member="IdCita" Type="System.Int32" DbType="INT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="c4c1b567-b3a7-4cfc-8f10-f9ed70095e1d" />
+    <Column Name="tipo" Member="Tipo" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="d45d9b69-f8c6-44c8-9e7d-9fc6cbf134bf" />
+    <Column Name="hora_ini_cita" Member="HoraIniCita" Type="System.DateTime" DbType="TIMESTAMP" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="d24bec07-1b43-470f-9d89-46ddda78c36a" />
+    <Column Name="hora_fin_cita" Member="HoraFinCita" Type="System.DateTime" DbType="TIMESTAMP" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="fcfdd750-5623-4880-9d99-ecc00fc5d04f" />
+    <Column Name="diagnostico" Member="Diagnostico" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="9baa91cb-79d4-4cf3-ae8a-d1d120b5df1c" />
+    <Column Name="nombre" Member="Nombre" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="5112d5d8-7c25-453b-839d-27d5522533de" />
+    <Column Name="apellido" Member="Apellido" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="ee1a6e38-07c2-4984-9e1a-38d12891808c" />
+  </Type>
+  <Type Name="MedicamentosreporteResult" ed:Guid="4fba4728-1184-44d3-87a6-efb0899c5fe3">
+    <Column Name="nombre" Member="Nombre" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="9a4f97d0-cf8d-47e8-a4a5-810bf922ca85" />
+    <Column Name="apellido" Member="Apellido" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="d822c3ef-00aa-48f8-ad14-4bea117f9ff2" />
+    <Column Name="documento" Member="Documento" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="cd78f758-32a5-43de-baf9-632407de5b8d" />
+    <Column Name="edad" Member="Edad" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="deedf928-646f-4e2d-a637-6004a5a1bcb0" />
+    <Column Name="tipo_de_sangre" Member="TipoDeSangre" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="ef8fe646-b7af-4968-8742-79fa0c4dd49d" />
+    <Column Name="fecha_de_ultimo_examen" Member="FechaDeUltimoExamen" Type="System.DateTime" DbType="DATE" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="88a6e4e7-4100-42d9-a8ff-58d165713e8b" />
+    <Column Name="dosis" Member="Dosis" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="ec0ba775-f10a-460a-ad0c-9de8632560c9" />
+    <Column Name="fecha_ini" Member="FechaIni" Type="System.DateTime" DbType="TIMESTAMP" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="e37b047d-bd5a-4940-95f3-4d2089b6ae55" />
+    <Column Name="fecha_fin" Member="FechaFin" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="b6624386-1956-43c8-82bd-21f5e69f24af" />
+    <Column Name="nombre_medicamento" Member="NombreMedicamento" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="f9e014be-ebcd-44f4-be66-44910c2431ad" />
+  </Type>
+  <Type Name="FObtenerCorreoResult" ed:Guid="8c8c72c9-1b02-4d00-a622-9f0caad712f2">
+    <Column Name="correo" Member="Correo" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="92fab3c3-15bc-48bb-b0ef-f8010d67c9d0" />
+  </Type>
+  <Type Name="FBuscaHorarioResult" ed:Guid="18a25012-15ab-4a00-8df7-df9e872e9983">
+    <Column Name="dia" Member="Dia" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="f5a92e71-557f-4fa6-b94d-0ed69ac5fb23" />
+    <Column Name="hora_inicio" Member="HoraInicio" Type="System.TimeSpan" DbType="TIME" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="8f3cf069-de38-4746-9cda-f6551e938cce" />
+    <Column Name="hora_fin" Member="HoraFin" Type="System.TimeSpan" DbType="TIME" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="5d36c6e9-aa23-41b1-a65c-0477bf7e2571" />
+    <Column Name="id_usuario" Member="IdUsuario" Type="System.Int32" DbType="INT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="3704f753-5fc6-45cc-aecb-231ddcb8c864" />
+  </Type>
+  <Type Name="FObtenerFechaResult" ed:Guid="8d355c2e-fd3b-4e1e-9330-c520f5186776">
+    <Column Name="fecha" Member="Fecha" Type="System.DateTime" DbType="DATE" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="4df8147a-fbde-4468-894b-14b034bca9ec" />
+  </Type>
+  <Type Name="FBuscarCitaDResult" ed:Guid="735b8429-09b2-47b4-9c7c-7a022309dfd1">
+    <Column Name="id_cita" Member="IdCita" Type="System.Int32" DbType="INT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="7acefa8d-864d-44b2-8731-586b8e56d40a" />
+    <Column Name="tipo" Member="Tipo" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="4aa7fea9-c038-443e-8184-7226093f9dda" />
+    <Column Name="nombre" Member="Nombre" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="81d541e4-bed5-41b7-9a7d-8e68d8a259f6" />
+    <Column Name="apellido" Member="Apellido" Type="System.String" DbType="TEXT" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="9a4dc7c0-7736-4784-871d-07de9c93c456" />
+    <Column Name="hora_inicio" Member="HoraInicio" Type="System.DateTime" DbType="TIMESTAMP" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="25ecf43f-1175-4d23-9b4a-b7431e6e730b" />
+    <Column Name="hora_fin" Member="HoraFin" Type="System.DateTime" DbType="TIMESTAMP" CanBeNull="true" UpdateCheck="Never" ed:ValidateRequired="false" ed:Guid="924c3d57-4a8c-469e-abcf-16b246c486a5" />
+  </Type>
+  <Function Name="hospital.f_add_paciente:1" Method="FAddPaciente1" IsComposable="true" ed:Guid="45568130-8a20-4d6e-91c0-74a29921d011">
+    <Parameter Name="username_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="clave_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="nombre_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="apellido_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="edad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="tiposangre_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="idrol_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="url_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="examen_" Type="System.String" DbType="TEXT" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="hospital.modificarusuario" Method="Modificarusuario" IsComposable="true" ed:Guid="049415da-0e0a-4d22-ae8f-aa46512e0d55">
+    <Parameter Name="id_user" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="_nombre" Type="System.String" DbType="CHARACTER VARYING" />
+    <Parameter Name="_apellido" Type="System.String" DbType="CHARACTER VARYING" />
+    <Parameter Name="_clave" Type="System.String" DbType="CHARACTER VARYING" />
+    <Parameter Name="_edad" Type="System.String" DbType="CHARACTER VARYING" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="hospital.f_solicitar_cita" Method="FSolicitarCita" IsComposable="true" ed:Guid="3ca512be-6bd4-4ceb-bf43-e051ab4e4044">
+    <Parameter Name="id_usuario_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="id_cita_" Type="System.Int32" DbType="INTEGER" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="hospital.f_busca_paciente" Method="FBuscaPaciente" IsComposable="true" ed:Guid="db52836b-9bca-452e-b36e-873d36838d87">
+    <ElementType IdRef="ID6" />
+  </Function>
+  <Function Name="hospital.f_verificar_cita" Method="FVerificarCita" IsComposable="true" ed:Guid="84a831fa-cc81-41a0-8a18-3a6dd2c5ec2c">
+    <Parameter Name="_id_cita" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="_id_usuario" Type="System.Int32" DbType="INTEGER" />
+    <ElementType Type="FVerificarCitaResult" />
+  </Function>
+  <Function Name="hospital.f_add_doctor:2" Method="FAddDoctor2" IsComposable="true" ed:Guid="98cb7283-64c4-4aa1-9272-b8840e1cf913">
+    <Parameter Name="username_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="clave_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="nombre_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="apellido_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="edad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="estudios_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="especialidad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="idrol_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="url_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="estado_" Type="System.String" DbType="TEXT" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="hospital.f_generar_citas" Method="FGenerarCita" IsComposable="true" ed:Guid="12331b18-c7bc-4c6c-bf42-94acdb99328b">
+    <Return Type="System.Object" />
+  </Function>
+  <Function Name="hospital.buscarusuario:2" Method="Buscarusuario2" IsComposable="true" ed:Guid="23722088-8182-448c-8623-8b009d8abfeb">
+    <Parameter Name="user_" Type="System.String" DbType="CHARACTER VARYING" />
+    <Parameter Name="clave_" Type="System.String" DbType="CHARACTER VARYING" />
+    <Parameter Name="ip_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="mac_" Type="System.String" DbType="TEXT" />
+    <ElementType Type="Buscarusuario2Result" />
+  </Function>
+  <Function Name="hospital.f_add_cirugia:1" Method="FAddCirugia1" IsComposable="true" ed:Guid="9cabf6a5-f3ae-4028-89bd-c29f76b9100c">
+    <Parameter Name="cirugia_" Type="System.String" DbType="TEXT" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="hospital.buscarcitareporte" Method="Buscarcitareporte" IsComposable="true" ed:Guid="8f5f99a2-ca2f-4ebe-9264-bdd4a7efa913">
+    <Parameter Name="id_paciente_" Type="System.Int32" DbType="INTEGER" />
+    <ElementType Type="BuscarcitareporteResult" />
+  </Function>
+  <Function Name="hospital.f_buscar_doctores" Method="FBuscarDoctore" IsComposable="true" ed:Guid="092bacc7-f14d-4cbf-b3b6-f1db57af6027">
+    <ElementType Type="FBuscarDoctoreResult" />
+  </Function>
+  <Function Name="hospital.f_add_doctor:4" Method="FAddDoctor4" IsComposable="true" ed:Guid="07300910-5774-4427-95ab-e72bb30ad347">
+    <Parameter Name="username_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="clave_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="nombre_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="apellido_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="edad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="estudios_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="especialidad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="idrol_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="url_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="estado_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="correo_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="documento_" Type="System.String" DbType="TEXT" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="hospital.f_cancelar_citas_hora_doctor" Method="FCancelarCitasHoraDoctor" IsComposable="true" ed:Guid="8e31ce92-c0c2-4dc0-a15a-38e59ce95a72">
+    <Parameter Name="id_user" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="fecha_" Type="System.DateTime" DbType="DATE" />
+    <ElementType Type="FCancelarCitasHoraDoctorResult" />
+  </Function>
+  <Function Name="hospital.f_buscarusuario" Method="FBuscarusuario" IsComposable="true" ed:Guid="8f4bb990-95b5-42c3-ba7d-0baa47f84b22">
+    <Parameter Name="nombrebd" Type="System.String" DbType="TEXT" />
+    <Parameter Name="clavebd" Type="System.String" DbType="TEXT" />
+    <ElementType IdRef="ID6" />
+  </Function>
+  <Function Name="hospital.f_buscar_allusuarios" Method="FBuscarAllusuario" IsComposable="true" ed:Guid="030aaaf2-cd5f-48da-bec0-1226034fa898">
+    <ElementType IdRef="ID6" />
+  </Function>
+  <Function Name="hospital.f_editar_doctor:2" Method="FEditarDoctor2" IsComposable="true" ed:Guid="68f31a51-eb01-436b-a39f-45ebf156acc2">
+    <Parameter Name="idusuario_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="username_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="clave_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="nombre_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="apellido_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="edad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="estudios_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="especialidad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="estado_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="url_" Type="System.String" DbType="TEXT" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="hospital.mostrardoctoresrol" Method="Mostrardoctoresrol" IsComposable="true" ed:Guid="a0a559d5-fab7-492a-a466-9873a765bb70">
+    <ElementType Type="MostrardoctoresrolResult" />
+  </Function>
+  <Function Name="hospital.f_verificarusuario" Method="FVerificarusuario" IsComposable="true" ed:Guid="56bf8ce6-f0e3-4b39-9403-3f024ac9fdcb">
+    <Parameter Name="user_" Type="System.String" DbType="CHARACTER VARYING" />
+    <ElementType IdRef="ID6" />
+  </Function>
+  <Function Name="hospital.f_add_hojavida" Method="FAddHojavida" IsComposable="true" ed:Guid="676fef73-a9a3-4860-9931-b1af0e730b6c">
+    <Parameter Name="perfil_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="bachiller_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="universidad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="estudios_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="fellows_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="idiomas_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="experiencia_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="doctorid_" Type="System.Int32" DbType="INTEGER" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="hospital.f_eliminar_cita" Method="FEliminarCita" IsComposable="true" ed:Guid="ac9e3efa-c5bf-45e9-b1c0-8974c335a894">
+    <Parameter Name="id_usuario" Type="System.Int32" DbType="INTEGER" />
+    <ElementType Type="FCancelarCitasHoraDoctorResult" />
+  </Function>
+  <Function Name="hospital.f_editar_doctor:4" Method="FEditarDoctor4" IsComposable="true" ed:Guid="e8bc8dd7-d862-43f8-b2ab-0298caec47d5">
+    <Parameter Name="idusuario_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="username_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="clave_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="nombre_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="apellido_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="edad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="estudios_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="especialidad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="estado_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="url_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="correo_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="documento_" Type="System.String" DbType="TEXT" />
+    <ElementType Type="FCancelarCitasHoraDoctorResult" />
+  </Function>
+  <Function Name="hospital.f_busca_todos_pacientes" Method="FBuscaTodosPaciente" IsComposable="true" ed:Guid="dd2dd409-df00-42cf-972b-773d00976b2a">
+    <ElementType Type="FBuscaTodosPacienteResult" />
+  </Function>
+  <Function Name="hospital.f_editar_doctorv:3" Method="FEditarDoctorv3" IsComposable="true" ed:Guid="cc32d7be-7681-4552-89dc-e3fe69648103">
+    <Parameter Name="username_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="clave_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="nombre_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="apellido_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="edad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="estudios_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="especialidad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="imagen_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="idusuario_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="estado_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="documento_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="correo_" Type="System.String" DbType="TEXT" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="hospital.f_add_paciente:2" Method="FAddPaciente2" IsComposable="true" ed:Guid="322175da-aba7-436f-87cb-9c48607bfa45">
+    <Parameter Name="username_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="clave_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="nombre_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="apellido_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="edad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="tiposangre_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="idrol_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="url_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="examen_" Type="System.DateTime" DbType="DATE" />
+    <Parameter Name="correo_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="documento_" Type="System.String" DbType="TEXT" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="hospital.alergiasreporte" Method="Alergiasreporte" IsComposable="true" ed:Guid="7280e869-4d53-4130-a3d1-6da2a5bea5ac">
+    <Parameter Name="id_paciente_" Type="System.Int32" DbType="INTEGER" />
+    <ElementType Type="AlergiasreporteResult" />
+  </Function>
+  <Function Name="hospital.f_editar_doctor:1" Method="FEditarDoctor1" IsComposable="true" ed:Guid="7dfc46fd-2dc3-4214-9b6c-68c530aeb1a1">
+    <Parameter Name="idusuario_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="username_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="clave_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="nombre_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="apellido_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="edad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="estudios_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="especialidad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="url_" Type="System.String" DbType="TEXT" />
+    <ElementType Type="FCancelarCitasHoraDoctorResult" />
+  </Function>
+  <Function Name="hospital.f_editar_doctorv:2" Method="FEditarDoctorv2" IsComposable="true" ed:Guid="62249daf-d6a4-4aaa-a96f-3905315cd36a">
+    <Parameter Name="username_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="idusuario_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="clave_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="nombre_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="apellido_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="edad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="estudios_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="especialidad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="imagen_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="estado_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="documento_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="correo_" Type="System.String" DbType="TEXT" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="hospital.f_add_citadoctor3" Method="FAddCitadoctor3" IsComposable="true" ed:Guid="ddb889cc-6a47-432c-92b6-d1d036238e77">
+    <Parameter Name="diagnostico_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="iddoctor_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="idcita_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="cirugia_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="descripcirugia_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="fechacirugia_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="idmedicina_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="dosis_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="fechafinmedicina_" Type="System.String" DbType="TEXT" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="hospital.f_ver_alergias" Method="FVerAlergia" IsComposable="true" ed:Guid="95e875c6-9511-4b9d-8551-5cde533eaafe">
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="hospital.f_add_medicita" Method="FAddMedicita" IsComposable="true" ed:Guid="4d248c97-c320-4533-8dd8-51ff9919e2c5">
+    <Parameter Name="nombre_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="dosis_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="idcita_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="idusuario_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="fechainicio_" Type="System.DateTime" DbType="DATE" />
+    <Parameter Name="fechafin_" Type="System.DateTime" DbType="DATE" />
+    <ElementType Type="FCancelarCitasHoraDoctorResult" />
+  </Function>
+  <Function Name="hospital.f_add_medicina" Method="FAddMedicina" IsComposable="true" ed:Guid="c41fbde1-5af4-4eab-bc65-fa550c148883">
+    <Parameter Name="medicina_" Type="System.String" DbType="TEXT" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="hospital.cirugiasreporte" Method="Cirugiasreporte" IsComposable="true" ed:Guid="93a38ae8-ae98-4f4d-a650-39d90e58af33">
+    <Parameter Name="id_paciente_" Type="System.Int32" DbType="INTEGER" />
+    <ElementType Type="CirugiasreporteResult" />
+  </Function>
+  <Function Name="hospital.f_add_doctor:3" Method="FAddDoctor3" IsComposable="true" ed:Guid="7460a5bc-ddac-41fa-9ca8-71a9db310265">
+    <Parameter Name="username_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="clave_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="nombre_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="apellido_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="edad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="estudios_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="especialidad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="idrol_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="url_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="estado_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="correo_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="documento_" Type="System.String" DbType="TEXT" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="hospital.f_add_alergia" Method="FAddAlergia" IsComposable="true" ed:Guid="4a926fb8-c7e8-488d-a7b0-fd60f1a616c6">
+    <Parameter Name="alergia_" Type="System.String" DbType="TEXT" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="hospital.f_hv_doctor" Method="FHvDoctor" IsComposable="true" ed:Guid="9d384991-06ce-4bc5-88a9-65fe6aaa22c0">
+    <Parameter Name="id_usuario_" Type="System.Int32" DbType="INTEGER" />
+    <ElementType Type="FHvDoctorResult" />
+  </Function>
+  <Function Name="hospital.f_editar_doctor:3" Method="FEditarDoctor3" IsComposable="true" ed:Guid="384b52b6-ae53-4107-b961-08c4af081c7b">
+    <Parameter Name="idusuario_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="username_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="clave_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="nombre_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="apellido_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="edad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="estudios_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="especialidad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="imagen_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="documento_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="correo_" Type="System.String" DbType="TEXT" />
+    <ElementType Type="FCancelarCitasHoraDoctorResult" />
+  </Function>
+  <Function Name="hospital.f_busca_cita" Method="FBuscaCita" IsComposable="true" ed:Guid="04dd5e9f-38a3-40d6-9176-fcef7be4c4fa">
+    <Parameter Name="id_user" Type="System.Int32" DbType="INTEGER" />
+    <ElementType Type="FBuscaCitaResult" />
+  </Function>
+  <Function Name="hospital.buscarusuarioid" Method="Buscarusuarioid" IsComposable="true" ed:Guid="aecd6cb5-0a68-4cca-b1e8-344ea3e66b01">
+    <Parameter Name="_id_user" Type="System.Int32" DbType="INTEGER" />
+    <ElementType IdRef="ID6" />
+  </Function>
+  <Function Name="hospital.f_add_citadoctor" Method="FAddCitadoctor" IsComposable="true" ed:Guid="ca4fbe9a-d4f6-42fe-bec6-624380ef7069">
+    <Parameter Name="diagnostico_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="iddoctor_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="idcita_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="idalergia_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="descripalergia_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="cirugia_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="descripcirugia_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="fechacirugia_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="idmedicina_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="dosis_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="fechafinmedicina_" Type="System.String" DbType="TEXT" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="hospital.f_muestra_parametrizacion" Method="FMuestraParametrizacion" IsComposable="true" ed:Guid="947fea12-0332-4f09-a314-4a31787ef062">
+    <ElementType IdRef="ID4" />
+  </Function>
+  <Function Name="hospital.f_modificar_horario" Method="FModificarHorario" IsComposable="true" ed:Guid="69a71846-7563-43a8-9354-3fa1644a17ef">
+    <Parameter Name="_inicio" Type="System.DateTime" DbType="TIMESTAMP WITHOUT TIME ZONE" />
+    <Parameter Name="_fin" Type="System.DateTime" DbType="TIMESTAMP WITHOUT TIME ZONE" />
+    <Parameter Name="_dia" Type="System.String" DbType="TEXT" />
+    <Parameter Name="id_doctor" Type="System.Int32" DbType="INTEGER" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="hospital.buscarusuario:1" Method="Buscarusuario1" IsComposable="true" ed:Guid="edb7a808-47d5-4657-af8f-6f172b40136f">
+    <Parameter Name="user_" Type="System.String" DbType="CHARACTER VARYING" />
+    <Parameter Name="clave_" Type="System.String" DbType="CHARACTER VARYING" />
+    <ElementType IdRef="ID6" />
+  </Function>
+  <Function Name="hospital.f_add_alergicita" Method="FAddAlergicita" IsComposable="true" ed:Guid="4e8a5bdb-32a3-4fc2-9313-b4e83a328229">
+    <Parameter Name="descripcion" Type="System.String" DbType="TEXT" />
+    <Parameter Name="iduser_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="idcita" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="idalergia" Type="System.Int32" DbType="INTEGER" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="hospital.f_add_citadoctor2" Method="FAddCitadoctor2" IsComposable="true" ed:Guid="8a399aaa-4776-438b-bbfd-5ed5b31a64f4">
+    <Parameter Name="diagnostico_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="iddoctor_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="idcita_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="idalergia_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="descripalergia_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="idmedicina_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="dosis_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="fechafinmedicina_" Type="System.String" DbType="TEXT" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="hospital.f_generar_horario" Method="FGenerarHorario" IsComposable="true" ed:Guid="a6a4cfa3-6354-4213-8350-6c331a48e2b1">
+    <Parameter Name="_inicio" Type="System.DateTime" DbType="DATE" />
+    <Parameter Name="_fin" Type="System.DateTime" DbType="DATE" />
+    <Parameter Name="_horario" Type="System.String" DbType="TEXT" />
+    <Parameter Name="id_doctor" Type="System.Int32" DbType="INTEGER" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="hospital.f_cancelar_citas_dia_doctor" Method="FCancelarCitasDiaDoctor" IsComposable="true" ed:Guid="f46228b9-cb22-43ed-a9f8-86c998a2d586">
+    <Parameter Name="id_user" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="fecha_" Type="System.DateTime" DbType="DATE" />
+    <ElementType Type="FCancelarCitasHoraDoctorResult" />
+  </Function>
+  <Function Name="hospital.f_add_citadoctor4" Method="FAddCitadoctor4" IsComposable="true" ed:Guid="91149b19-bda6-4bed-832a-d6adbc4bb6e4">
+    <Parameter Name="diagnostico_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="iddoctor_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="idcita_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="idmedicina_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="dosis_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="fechafinmedicina_" Type="System.String" DbType="TEXT" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="hospital.f_busca_doctor" Method="FBuscaDoctor" IsComposable="true" ed:Guid="25c9772e-c51f-40d1-ba6f-bdbf6844df26">
+    <ElementType IdRef="ID6" />
+  </Function>
+  <Function Name="hospital.f_buscarcitas_usuariov" Method="FBuscarcitasUsuariov" IsComposable="true" ed:Guid="22bfcedd-430e-4434-ab3d-2893475cb9bb">
+    <Parameter Name="id_usuario_" Type="System.Int32" DbType="INTEGER" />
+    <ElementType Type="FBuscarcitasUsuariovResult" />
+  </Function>
+  <Function Name="hospital.f_busca_doctorprincipal" Method="FBuscaDoctorprincipal" IsComposable="true" ed:Guid="fba62680-f144-4602-98d9-b9f49b057693">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="hospital.f_editar_doctorv:1" Method="FEditarDoctorv1" IsComposable="true" ed:Guid="63e56772-c0f3-4f22-8a9a-fe75b2bcc182">
+    <Parameter Name="idusuario_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="username_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="clave_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="nombre_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="apellido_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="edad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="estudios_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="especialidad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="imagen_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="estado_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="documento_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="correo_" Type="System.String" DbType="TEXT" />
+    <ElementType Type="FCancelarCitasHoraDoctorResult" />
+  </Function>
+  <Function Name="hospital.f_add_cirugia:2" Method="FAddCirugia2" IsComposable="true" ed:Guid="82878bad-2fc7-4a2c-ab13-a1518a917455">
+    <Parameter Name="fecha" Type="System.DateTime" DbType="DATE" />
+    <Parameter Name="descripcion_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="iduser" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="idcita" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="idcirugia" Type="System.Int32" DbType="INTEGER" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="hospital.buscartipocita" Method="Buscartipocita" IsComposable="true" ed:Guid="76378d5c-0d2d-40cb-a256-675ef7ec73e2">
+    <ElementType IdRef="ID2" />
+  </Function>
+  <Function Name="hospital.f_buscadoc" Method="FBuscadoc" IsComposable="true" ed:Guid="2ed9ecab-5528-4ea1-bf03-aa01099a65d0">
+    <Parameter Name="idusuario_" Type="System.Int32" DbType="INTEGER" />
+    <ElementType IdRef="ID6" />
+  </Function>
+  <Function Name="hospital.f_busca_hoja_vida" Method="FBuscaHojaVida" IsComposable="true" ed:Guid="e356c3cf-3b35-4d04-8348-6a4d7ac7f9e1">
+    <Parameter Name="id_user" Type="System.Int32" DbType="INTEGER" />
+    <ElementType IdRef="ID5" />
+  </Function>
+  <Function Name="hospital.medicamentosreporte" Method="Medicamentosreporte" IsComposable="true" ed:Guid="843dd5c9-ab1f-43c5-a311-28d2e0285e04">
+    <Parameter Name="id_paciente_" Type="System.Int32" DbType="INTEGER" />
+    <ElementType Type="MedicamentosreporteResult" />
+  </Function>
+  <Function Name="hospital.f_obtener_correo" Method="FObtenerCorreo" IsComposable="true" ed:Guid="d224974c-3a81-43cb-a62f-5dbd63dd542f">
+    <Parameter Name="id_usuario_" Type="System.Int32" DbType="INTEGER" />
+    <ElementType Type="FObtenerCorreoResult" />
+  </Function>
+  <Function Name="hospital.f_busca_nombreusuario" Method="FBuscaNombreusuario" IsComposable="true" ed:Guid="6e134f78-e10d-41d4-a459-cb7f9cee7fb1">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="hospital.f_busca_alergias" Method="FBuscaAlergia" IsComposable="true" ed:Guid="06ffe09b-261c-4d38-9a15-e9a112efc5d2">
+    <ElementType IdRef="ID3" />
+  </Function>
+  <Function Name="hospital.f_editar_hojavida" Method="FEditarHojavida" IsComposable="true" ed:Guid="eaf56a38-8c1f-4727-8a88-cca70c0a29f7">
+    <Parameter Name="id_doc" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="perfil_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="bachiller_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="universidad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="estudios_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="fellows_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="idiomas_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="experiencia_" Type="System.String" DbType="TEXT" />
+    <ElementType Type="FCancelarCitasHoraDoctorResult" />
+  </Function>
+  <Function Name="hospital.f_add_doctor:1" Method="FAddDoctor1" IsComposable="true" ed:Guid="e0746821-60f6-40b2-9c7d-4a974c93b807">
+    <Parameter Name="username_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="clave_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="nombre_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="apellido_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="edad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="estudios_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="especialidad_" Type="System.String" DbType="TEXT" />
+    <Parameter Name="idrol_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="url_" Type="System.String" DbType="TEXT" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="hospital.f_busca_medicinas" Method="FBuscaMedicina" IsComposable="true" ed:Guid="d035406c-7fb4-463e-bb1a-287ecc3e1022">
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="hospital.f_registrar_doctor" Method="FRegistrarDoctor" ed:Guid="f583af4a-28a1-4fe0-8dee-a6d27afb6f9f">
+    <Parameter Name="_username" Type="System.String" DbType="CHARACTER VARYING" />
+    <Parameter Name="_clave" Type="System.String" DbType="CHARACTER VARYING" />
+    <Parameter Name="_nombre" Type="System.String" DbType="CHARACTER VARYING" />
+    <Parameter Name="_apellido" Type="System.String" DbType="CHARACTER VARYING" />
+    <Parameter Name="_edad" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="_estudios" Type="System.String" DbType="TEXT" />
+    <Parameter Name="_especialidad" Type="System.String" DbType="TEXT" />
+    <Parameter Name="_estado" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="_email" Type="System.String" DbType="CHARACTER VARYING" />
+    <Parameter Name="_documento" Type="System.String" DbType="CHARACTER VARYING" />
+    <Parameter Name="_url_perfil" Type="System.String" DbType="TEXT" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="hospital.f_cancelar_cita_usuario" Method="FCancelarCitaUsuario" IsComposable="true" ed:Guid="f6b45e1e-e0f0-430b-8aac-47ee7fcbdadb">
+    <Parameter Name="id_cita_" Type="System.Int32" DbType="INTEGER" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="hospital.f_registrar_paciente" Method="FRegistrarPaciente" ed:Guid="7e5a02cf-8b92-406e-9334-cf538e042840">
+    <Parameter Name="_username" Type="System.String" DbType="CHARACTER VARYING" />
+    <Parameter Name="_clave" Type="System.String" DbType="CHARACTER VARYING" />
+    <Parameter Name="_nombre" Type="System.String" DbType="CHARACTER VARYING" />
+    <Parameter Name="_apellido" Type="System.String" DbType="CHARACTER VARYING" />
+    <Parameter Name="_edad" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="_tiposangre" Type="System.String" DbType="TEXT" />
+    <Parameter Name="_email" Type="System.String" DbType="CHARACTER VARYING" />
+    <Parameter Name="_documento" Type="System.String" DbType="CHARACTER VARYING" />
+    <Parameter Name="_fechaexamen" Type="System.String" DbType="CHARACTER VARYING" />
+    <Parameter Name="_imagen" Type="System.String" DbType="TEXT" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="hospital.buscarcita" Method="Buscarcita" IsComposable="true" ed:Guid="47b427ae-271c-4fbd-8fd7-cc4a9cf5b518">
+    <Parameter Name="id_paciente_" Type="System.Int32" DbType="INTEGER" />
+    <ElementType IdRef="ID7" />
+  </Function>
+  <Function Name="hospital.f_sacar_cita" Method="FSacarCita" IsComposable="true" ed:Guid="720050fa-5e92-4ecd-b507-f249c03dbf29">
+    <Parameter Name="id_usuario_" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="id_cita_" Type="System.Int32" DbType="INTEGER" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="hospital.f_edita_tiempo" Method="FEditaTiempo" ed:Guid="d53bf919-a27a-4a7c-aa73-3508ab4c0664">
+    <Parameter Name="_id_horario" Type="System.Int32" DbType="INTEGER" />
+    <Parameter Name="_duracion_citas" Type="System.String" DbType="TEXT" />
+    <Parameter Name="_hora_inicio" Type="System.String" DbType="TEXT" />
+    <Parameter Name="_hora_fin" Type="System.String" DbType="TEXT" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="hospital.f_busca_horario" Method="FBuscaHorario" IsComposable="true" ed:Guid="9b01b0ac-ad9a-4faf-9ef3-b4e661abb9a6">
+    <Parameter Name="id_doctor" Type="System.Int32" DbType="INTEGER" />
+    <ElementType Type="FBuscaHorarioResult" />
+  </Function>
+  <Function Name="hospital.f_obtener_fechas" Method="FObtenerFecha" IsComposable="true" ed:Guid="fdc9b85e-8c09-44ed-b92c-ffc664774199">
+    <ElementType Type="FObtenerFechaResult" />
+  </Function>
+  <Function Name="hospital.f_ver_medicinas" Method="FVerMedicina" IsComposable="true" ed:Guid="004cdab0-3924-41e0-93ab-87ba5c0bf9db">
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="hospital.f_buscar_cita_d" Method="FBuscarCitaD" IsComposable="true" ed:Guid="e5b8010f-d473-468a-838c-d811cf99f09d">
+    <Parameter Name="fecha" Type="System.DateTime" DbType="DATE" />
+    <ElementType Type="FBuscarCitaDResult" />
+  </Function>
 </Database>

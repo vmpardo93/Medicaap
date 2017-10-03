@@ -50,7 +50,7 @@
             <tr>
                 <td class="auto-style5"></td>
                 <td class="auto-style6">
-                    <div class="nombre_login" ><h3>Username</h3></div>
+                    <div class="nombre_login" ><h3 id="LB_UserName">Username</h3></div>
                     <asp:TextBox ID="TB_username" runat="server" MaxLength="15" ValidationGroup="1" placeholder="username" CssClass="form-control"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TB_username" Display="Dynamic" ErrorMessage="*" ForeColor="Red" ValidationGroup="1"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="REV_UserName" runat="server" ControlToValidate="TB_username" Display="Dynamic" ErrorMessage="Caracteres no validos" ValidationExpression="^[0-9a-zA-Z ñÑáéíóúÁÉÍÓÚ ]+$" ValidationGroup="1"></asp:RegularExpressionValidator>
@@ -59,7 +59,7 @@
             <tr>
                 <td class="auto-style2">&nbsp;</td>
                 <td>
-                    <div class="nombre_login" ><h3>Contraseña</h3></div>
+                    <div class="nombre_login" ><h3 id="LB_Clave">Contraseña</h3></div>
                     <asp:TextBox ID="TB_Clave" runat="server" MaxLength="15" TextMode="Password" ValidationGroup="1" placeholder="password" CssClass="form-control"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TB_Clave" Display="Dynamic" ErrorMessage="*" ForeColor="Red" ValidationGroup="1"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="REV_Clave" runat="server" Display="Dynamic" ErrorMessage="Caracteres no validos" ValidationExpression="^[0-9a-zA-Z ñÑáéíóúÁÉÍÓÚ ]+$" ControlToValidate="TB_Clave" ValidationGroup="1"></asp:RegularExpressionValidator>
