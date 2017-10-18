@@ -8,6 +8,13 @@ namespace utilitarios
 {
     public class Uparametrizacion
     {
+        private int idparametriza;
+
+        public int Idparametriza
+        {
+            get { return idparametriza; }
+            set { idparametriza = value; }
+        }
         private String inicio;
 
         public String Inicio

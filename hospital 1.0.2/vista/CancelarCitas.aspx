@@ -23,14 +23,14 @@
     <tr>
         <td class="auto-style7"></td>
         <td class="auto-style7">
-            <asp:GridView ID="GV_CancelarCita" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id_cita" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+            <asp:GridView ID="GV_CancelarCita" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="IdCita" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
-                    <asp:BoundField DataField="tipo" HeaderText="Tipo" />
-                    <asp:BoundField DataField="hora_ini_cita" HeaderText="Hora de inicio" />
-                    <asp:BoundField DataField="hora_fin_cita" HeaderText="Hora de fin" />
-                    <asp:BoundField DataField="nombre" HeaderText="Nombre" />
-                    <asp:BoundField DataField="apellido" HeaderText="Apellido" />
+                    <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
+                    <asp:BoundField DataField="HoraInicio" HeaderText="Hora de inicio" />
+                    <asp:BoundField DataField="HoraFin" HeaderText="Hora de fin" />
+                    <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
+                    <asp:BoundField DataField="Apellido" HeaderText="Apellido" />
                     <asp:CommandField SelectText="Cancelar" ShowSelectButton="True" />
                 </Columns>
                 <EditRowStyle BackColor="#999999" />
@@ -44,7 +44,7 @@
                 <SortedDescendingCellStyle BackColor="#FFFDF8" />
                 <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
             </asp:GridView>
-            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="mostrarCitasSeparadas" TypeName="Logica.Lpacientes">
+            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="mostrarCitasSeparadas" TypeName="Logica.Lcitas">
                 <SelectParameters>
                     <asp:SessionParameter DefaultValue="0" Name="id_user" SessionField="id_user" Type="Int32" />
                 </SelectParameters>

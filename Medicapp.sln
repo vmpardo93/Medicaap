@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "hospital 1.0.2", "http://localhost:8605", "{724EBF62-9C6F-4EFD-A841-3FE773CEF4AE}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
-		ProjectReferences = "{5b9fdb5c-130c-44d5-a5ac-4115d90b6954}|Logica.dll;{6DD05DBE-4798-4542-AEE5-EAB5DBE4E41F}|utilitarios.dll;{7007FE0D-BE6E-4AE7-9598-6E16BB9F741D}|Data.dll;"
+		ProjectReferences = "{5b9fdb5c-130c-44d5-a5ac-4115d90b6954}|Logica.dll;{6DD05DBE-4798-4542-AEE5-EAB5DBE4E41F}|utilitarios.dll;{7007FE0D-BE6E-4AE7-9598-6E16BB9F741D}|Data.dll;{C2763F8D-89D5-475E-828D-1B2AFF033002}|DataPersis.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_8605"
 		Debug.AspNetCompiler.PhysicalPath = "hospital 1.0.2\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_8605\"

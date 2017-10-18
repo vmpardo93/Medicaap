@@ -46,20 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CitasContext.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CitasContext.lqml</DependentUpon>
-    </Compile>
-    <Compile Include="DAOalergias.cs" />
-    <Compile Include="DAOcitas.cs" />
-    <Compile Include="DAOdoctores.cs" />
-    <Compile Include="DAOhojavida.cs" />
-    <Compile Include="DAOhorario.cs" />
-    <Compile Include="DAOmedicinas.cs" />
-    <Compile Include="DAOpaciente.cs" />
-    <Compile Include="DAOparametriza.cs" />
-    <Compile Include="DAOusuarios.cs" />
+    <Compile Include="DAOreportes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -70,16 +57,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="CitasContext.Diagram1.view">
-      <DependentUpon>CitasContext.lqml</DependentUpon>
-    </None>
-    <None Include="CitasContext.edps">
-      <DependentUpon>CitasContext.lqml</DependentUpon>
-    </None>
-    <None Include="CitasContext.lqml">
-      <Generator>DevartLinqToSqlGenerator</Generator>
-      <LastGenOutput>CitasContext.Designer.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

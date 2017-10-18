@@ -24,5 +24,6 @@ public partial class vista_CancelarCitas : System.Web.UI.Page
         int id_cita = int.Parse(GV_CancelarCita.DataKeys[row.RowIndex].Values[0].ToString());
         doctores.cancelarCitasUsuario(id_cita);
         Response.Redirect("CancelarCitas.aspx");
+        
     }
 }

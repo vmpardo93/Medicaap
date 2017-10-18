@@ -21,14 +21,14 @@
         <tr>
             <td class="auto-style2">&nbsp;</td>
             <td>
-                <asp:GridView ID="GV_horario" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="ODS_verhorario" GridLines="Horizontal" DataKeyNames="id_usuario" Height="245px" Width="524px" OnRowUpdating="gv_updating">
+                <asp:GridView ID="GV_horario" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="ODS_verhorario" GridLines="Horizontal" DataKeyNames="IdUsuario" Height="245px" Width="524px" OnRowUpdating="gv_updating">
                     <Columns>
                         <asp:TemplateField HeaderText="Dia">
                             <EditItemTemplate>
-                                <asp:Label ID="L_dia" runat="server" Text='<%# Bind("dia") %>'></asp:Label>
+                                <asp:Label ID="L_dia" runat="server" Text='<%# Bind("Dia") %>'></asp:Label>
                             </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="Label1" runat="server" Text='<%# Bind("dia") %>'></asp:Label>
+                                <asp:Label ID="Label1" runat="server" Text='<%# Bind("Dia") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Hora inicio">
@@ -61,7 +61,7 @@
                                 </asp:DropDownList>
                             </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="Label2" runat="server" Text='<%# Bind("hora_inicio") %>'></asp:Label>
+                                <asp:Label ID="Label2" runat="server" Text='<%# Bind("HoraInicio") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Hora fin">
@@ -95,7 +95,7 @@
                                 </asp:DropDownList>
                             </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="Label3" runat="server" Text='<%# Bind("hora_fin") %>'></asp:Label>
+                                <asp:Label ID="Label3" runat="server" Text='<%# Bind("HoraFin") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:CommandField ShowEditButton="True" />
@@ -110,16 +110,16 @@
                     <SortedDescendingCellStyle BackColor="#E5E5E5" />
                     <SortedDescendingHeaderStyle BackColor="#275353" />
                 </asp:GridView>
-                <asp:ObjectDataSource ID="ODS_verhorario" runat="server" SelectMethod="mostrarhorario" TypeName="Data.DAOhorario" UpdateMethod="editarhorario">
+                <asp:ObjectDataSource ID="ODS_verhorario" runat="server" SelectMethod="mostrarhorario" TypeName="Logica.Lhorario" UpdateMethod="editarhorario">
                     <SelectParameters>
-                        <asp:SessionParameter Name="doctor_id" SessionField="id_user" Type="String" />
+                        <asp:SessionParameter Name="DoctorId" SessionField="id_user" Type="String" />
                     </SelectParameters>
                     <UpdateParameters>
-                        <asp:Parameter Name="doctor_id" Type="String" />
-                        <asp:Parameter Name="hora_inicio" Type="String" />
-                        <asp:Parameter Name="hora_fin" Type="String" />
-                        <asp:Parameter Name="dia" Type="String" />
-                        <asp:Parameter Name="id_usuario" Type="String" />
+                        <asp:Parameter Name="DoctorId" Type="String" />
+                        <asp:Parameter Name="HoraInicio" Type="String" />
+                        <asp:Parameter Name="HoraFin" Type="String" />
+                        <asp:Parameter Name="Dia" Type="String" />
+                        <asp:Parameter Name="IdUsuario" Type="String" />
                     </UpdateParameters>
                 </asp:ObjectDataSource>
             </td>

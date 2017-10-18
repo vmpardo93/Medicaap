@@ -81,7 +81,7 @@
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ODSmostrarmedicina" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
-                        <asp:BoundField DataField="nombre_medicina" HeaderText="Medicinas" />
+                        <asp:BoundField DataField="NombreMedicina" HeaderText="Medicinas" />
                     </Columns>
                     <EditRowStyle BackColor="#7C6F57" />
                     <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -94,13 +94,13 @@
                     <SortedDescendingCellStyle BackColor="#D4DFE1" />
                     <SortedDescendingHeaderStyle BackColor="#15524A" />
                 </asp:GridView>
-                <asp:ObjectDataSource ID="ODSmostrarmedicina" runat="server" SelectMethod="mostrarmedicinasAdmon" TypeName="Data.DAOmedicinas"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="ODSmostrarmedicina" runat="server" SelectMethod="mostrarmedicinas" TypeName="DataPersis.DAOmedicina"></asp:ObjectDataSource>
             </td>
             <td class="auto-style24">
                 <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ODSmostraralergias" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
-                        <asp:BoundField DataField="nombre_alergia" HeaderText="Alergias" />
+                        <asp:BoundField DataField="NombreAlergia" HeaderText="Alergias" />
                     </Columns>
                     <EditRowStyle BackColor="#7C6F57" />
                     <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -113,7 +113,7 @@
                     <SortedDescendingCellStyle BackColor="#D4DFE1" />
                     <SortedDescendingHeaderStyle BackColor="#15524A" />
                 </asp:GridView>
-                <asp:ObjectDataSource ID="ODSmostraralergias" runat="server" SelectMethod="mostraralergiasAdmon" TypeName="Data.DAOalergias"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="ODSmostraralergias" runat="server" SelectMethod="mostraralergiasAdmon" TypeName="DataPersis.DAOalergia"></asp:ObjectDataSource>
             </td>
             <td class="auto-style24"></td>
         </tr>
@@ -121,7 +121,7 @@
             <td class="auto-style28">
                 </td>
             <td>
-                <asp:GridView ID="GV_parametriza" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ODS_parametriza" ForeColor="#333333" GridLines="None" DataKeyNames="id_paremetrizacion" OnRowUpdating="updating">
+                <asp:GridView ID="GV_parametriza" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ODS_parametriza" ForeColor="#333333" GridLines="None" DataKeyNames="IdParemetrizacion" OnRowUpdating="updating">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:TemplateField HeaderText="Duracion citas">
@@ -136,7 +136,7 @@
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="DDL_duracion" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red">*</asp:RequiredFieldValidator>
                             </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="Label1" runat="server" Text='<%# Bind("duracion_citas") %>'></asp:Label>
+                                <asp:Label ID="Label1" runat="server" Text='<%# Bind("DuracionCitas") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Hora Inicio Actividades">
@@ -162,7 +162,7 @@
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="DDL_horainicio" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red">*</asp:RequiredFieldValidator>
                             </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="Label2" runat="server" Text='<%# Bind("hora_inicio") %>'></asp:Label>
+                                <asp:Label ID="Label2" runat="server" Text='<%# Bind("HoraInicio") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Hora Fin Actividades">
@@ -188,7 +188,7 @@
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="DDL_horafin" Display="Dynamic" ErrorMessage="RequiredFieldValidator" ForeColor="Red">*</asp:RequiredFieldValidator>
                             </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="Label3" runat="server" Text='<%# Bind("hora_fin") %>'></asp:Label>
+                                <asp:Label ID="Label3" runat="server" Text='<%# Bind("HoraFin") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:CommandField ShowEditButton="True" />
@@ -204,7 +204,12 @@
                     <SortedDescendingCellStyle BackColor="#D4DFE1" />
                     <SortedDescendingHeaderStyle BackColor="#15524A" />
                 </asp:GridView>
-                <asp:ObjectDataSource ID="ODS_parametriza" runat="server" SelectMethod="mostrarparametrizacion" TypeName="Data.DAOparametriza">
+                <asp:ObjectDataSource ID="ODS_parametriza" runat="server" SelectMethod="mostrarparametrizacion" TypeName="Logica.Lparametriza" UpdateMethod="parametrizacitas">
+                    <UpdateParameters>
+                        <asp:Parameter Name="duracion" Type="String" />
+                        <asp:Parameter Name="horainicio" Type="String" />
+                        <asp:Parameter Name="horafin" Type="String" />
+                    </UpdateParameters>
                 </asp:ObjectDataSource>
             </td>
             <td colspan="2" class="auto-style29">&nbsp;</td>

@@ -29,7 +29,7 @@ public partial class vista_doctoresAdminV : System.Web.UI.Page
         Label imagen = (Label)row.FindControl("Label11");
         DropDownList drop = (DropDownList)row.FindControl("DL_Estado");
         String estado = drop.SelectedValue;
-        e.NewValues.Add("estado", estado);
+        e.NewValues.Add("Estado", estado);
         
         
         if (file.HasFile)
@@ -50,7 +50,7 @@ public partial class vista_doctoresAdminV : System.Web.UI.Page
         }
         else
         {
-            e.NewValues.Add("imagen", imagen.Text);
+            e.NewValues.Add("Imagen", imagen.Text);
         }
     }
 }

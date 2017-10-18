@@ -37,8 +37,8 @@ public partial class verhorariot : System.Web.UI.Page
         DropDownList hora_fin1 = (DropDownList)row.FindControl("DDL_horafin");
         String hora_inicio = hora_inicio1.SelectedValue;
         String hora_fin = hora_fin1.SelectedValue;
-        e.NewValues.Add("hora_inicio", hora_inicio);
-        e.NewValues.Add("hora_fin",hora_fin);
+        e.NewValues.Add("HoraInicio", hora_inicio);
+        e.NewValues.Add("HoraFin",hora_fin);
 
     }
 

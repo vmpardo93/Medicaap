@@ -14,7 +14,8 @@ public partial class buscacita : System.Web.UI.Page
     {
         LUsuarios user = new LUsuarios();
         UUsuario datos = new UUsuario();
-        datos = user.ValidarSesionPaci(Session["rol_user"].ToString(), Session["user"].ToString());
+        user.ValidarSesiondoc(Session["rol_user"].ToString(), Session["user"].ToString());
+        //datos = user.ValidarSesiondoc(Session["rol_user"].ToString(), Session["user"].ToString());
         this.RegisterStartupScript("mensaje", datos.Mensaje);
         ClientScriptManager cm = this.ClientScript;
         Lnombre.Visible = false;

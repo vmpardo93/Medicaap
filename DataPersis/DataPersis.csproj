@@ -47,7 +47,15 @@
     <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="DAOalergia.cs" />
+    <Compile Include="DAOcita.cs" />
+    <Compile Include="DAOdoctorcs.cs" />
+    <Compile Include="DAOhojadevida.cs" />
+    <Compile Include="DAOhorarios.cs" />
+    <Compile Include="DAOmedicina.cs" />
+    <Compile Include="DAOpacientes.cs" />
+    <Compile Include="DAOparametrizar.cs" />
+    <Compile Include="DAOusuario.cs" />
     <Compile Include="DataContext1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -67,12 +75,15 @@
       <Generator>DevartLinqToSqlGenerator</Generator>
       <LastGenOutput>DataContext1.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataContext1.Medicapp13DataContextDiagram.view">
-      <DependentUpon>DataContext1.lqml</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\utilitarios\utilitarios.csproj">
+      <Project>{6dd05dbe-4798-4542-aee5-eab5dbe4e41f}</Project>
+      <Name>utilitarios</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

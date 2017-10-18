@@ -10,12 +10,8 @@ using utilitarios;
 
 public partial class vista_Login : System.Web.UI.Page
 {
-
-    static Int32 FORMULARIO = 1;
     protected void Page_Load(object sender, EventArgs e)
     {
-
-        
         Session["id_user"] = null;
         Session["id_user"] = null;
         Session["user"] = null;

@@ -6,20 +6,20 @@
    
     <asp:DataList ID="DL_Doctores" runat="server" DataSourceID="ObjectDataSource1" OnItemCommand="DL_Doctores_ItemCommand" RepeatColumns="4" >
         <ItemTemplate>
-            <asp:ImageButton ID="ImageButton1" runat="server" CommandArgument='<%# Eval("id_usuario") %>' Height="214px" ImageUrl='<%# Eval("imagen") %>' Width="222px" />
+            <asp:ImageButton ID="ImageButton1" runat="server" CommandArgument='<%# Eval("IdUsuario") %>' Height="214px" ImageUrl='<%# Eval("Imagen") %>' Width="222px" />
             <br />
             <br />
             <asp:Label ID="Label1" runat="server" Text="Nombre:"></asp:Label>
-            &nbsp;<asp:Label ID="Label2" runat="server" Text='<%# Eval("nombre") %>'></asp:Label>
-            &nbsp;<asp:Label ID="Label3" runat="server" Text='<%# Eval("apellido") %>'></asp:Label>
+            &nbsp;<asp:Label ID="Label2" runat="server" Text='<%# Eval("Nombre") %>'></asp:Label>
+            &nbsp;<asp:Label ID="Label3" runat="server" Text='<%# Eval("Apellido") %>'></asp:Label>
             <br />
             <br />
             <asp:Label ID="Label4" runat="server" Text="Especialidad:"></asp:Label>
-            &nbsp;<asp:Label ID="Label5" runat="server" Text='<%# Eval("especialidad") %>'></asp:Label>
+            &nbsp;<asp:Label ID="Label5" runat="server" Text='<%# Eval("Especialidad") %>'></asp:Label>
             <br />
         </ItemTemplate>
     </asp:DataList>
-    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="mostrarDoctoresPrincipal" TypeName="Data.DAOdoctores" ></asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="mostrarDoctoresPrincipal" TypeName="DataPersis.DAOdoctorcs" ></asp:ObjectDataSource>
    
 </asp:Content>
 

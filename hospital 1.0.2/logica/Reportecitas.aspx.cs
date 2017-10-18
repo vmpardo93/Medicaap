@@ -21,7 +21,7 @@ public partial class vista_Reportecitas : System.Web.UI.Page
     {
         DataSet datos = new DataSet();
 
-        Lpacientes logica = new Lpacientes();
+        Lreportes logica = new Lreportes();
         DataTable resultado = logica.buscarcitareporte((int.Parse(Session["id_user"].ToString())));
         try
         {

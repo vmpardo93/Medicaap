@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Data;
 using System.Data;
 using utilitarios;
+using DataPersis;
 
 namespace Logica
 {
@@ -22,15 +23,42 @@ namespace Logica
             }
             return archivo;
         }
-        public DataTable obtenerdoctores (){
+        public DataTable obtenerdoctores()
+        {
 
-            DAOdoctores dao = new DAOdoctores();
-            return dao.mostrarDoctoresPrincipal();
+            DAOdoctorcs dao = new DAOdoctorcs();
+            return dao.obtenerDoctores();
             
+        }
+        public void modificardoctor(string Username, string Clave, string Nombre, string Apellido, string Edad, string Estudios, string Especialidad, string Imagen, int IdUsuario, string Estado, string Documento, string Correo)
+        {
+            Udoctor datos = new Udoctor();
+            DAOdoctorcs doctores = new DAOdoctorcs();
+            datos.Username = Username;
+            datos.Clave = Clave;
+            datos.Nombre = Nombre;
+            datos.Apellido = Apellido;
+            datos.Edad = Edad;
+            datos.Especialidad = Especialidad;
+            datos.Id_usuario = IdUsuario;
+            datos.Estudios = Estudios;
+            datos.Estado = "1";
+            datos.Correo = Correo;
+            datos.Documento = Int64.Parse(Documento);
+            datos.Foto = Imagen;
+            doctores.modificardoctor(datos);
+            
+        }
+        public DataTable obtenerdoc(Int32 id) 
+        {
+            DAOdoctorcs dao = new DAOdoctorcs();
+            Udoctor datos= new Udoctor();
+            datos.Id_usuario=id;
+            return dao.obtenerdoc(datos);
         }
         public Udoctor agregardoctor(String username, String clave, String nombre, String apellido, String edad, String estudios,String especialidad,String correo,String documento,String foto) 
         {
-            DAOdoctores bases = new DAOdoctores();
+            DAOdoctorcs bases = new DAOdoctorcs();
             DataTable datos = new DataTable();
             Udoctor data = new Udoctor();
             if (username == " " || clave == " " || nombre == "" || apellido == "" || edad == "" || estudios == "" || especialidad == "" || correo == "" || documento == "" || foto == "")
@@ -56,7 +84,6 @@ namespace Logica
                         data.Nombre = nombre;
                         data.Apellido = apellido;
                         data.Edad = edad;
-                        data.Estado = estudios;
                         data.Especialidad = especialidad;
                         data.Estudios = estudios;
                         data.Estado = "1";

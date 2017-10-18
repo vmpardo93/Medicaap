@@ -38,7 +38,7 @@ public partial class modificadoc : System.Web.UI.Page
             string extension = System.IO.Path.GetExtension(file.PostedFile.FileName);
             string savelocation = (Server.MapPath("~\\images\\Perfil") + "\\" + archivo);
             string nombreArchivo = archivo;
-            e.NewValues.Add("imagen", "~\\images\\Perfil\\" + nombreArchivo);
+            e.NewValues.Add("Imagen", "~\\images\\Perfil\\" + nombreArchivo);
             try
             {
                 file.PostedFile.SaveAs(savelocation);
@@ -50,7 +50,7 @@ public partial class modificadoc : System.Web.UI.Page
         }
         else
         {
-            e.NewValues.Add("imagen", imagen.Text);
+            e.NewValues.Add("Imagen", imagen.Text);
         }
     }
 }

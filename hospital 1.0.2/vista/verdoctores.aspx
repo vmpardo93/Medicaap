@@ -6,13 +6,13 @@
     <asp:GridView ID="GV_doctores" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ODS_vertodosdoctores" ForeColor="#333333" GridLines="None" Width="631px" >
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
-            <asp:BoundField DataField="nombre" HeaderText="Nombre">
+            <asp:BoundField DataField="Nombre" HeaderText="Nombre">
             <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
             </asp:BoundField>
-            <asp:BoundField DataField="apellido" HeaderText="Apellido" />
-            <asp:BoundField DataField="edad" HeaderText="Edad" />
-            <asp:BoundField DataField="especialidad" HeaderText="Especialidad" />
-            <asp:ImageField DataImageUrlField="imagen" HeaderText="Foto">
+            <asp:BoundField DataField="Apellido" HeaderText="Apellido" />
+            <asp:BoundField DataField="Edad" HeaderText="Edad" />
+            <asp:BoundField DataField="Especialidad" HeaderText="Especialidad" />
+            <asp:ImageField DataImageUrlField="Imagen" HeaderText="Foto">
                 <ControlStyle Height="100px" Width="100px" />
                 <FooterStyle Height="100px" Width="100px" />
                 <HeaderStyle Height="100px" Width="100px" />
@@ -30,6 +30,6 @@
         <SortedDescendingCellStyle BackColor="#FFFDF8" />
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
     </asp:GridView>
-    <asp:ObjectDataSource ID="ODS_vertodosdoctores" runat="server" SelectMethod="vertodosdoctores" TypeName="DAO_doctores"></asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ODS_vertodosdoctores" runat="server" SelectMethod="obtenerdoctores" TypeName="Logica.LDoctor"></asp:ObjectDataSource>
 </asp:Content>
 

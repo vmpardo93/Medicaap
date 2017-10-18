@@ -72,7 +72,7 @@ public partial class vista_AgregarAdmon : System.Web.UI.Page
         String duraci = duracion.SelectedValue;
 
         Lparametriza logica = new Lparametriza();
-        logica.parametrizacitas(duraci, hora_inicio, hora_fin); 
+        //logica.parametrizacitas(duraci, hora_inicio, hora_fin); 
 
         e.NewValues.Add("duracion_citas", duraci);
         e.NewValues.Add("hora_inicio", hora_inicio);

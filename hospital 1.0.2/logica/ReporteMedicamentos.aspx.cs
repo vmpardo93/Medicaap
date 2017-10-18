@@ -20,7 +20,7 @@ public partial class vista_ReporteMedicamentos : System.Web.UI.Page
     {
         DataSet datos = new DataSet();
 
-        Lpacientes logica = new Lpacientes();
+        Lreportes logica = new Lreportes();
         DataTable resultado = logica.buscarmedicinareporte((int.Parse(Session["id_user"].ToString())));
         try
         {

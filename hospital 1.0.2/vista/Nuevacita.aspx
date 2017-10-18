@@ -57,14 +57,14 @@
                 <br />
             </td>
             <td class="auto-style12">
-                <asp:GridView ID="GV_CitasDisponibles" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id_cita" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GV_CitasDisponibles_SelectedIndexChanged" AllowPaging="True" PageSize="5" OnPageIndexChanging="GV_CitasDisponibles_PageIndexChanging">
+                <asp:GridView ID="GV_CitasDisponibles" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="IdCita" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GV_CitasDisponibles_SelectedIndexChanged" AllowPaging="True" PageSize="5" OnPageIndexChanging="GV_CitasDisponibles_PageIndexChanging">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
-                        <asp:BoundField DataField="tipo" HeaderText="tipo cita" />
-                        <asp:BoundField DataField="nombre" HeaderText="Nombre doc" />
-                        <asp:BoundField DataField="apellido" HeaderText="Apellido doc" />
-                        <asp:BoundField DataField="hora_inicio" HeaderText="Fecha de inicio" />
-                        <asp:BoundField DataField="hora_fin" HeaderText="Fecha fin de cita" />
+                        <asp:BoundField DataField="Tipo" HeaderText="tipo cita" />
+                        <asp:BoundField DataField="Nombre" HeaderText="Nombre doc" />
+                        <asp:BoundField DataField="Apellido" HeaderText="Apellido doc" />
+                        <asp:BoundField DataField="HoraInicio" HeaderText="Fecha de inicio" />
+                        <asp:BoundField DataField="HoraFin" HeaderText="Fecha fin de cita" />
                         <asp:CommandField ShowSelectButton="True" />
                     </Columns>
                     <EditRowStyle BackColor="#999999" />

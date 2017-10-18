@@ -10,6 +10,7 @@ using System.Net;
 using Logica;
 using utilitarios;
 using Data;
+using DataPersis;
 
 public partial class vista_Nuevacita : System.Web.UI.Page
 {
@@ -31,7 +32,7 @@ public partial class vista_Nuevacita : System.Web.UI.Page
     {
 
         dia = C_Ncita.SelectedDate;
-        Lpacientes data = new Lpacientes();
+        Lcitas data = new Lcitas();
         GV_CitasDisponibles.DataSource = data.buscarCitaD(dia);
         GV_CitasDisponibles.DataBind();
 
@@ -46,7 +47,7 @@ public partial class vista_Nuevacita : System.Web.UI.Page
     private void llenarDatos()
     {
         dia = C_Ncita.SelectedDate;
-        Lpacientes data = new Lpacientes();
+        Lcitas data = new Lcitas();
         DataTable datos_llenos = new DataTable();
         datos_llenos = data.buscarCitaD(dia);
         this.GV_CitasDisponibles.DataSource = datos_llenos;
@@ -57,7 +58,7 @@ public partial class vista_Nuevacita : System.Web.UI.Page
 
 
         Ucitas datos = new Ucitas();
-        Lpacientes citas = new Lpacientes();
+        Lcitas citas = new Lcitas();
 
         GridViewRow row = this.GV_CitasDisponibles.SelectedRow;
         int id_cita = int.Parse(GV_CitasDisponibles.DataKeys[row.RowIndex].Values[0].ToString());
@@ -73,7 +74,7 @@ public partial class vista_Nuevacita : System.Web.UI.Page
     {
         Lcitas logica = new Lcitas();
         Ucitas datos = new Ucitas();
-        DAOcitas doc = new DAOcitas();
+        DAOcita doc = new DAOcita();
         DataTable dias = doc.obtenerfechas();
         /* DateTime ant=e.Day.Date;
          DateTime fecha = DateTime.Now;
@@ -90,7 +91,7 @@ public partial class vista_Nuevacita : System.Web.UI.Page
         {
             for (int i = 0; i < cant; i++)
             {
-                if (e.Day.Date == DateTime.Parse(dias.Rows[i][0].ToString()).Date)
+                if (e.Day.Date == DateTime.Parse(dias.Rows[i][1].ToString()).Date)
                 {
                     //e.Day.IsSelectable = false;
                     //e.Cell.Enabled = false;

@@ -366,7 +366,7 @@
             <td class="auto-style125"></td>
             <td class="auto-style126"></td>
             <td class="auto-style127">
-                <asp:ObjectDataSource ID="ODS_buscacita" runat="server" SelectMethod="mostrarcitasdoctor" TypeName="Data.DAOcitas">
+                <asp:ObjectDataSource ID="ODS_buscacita" runat="server" SelectMethod="mostrarcitasdoctor" TypeName="Logica.Lcitas">
                     <SelectParameters>
                         <asp:SessionParameter Name="doctor_id" SessionField="id_user" Type="String" />
                     </SelectParameters>
@@ -382,13 +382,13 @@
             <td class="auto-style10">&nbsp;</td>
             <td class="auto-style3"></td>
             <td class="auto-style4" colspan="3">
-                <asp:GridView ID="GV_citasdoc" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="ODS_buscacita" GridLines="Horizontal" OnSelectedIndexChanged="GV_citasdocSelectedIndexChanged" DataKeyNames="idcita_">
+                <asp:GridView ID="GV_citasdoc" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="ODS_buscacita" GridLines="Horizontal" OnSelectedIndexChanged="GV_citasdocSelectedIndexChanged" DataKeyNames="IdCita">
                     <Columns>
                         <asp:CommandField ShowSelectButton="True" />
-                        <asp:BoundField DataField="hora_ini_cita" HeaderText="Hora Inicio" />
-                        <asp:BoundField DataField="hora_fin_cita" HeaderText="Hora fin" />
-                        <asp:BoundField DataField="nombre" HeaderText="Nombre paciente" />
-                        <asp:BoundField DataField="apellido" HeaderText="Apellido paciente" />
+                        <asp:BoundField DataField="HoraInicio" HeaderText="Hora Inicio" />
+                        <asp:BoundField DataField="HoraFin" HeaderText="Hora fin" />
+                        <asp:BoundField DataField="Nombre" HeaderText="Nombre paciente" />
+                        <asp:BoundField DataField="Apellido" HeaderText="Apellido paciente" />
                     </Columns>
                     <FooterStyle BackColor="White" ForeColor="#333333" />
                     <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />

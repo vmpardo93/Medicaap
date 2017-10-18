@@ -27,6 +27,9 @@
                             <li><a href="doctores.aspx">Doctores</a></li>
                             <li><a href="Login.aspx">Login</a></li>
                             <li><a href="Quienesomos.aspx">Quienes somos</a></li>
+                            <li></li>
+                             <li><asp:Image ID="I_idioma" runat="server" ImageUrl="~/images/proyecto/translate.png" Width="25px" /></li>
+                                
                         </ul>
                     </nav>
                     </div>

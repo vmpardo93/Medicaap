@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using utilitarios;
 using Data;
+using System.Data;
+using DataPersis;
 
 namespace Logica
 {
@@ -30,7 +32,7 @@ namespace Logica
         }
         public Uhojavida agregar_hoja_vida(String bachiller, String estudios, String fellows, String idiomas, String perfil, String universidad, String experiencia, String session)
         {
-            DAOhojavida datos = new DAOhojavida();
+            DAOhojadevida datos = new DAOhojadevida();
             Uhojavida encap = new Uhojavida();
             if (bachiller == "" || estudios == "" || universidad == "" || session == "")
             {
@@ -60,5 +62,27 @@ namespace Logica
             }
             return encap;
         }
+        public DataTable buscarhojavida(Int32 id_user) 
+        {
+            Uhojavida datos = new Uhojavida();
+            DAOhojadevida dao = new DAOhojadevida();
+            datos.Id_doctor =Convert.ToString(id_user);
+            return dao.buscarhojavida(datos);
+        }
+        public void modificarhojavida(String PerfilProfesional, String Bachiller, String Universidad, String OtrosEstudios, String Fellows, String Idiomas, String Experiencia, Int32 IdDoctor)
+        {
+            DAOhojadevida dao = new DAOhojadevida();
+            Uhojavida datos = new Uhojavida();
+            datos.Perfil = PerfilProfesional;
+            datos.Bachiller = Bachiller;
+            datos.Universidad = Universidad;
+            datos.Estudios = OtrosEstudios;
+            datos.Fellows = Fellows;
+            datos.Idiomas = Idiomas;
+            datos.Experiencia = Experiencia;
+            datos.Id_doctor = Convert.ToString(IdDoctor);
+            dao.modificarhojavida(datos);
+        }
+        
     }
 }

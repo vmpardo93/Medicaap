@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using utilitarios;
 using Data;
+using DataPersis;
 
 namespace Logica
 {
@@ -39,7 +40,7 @@ namespace Logica
         public Uhorario guardarhorario(String inicio, String fin,Hashtable chequeo, String iddoctor,Dictionary<string,string> horasini, Dictionary<string,string>horafin) 
         {
             Uhorario datos = new Uhorario();
-            DAOhorario bases = new DAOhorario();
+            DAOhorarios bases = new DAOhorarios();
             datos.Inicio = inicio;
             datos.Fin = fin;
             datos.Iddoctor = iddoctor;
@@ -199,6 +200,24 @@ namespace Logica
                 datos.Mensaje = ex.Message;
             }
             return datos;
+        }
+        public DataTable mostrarhorario(string DoctorId)
+        {
+            DAOhorarios dao= new DAOhorarios();
+            Uhorario datos = new Uhorario();
+            datos.Iddoctor = DoctorId;
+            return dao.mostrarhorario(datos);
+        }
+        public void editarhorario(string DoctorId, string HoraInicio, string HoraFin, string Dia, string IdUsuario)
+        {
+            DAOhorarios dao = new DAOhorarios();
+            Uhorario datos = new Uhorario();
+            datos.Iddoctor = DoctorId;
+            datos.Inicio = HoraInicio;
+            datos.Fin = HoraFin;
+            datos.Horario = Dia;
+            datos.Iddoctor = IdUsuario;
+            dao.editarhorario(datos);
         }
     }
 }

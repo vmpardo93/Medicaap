@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using utilitarios;
 using Data;
 using System.Data;
+using DataPersis;
 
 namespace Logica
 {
@@ -13,7 +14,7 @@ namespace Logica
     {
         public UUsuario loggin(String user, String pass)
         {
-            DAOusuarios users = new DAOusuarios();
+            DAOusuario users = new DAOusuario();
             UUsuario data = new UUsuario();
             IpMac dirrec = new IpMac();
 
@@ -23,23 +24,27 @@ namespace Logica
             data.Mac = dirrec.GetMACAddress2();
             DataTable datos = users.login(data);
 
+
             if (datos.Rows.Count > 0)
             {
 
-                data.Idrol = int.Parse(datos.Rows[0]["Id_Rol"].ToString());
-                data.Id_usuario = int.Parse(datos.Rows[0]["Id_Usuario"].ToString());
-                data.Nombre = (datos.Rows[0]["nombre"].ToString());
-                data.Apellido = (datos.Rows[0]["apellido"].ToString());
-                data.Username = (datos.Rows[0]["username"].ToString());
-                data.Idrol = int.Parse(datos.Rows[0]["id_rol"].ToString());
-                data.Tipo_de_sangre = (datos.Rows[0]["tipo_de_sangre"].ToString());
-                data.Edad = (datos.Rows[0]["edad"].ToString());
+                data.Idrol = int.Parse(datos.Rows[0]["idRol"].ToString());
+                data.Id_usuario = int.Parse(datos.Rows[0]["idUsuario"].ToString());
+                data.Nombre = (datos.Rows[0]["Nombreus"].ToString());
+                data.Apellido = (datos.Rows[0]["Apellido"].ToString());
+                data.Username = (datos.Rows[0]["Username"].ToString());
+                data.Tipo_de_sangre = (datos.Rows[0]["TipoDesangre"].ToString());
+                data.Edad = (datos.Rows[0]["Edad"].ToString());
                 //data.Especialidad = (datos.Rows[0]["especialidad"].ToString());
                 //data.Fecha_ultimo_examen = (datos.Rows[0]["fecha_de_ultimo_examen"].ToString());
-                data.DireccionImagen = (datos.Rows[0]["imagen"].ToString());
+                data.DireccionImagen = (datos.Rows[0]["Imagen"].ToString());
+                string bloqueado=(datos.Rows[0]["Bloqueado"].ToString());
                 
-
-                if (int.Parse(datos.Rows[0]["Id_Rol"].ToString()) == 1)
+                if (bloqueado.Equals("True"))
+                {
+                     data.Mensaje = "<script type='text/javascript'>alert('El usuario ha sido bloqueado porfavor espere un momento');window.location=\"Login.aspx\"</script>";
+                }
+                else if (int.Parse(datos.Rows[0]["IdRol"].ToString()) == 1)
                 {
                     
                     data.Mensaje ="<script type='text/javascript'>window.location=\"VerUsuariosAdmon.aspx\"</script>";

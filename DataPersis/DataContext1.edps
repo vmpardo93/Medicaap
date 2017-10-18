@@ -7,7 +7,7 @@
       <Class UseSchemaAsPrefix="False" PluralizeCollectionNavigationPropertyName="True" AddConstraintColumnsToNavigationPropertyName="False" RemoveUnderscores="True" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="FirstLetterUppercase" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Singularize" />
       <Property RemoveUnderscores="True" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="FirstLetterUppercase" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Unchanged" />
     </DatabaseFirstNamingRules>
-    <ModelFirst StorageSynchronizationEnabled="False" TargetSchema="public">
+    <ModelFirst StorageSynchronizationEnabled="False" TargetSchema="hospital">
       <TargetServer Server="PostgreSQL" ServerVersion="9.6" />
       <ModelFirstNamingRules>
         <Table RemoveUnderscores="False" AddUnderscores="False" RemoveInvalidCharacters="True" CodeCase="Unchanged" AddPrefix="" AddSuffix="" RemovePrefixes="" RemoveSuffixes="" PluralizationName="Pluralize" />
@@ -15,7 +15,7 @@
       </ModelFirstNamingRules>
     </ModelFirst>
     <Diagrams>
-      <Diagram Name="Medicapp13DataContextDiagram" DefaultDiagram="True" />
+      <Diagram Name="Diagram1" DefaultDiagram="True" />
     </Diagrams>
     <Templates>
       <Template Name="LinqConnect" Description="Use this template to generate a strongly-typed DataContext class and persistence-aware classes." Enabled="True" PredefinedTemplateName="LinqConnect C#">

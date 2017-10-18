@@ -2,15 +2,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:GridView ID="GridView1" runat="server" DataSourceID="ObjectDataSource1" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="710px">
+    <asp:GridView ID="GridView1" runat="server" DataSourceID="ODS_citasuser" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" Width="710px">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
-            <asp:BoundField DataField="tipo" HeaderText="Tipo" />
-            <asp:BoundField DataField="hora_ini_cita" HeaderText="Hora de inicio" />
-            <asp:BoundField DataField="hora_fin_cita" HeaderText="Hora de fin" />
-            <asp:BoundField DataField="diagnostico" HeaderText="Diagnostico" />
-            <asp:BoundField DataField="nombre" HeaderText="Nombre doctor" />
-            <asp:BoundField DataField="apellido" HeaderText="Apellido doctor" />
+            <asp:BoundField DataField="Tipo" HeaderText="Tipo" />
+            <asp:BoundField DataField="HoraInicio" HeaderText="Hora de inicio" />
+            <asp:BoundField DataField="HoraFin" HeaderText="Hora de fin" />
+            <asp:BoundField DataField="Diagnostico" HeaderText="Diagnostico" />
+            <asp:BoundField DataField="Nombre" HeaderText="Nombre doctor" />
+            <asp:BoundField DataField="Apellido" HeaderText="Apellido doctor" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -23,6 +23,11 @@
         <SortedDescendingCellStyle BackColor="#FFFDF8" />
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
     </asp:GridView>
+    <asp:ObjectDataSource ID="ODS_citasuser" runat="server" SelectMethod="buscarcitaid" TypeName="Logica.Lcitas">
+        <SelectParameters>
+            <asp:SessionParameter Name="id_user" SessionField="id_user" Type="Int32" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
 <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="buscarcitaid" TypeName="Logica.Lpacientes">
     <SelectParameters>
         <asp:SessionParameter DefaultValue="0" Name="id_user" SessionField="id_user" Type="Int32" />
