@@ -19,6 +19,9 @@ public partial class MasterDoctores : System.Web.UI.MasterPage
 
         UUsuario user = (UUsuario)Session["objdata"];
 
+        /*esto es para validar la session del usuario*/
+        log.session(int.Parse(Session["id_user"].ToString()));
+
         Im_Perfil.ImageUrl = user.DireccionImagen;
         Response.Cache.SetNoStore();
     }

@@ -112,6 +112,12 @@ namespace Logica
             }
             return datos;
         }
-        
+        public void session(int iduser) 
+        {
+            DAOusuario user = new DAOusuario();
+            UUsuario datos = new UUsuario();
+            datos.Id_usuario = iduser;
+            user.session(datos);
+        }
     }
 }

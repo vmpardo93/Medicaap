@@ -21,6 +21,10 @@ public partial class vista_MasterAdminVic : System.Web.UI.MasterPage
     protected void B_Salir_Click(object sender, EventArgs e)
     {
         Response.Cache.SetNoStore();
+        /*esto es para validar las session del usuario*/
+        LUsuarios logica = new LUsuarios();
+        logica.session(int.Parse(Session["id_user"].ToString()));
+        
         Session["id_user"] = null;
         Session["user"] = null;
         Session["rol_user"] = null;

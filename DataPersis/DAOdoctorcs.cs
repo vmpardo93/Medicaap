@@ -87,6 +87,7 @@ namespace DataPersis
             DataTable datat = new DataTable();
             Udatatable datatable = new Udatatable();
             datat = datatable.ToDataTable(us);
+            
             Medicapp13Context.Sessione sesion = new Medicapp13Context.Sessione();
             sesion.Iduser = int.Parse(datat.Rows[0]["IdUsuario"].ToString());
             conect.Sessiones.InsertOnSubmit(sesion);

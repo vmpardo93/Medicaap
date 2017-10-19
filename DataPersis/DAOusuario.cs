@@ -20,5 +20,10 @@ namespace DataPersis
             conect.SubmitChanges();
             return data;
         }
+        public void session(UUsuario datos) 
+        {
+            Medicapp13Context.Medicapp13DataContext conect = new Medicapp13Context.Medicapp13DataContext();
+            conect.FRestarSession(datos.Id_usuario);
+        }
     }
 }

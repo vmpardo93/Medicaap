@@ -16,6 +16,10 @@ public partial class vista_Usuario : System.Web.UI.MasterPage
         Response.Cache.SetNoStore();
 
         UUsuario user = (UUsuario)Session["objdata"];
+
+        LUsuarios logica = new LUsuarios();
+        logica.session(int.Parse(Session["id_user"].ToString()));
+
         L_Nombre.Text = "Bienvenido   " + user.Nombre;
         Im_Perfil.ImageUrl = user.DireccionImagen;
 

@@ -30,10 +30,12 @@ namespace DataPersis
             user.Imagen = datos.Foto;
             conect.Usuarios.InsertOnSubmit(user);
             conect.SubmitChanges();
+            
             List<Medicapp13Context.Usuario> us = conect.Usuarios.Where(x => x.Username == datos.Username).ToList<Medicapp13Context.Usuario>();
             DataTable data = new DataTable();
             Udatatable datatable = new Udatatable();
             data = datatable.ToDataTable(us);
+            
             Medicapp13Context.Sessione sesion = new Medicapp13Context.Sessione();
             sesion.Iduser = int.Parse(data.Rows[0]["IdUsuario"].ToString());
             conect.Sessiones.InsertOnSubmit(sesion);
